@@ -1,0 +1,21 @@
+.note-editable{
+  max-height:100px !important;
+}
+.help-inline strong{
+  color: #ac3019 !important;
+}
+
+.add_more li{
+  text-decoration: none;
+  list-style: none;
+  margin-top: 5px;
+}
+.add_more li a{
+  color: white;
+}
+.single_line{
+  white-space: nowrap;
+}
+.clickable-row {
+  cursor: pointer;
+}
