@@ -50,8 +50,9 @@ return [
 		'teller' => [
 			'driver' => 'local',
 			'root' => storage_path('app/public/images/teller'),
-			'visibility' => 'public',
+			'visibility' => 'private',
 		],
+		
 		'public' => [
 			'driver' => 'local',
 			'root' => storage_path('app/public'),

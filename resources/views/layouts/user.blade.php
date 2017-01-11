@@ -166,9 +166,10 @@
 			<div class="navbar navbar-default" role="navigation">
 				<div class="container">
 					<div class="navbar-collapse2">
+						
 						<ul class="nav navbar-nav hidden-xs">
 							@section('select_widget')
-								My Wallet
+						<li><div class="pull-right">My Wallet: ₦ {{number_format(auth()->user()->mywallet->sum('amount'),2)}}</div></li>
 								{{----<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
 												class="icon-th"></i></a>
@@ -448,6 +449,12 @@
 										<a href='{{url('dashboard/new_level')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/new_level' ? 'active' : ''}}">
 											<span>Choose a level</span>
+										</a>
+									</li>
+									<li>
+										<a href='{{url('dashboard/pending_level')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/active_levels' ? 'active' : ''}}">
+											<span>Pending Levels</span>
 										</a>
 									</li>
 									<li>

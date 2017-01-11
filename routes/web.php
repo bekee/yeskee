@@ -91,7 +91,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('selected_level', ['uses' => 'DashboardController@saveSelectedLevel'])->name('selected_level');
 		
 		//Pending
-		Route::get('pending', ['uses' => 'DashboardController@pending']);
+		Route::get('pending_level', ['uses' => 'DashboardController@pending']);
 		
 		Route::get('profile', ['uses' => 'ProfileController@profile']);
 		Route::patch('profile/{id}', ['uses' => 'ProfileController@update']);

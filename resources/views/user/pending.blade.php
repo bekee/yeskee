@@ -69,7 +69,8 @@
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header transparent">
-					<h2><strong>{{$level->level->name}}</strong></h2>
+					<h2><span style="color: #1b7e5a">Level Name:</span> <strong>{{$level->level->name}}</strong> <span style="color: #ee1e2d;">Investing Amount:</span> <strong>₦ {{number_format($level->level->amount)}}</strong></h2>
+					<h2><span style="color: #1b7e5a">Expected Payout:</span> <strong>₦ {{(number_format(round($level->level->amount)*.33333*6,2))}}</strong></h2>
 					<div class="additional-btn">
 						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
 						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
@@ -87,10 +88,11 @@
 							<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
 						</div>
 					</div>
+					
 				</div>
 				<div class="col-sm-5">
 					<h5>My Teller</h5>
-					<img  src="{{asset('storage/images/teller/'.$level->payment->image)}}">
+					<img  src="{{\Illuminate\Support\Facades\Storage::disk('local')->url('images/teller/'.$level->payment->image)}}">
 				</div>
 			</div>
 		</div>
