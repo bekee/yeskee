@@ -72,6 +72,15 @@
 <!-- body -->
 <body class="home page page-id-4311 page-parent page-template-default template-slider  sticky-header layout-full-width">
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1014831538540996";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <!-- #Wrapper -->
 <div id="Wrapper">
 	<!-- #top_bar -->
@@ -371,13 +380,16 @@
 								     style="background:url('{{asset('rcoco/upload/call_to_action.jpg')}}')}}') center center;">
 									<a href="#" class="">
 										<div class="inner-padding">
-											<h4>Who we are?</h4>
+											<h4>Face of Yeske</h4>
 											<p>
-												We are the team<br/>
-												who loves work with<br/>
-												HTML Themes
-											</p>
-											<span class="button">&mdash; Read More &mdash;</span>
+												Yeske award winning context, giving you the opportunity to actualize
+												your dream<br/>
+											</p><br/>
+											<h5 style="color:#ffffff;">Become the next</h5>
+											<strong>FACE of YESKE</strong>
+											
+											<a href="http://face.yeskeinterconnect.com" class="button">&mdash;
+												NOW &mdash;</a>
 										</div>
 									</a>
 								</div>
@@ -460,16 +472,18 @@
 					<div class="section_wrapper clearfix">
 						<div class="items_group clearfix">
 							<div class="column one-fourth column">
-								<h3>Rocco is incredibly flexible, friendly and easy to use theme</h3>
+								<h3>Joining YeskeInterconnect is SIMPLE</h3>
 								<p>
 									Class aptent taciti sociosqu ad litora torquent fermentum in blandit ut per conubia
 									nostra, per inceptos himenaeos blandit ut per.
 								</p>
 								<ul class="list list_tick">
-									<li>Translation Ready</li>
-									<li>Styled for Contact Form 7 plugin</li>
-									<li>UberMenu compatible</li>
-									<li>Fast & Easy to configure</li>
+									<li>Choose the level</li>
+									<li>Pay for the level</li>
+									<li>Bring two people through your referral link</li>
+									<li>Immediately you bring two people under you and payment made, you are getting
+										paid (no time wasting)
+									</li>
 								</ul>
 								<a href="#" class="button">Read more about us</a>
 							</div>
@@ -546,6 +560,7 @@
 									</ul>
 								</div>
 							</div>
+							@section('our_post')
 							<div class="column one-fourth latest_posts">
 								<div class="latest_posts">
 									<h3>Latest posts</h3>
@@ -591,6 +606,7 @@
 									</div>
 								</div>
 							</div>
+							@show
 							<div class="column one-fourth contact_box">
 								<div class="get_in_touch">
 									<h3>Get in touch</h3>
@@ -600,27 +616,24 @@
 											     src="{{asset('rcoco/upload/get_in_touch.jpg')}}" alt="Get in touch"/>
 										</div>
 										<ul>
-											<li class="address"><i class="fa fa-map-marker"></i>
-												<p>
-													Envato Level 13, 2 Elizabeth St,<br/>
-													Melbourne, Victoria 3000 Australia
-												</p>
-											</li>
 											<li class="phone"><i class="fa fa-phone"></i>
 												<p>
-													+61 (0) 7 9180 3458
+													+234-9060-595-949
 												</p>
 											</li>
 											<li class="mail"><i class="fa fa-envelope"></i>
 												<p>
-													<a href="mailto:noreply@envato.com">noreply@envato.com</a>
+													<a href="mailto:info@yeskeinterconnect.com">info@yeskeinterconnect
+														.com</a>
 												</p>
 											</li>
-											<li class="www"><i class="fa fa-globe"></i>
+											<li class="mail"><i class="fa fa-envelope"></i>
 												<p>
-													<a href="http://www.envato.com/">www.envato.com</a>
+													<a href="mailto:ecn@yeskeinterconnect.com">ecn@yeskeinterconnect
+														.com</a>
 												</p>
 											</li>
+										
 										</ul>
 									</div>
 								</div>
@@ -729,148 +742,160 @@
 	<footer id="Footer" class="clearfix">
 		<!-- .Our_clients_slider -->
 		@section('our_clients')
-		<div class="Our_clients_slider">
-			<div class="container">
-				<div class="column one">
-					<a href="#" class="slider_control slider_control_prev"></a>
-					<a href="#" class="slider_control slider_control_next"></a>
-					<div class="inside">
-						<ul>
-							<li>
-								<div class="slide-wrapper">
-									<a target="_blank" href="#1" title="Html"><img width="200" height="65"
-									                                               src="{{asset('rcoco/upload/clients_1.png')}}"
-									                                               class="scale-with-grid wp-post-image"
-									                                               alt="clients_1"/></a>
-								</div>
-							</li>
-							<li>
-								<div class="slide-wrapper">
-									<a target="_blank" href="#2" title="Twitter"><img width="200" height="65"
-									                                                  src="{{asset('rcoco/upload/clients_2.png')}}"
-									                                                  class="scale-with-grid wp-post-image"
-									                                                  alt="clients_2"/></a>
-								</div>
-							</li>
-							<li>
-								<div class="slide-wrapper">
-									<img width="200" height="65" src="{{asset('rcoco/upload/clients_3.png')}}"
-									     class="scale-with-grid wp-post-image" alt="clients_3"/>
-								</div>
-							</li>
-							<li>
-								<div class="slide-wrapper">
-									<a target="_blank" href="#4" title="Behance"><img width="200" height="65"
-									                                                  src="{{asset('rcoco/upload/clients_4.png')}}"
-									                                                  class="scale-with-grid wp-post-image"
-									                                                  alt="clients_4"/></a>
-								</div>
-							</li>
-							<li>
-								<div class="slide-wrapper">
-									<a target="_blank" href="#5" title="WooCommerce"><img width="200" height="65"
-									                                                      src="{{asset('rcoco/upload/clients_5.png')}}"
-									                                                      class="scale-with-grid wp-post-image"
-									                                                      alt="clients_5"/></a>
-								</div>
-							</li>
-							<li>
-								<div class="slide-wrapper">
-									<a target="_blank" href="#7" title="Pinterest"><img width="200" height="65"
-									                                                    src="{{asset('rcoco/upload/clients_7.png')}}"
-									                                                    class="scale-with-grid wp-post-image"
-									                                                    alt="clients_7"/></a>
-								</div>
-							</li>
-							<li>
-								<div class="slide-wrapper">
-									<a target="_blank" href="#6" title="Youtube"><img width="200" height="65"
-									                                                  src="{{asset('rcoco/upload/clients_6.png')}}"
-									                                                  class="scale-with-grid wp-post-image"
-									                                                  alt="clients_6"/></a>
-								</div>
-							</li>
-						</ul>
+			<div class="Our_clients_slider">
+				<div class="container">
+					<div class="column one">
+						<a href="#" class="slider_control slider_control_prev"></a>
+						<a href="#" class="slider_control slider_control_next"></a>
+						<div class="inside">
+							<ul>
+								<li>
+									<div class="slide-wrapper">
+										<a target="_blank" href="#1" title="Html"><img width="200" height="65"
+										                                               src="{{asset('rcoco/upload/clients_1.png')}}"
+										                                               class="scale-with-grid wp-post-image"
+										                                               alt="clients_1"/></a>
+									</div>
+								</li>
+								<li>
+									<div class="slide-wrapper">
+										<a target="_blank" href="#2" title="Twitter"><img width="200" height="65"
+										                                                  src="{{asset('rcoco/upload/clients_2.png')}}"
+										                                                  class="scale-with-grid wp-post-image"
+										                                                  alt="clients_2"/></a>
+									</div>
+								</li>
+								<li>
+									<div class="slide-wrapper">
+										<img width="200" height="65" src="{{asset('rcoco/upload/clients_3.png')}}"
+										     class="scale-with-grid wp-post-image" alt="clients_3"/>
+									</div>
+								</li>
+								<li>
+									<div class="slide-wrapper">
+										<a target="_blank" href="#4" title="Behance"><img width="200" height="65"
+										                                                  src="{{asset('rcoco/upload/clients_4.png')}}"
+										                                                  class="scale-with-grid wp-post-image"
+										                                                  alt="clients_4"/></a>
+									</div>
+								</li>
+								<li>
+									<div class="slide-wrapper">
+										<a target="_blank" href="#5" title="WooCommerce"><img width="200" height="65"
+										                                                      src="{{asset('rcoco/upload/clients_5.png')}}"
+										                                                      class="scale-with-grid wp-post-image"
+										                                                      alt="clients_5"/></a>
+									</div>
+								</li>
+								<li>
+									<div class="slide-wrapper">
+										<a target="_blank" href="#7" title="Pinterest"><img width="200" height="65"
+										                                                    src="{{asset('rcoco/upload/clients_7.png')}}"
+										                                                    class="scale-with-grid wp-post-image"
+										                                                    alt="clients_7"/></a>
+									</div>
+								</li>
+								<li>
+									<div class="slide-wrapper">
+										<a target="_blank" href="#6" title="Youtube"><img width="200" height="65"
+										                                                  src="{{asset('rcoco/upload/clients_6.png')}}"
+										                                                  class="scale-with-grid wp-post-image"
+										                                                  alt="clients_6"/></a>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		@show
 		<div class="widgets_wrapper">
 			<div class="container">
 				
-				<div class="one-fourth column">
-					<aside id="text-2" class="widget widget_text">
-						<h4>About us</h4>
-						<div class="textwidget">
-							<h6>We really love working for you and your customers</h6>
-							<p>
-								We are Muffin Group and we do awesome themes. We do what we love and this is the best in
-								our life. Try a piece of our work and you will not want to swap for anything else!
-							</p>
-							<a href="#">Read more &rarr;</a>
-						</div>
-					</aside>
-				</div>
-				
-				<div class="one-fourth column">
-					<aside id="widget_mfn_recent_comments-2" class="widget widget_mfn_recent_comments">
-						<h4>Recent comments</h4>
-						<div class="Recent_comments">
-							<ul>
-								<li>
-									<div class="text">
-										<p>
-											"There are many variations of passages of Lorem Ipsum available, but the
-											majority have [...]"
-										</p>
-										<div class="arrow">
+				@section('one-fourth-1')
+					<div class="one-fourth column">
+						<aside id="text-2" class="widget widget_text">
+							<h4>About us</h4>
+							<div class="textwidget">
+								<h6>We really love working for you and your customers</h6>
+								<p>
+									We are Muffin Group and we do awesome themes. We do what we love and this is the
+									best in
+									our life. Try a piece of our work and you will not want to swap for anything else!
+								</p>
+								<a href="#">Read more &rarr;</a>
+							</div>
+						</aside>
+					</div>
+				@show
+				@section('one-fourth-2')
+					<div class="one-fourth column">
+						<aside id="widget_mfn_recent_comments-2" class="widget widget_mfn_recent_comments">
+							<h4>Recent comments</h4>
+							<div class="Recent_comments">
+								<ul>
+									<li>
+										<div class="text">
+											<p>
+												"There are many variations of passages of Lorem Ipsum available, but the
+												majority have [...]"
+											</p>
+											<div class="arrow">
+											</div>
 										</div>
-									</div>
-									<p class="author">
-										Don Papa, <a href="#" title="Don Papa | Revolution Slider left sidebar">Revolution
-											Slider left sidebar</a>
-									</p>
-								</li>
-								<li>
-									<div class="text">
-										<p>
-											"It is a long established fact that a reader will be distracted by the
-											[...]"
+										<p class="author">
+											Don Papa, <a href="#" title="Don Papa | Revolution Slider left sidebar">Revolution
+												Slider left sidebar</a>
 										</p>
-										<div class="arrow">
+									</li>
+									<li>
+										<div class="text">
+											<p>
+												"It is a long established fact that a reader will be distracted by the
+												[...]"
+											</p>
+											<div class="arrow">
+											</div>
 										</div>
-									</div>
-									<p class="author">
-										Doris, <a href="#" title="Doris | Vimeo &#038; YouTube video post">Vimeo &#038;
-											YouTube video post</a>
-									</p>
-								</li>
-							</ul>
-						</div>
-					</aside>
-				</div>
-				
-				<div class="one-fourth column">
-					<aside id="widget_mfn_quick_facts-2" class="widget widget_mfn_quick_facts">
-						<h4>Quick facts</h4>
-						<div class="quick_facts">
-							<ul>
-								<li><span><i class="fa fa-user"></i>12</span>people work for us</li>
-								<li><span><i class="fa fa-coffee"></i>52</span>drank gallons of coffee</li>
-								<li><span><i class="fa fa-align-left"></i>74</span>thousand lines of code</li>
-								<li><span><i class="fa fa-calendar"></i>03</span>years on Themeforest</li>
-								<li><span><i class="fa fa-clock-o"></i>24</span>hours outstanding support</li>
-							</ul>
-						</div>
-					</aside>
-				</div>
-				<div class="one-fourth column">
-					<aside id="tp_widget_recent_tweets-2" class="widget widget_tp_widget_recent_tweets">
-						<h4>Recent Tweets</h4>
-						<div id="example2"></div>
-					</aside>
-				</div>
+										<p class="author">
+											Doris, <a href="#" title="Doris | Vimeo &#038; YouTube video post">Vimeo
+												&#038;
+												YouTube video post</a>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+				@show
+				@section('one-fourth-3')
+					<div class="one-fourth column">
+						<aside id="widget_mfn_quick_facts-2" class="widget widget_mfn_quick_facts">
+							<h4>Quick facts</h4>
+							<div class="quick_facts">
+								<ul>
+									<li><span><i class="fa fa-bomb"></i>12</span>You get bonus upon each referral.</li>
+									<li><span><i class="fa fa-coffee"></i>100%</span>Full Money on level completion.
+									</li>
+									<li><span><i class="fa fa-align-left"></i>74</span>You can become our Ambassador
+									</li>
+									<li><span><i class="fa fa-calendar"></i>03</span>You can be the next Face of Yeske
+									</li>
+									<li><span><i class="fa fa-clock-o"></i>24</span>Can win yearly draw of ₦100,000.00
+									</li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+				@show
+				@section('one-fourth-4')
+					<div class="one-fourth column">
+						<aside id="tp_widget_recent_tweets-2" class="widget widget_tp_widget_recent_tweets">
+							<h4>Recent Tweets</h4>
+							<div id="example2"></div>
+						</aside>
+					</div>
+				@show
 			</div>
 		</div>
 		
