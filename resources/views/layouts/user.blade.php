@@ -423,9 +423,9 @@
 										</a>
 									</li>
 									<li>
-										<a href='{{url('admin/blocked_clients')}}'
+										<a href='{{url('admin/all_levels')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/blocked_clients' ? 'active' : ''}}">
-											<span>Blocked</span>
+											<span>My Transactions</span>
 										</a>
 									</li>
 								
