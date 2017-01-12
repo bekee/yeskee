@@ -1,4 +1,4 @@
-@extends('layouts.index1')
+@extends('layouts.index2')
 
 
 
@@ -39,16 +39,8 @@
 		</div>
 	</section>
 @stop
-@section('services')
-@stop
-@section('video')
-@stop
-@section('features_block')
-@stop
-@section('product_block')
-@stop
-@section('testimony')
+@section('portfolio')
 @stop
 
-@section('brands')
+@section('our_clients')
 @stop
