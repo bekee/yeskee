@@ -332,6 +332,7 @@ class ComposerStaticInitaa6df4255a86cc85a8cab78ca67ca5ff
         'CreateBonusesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_121107_create_bonuses_table.php',
         'CreateDuePaymentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_27_181055_create_due_payments_table.php',
         'CreateForeignKeysTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_27_193219_create_foreign_keys_table.php',
+        'CreateLevelMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_212239_create_level_messages_table.php',
         'CreateLevelStatusesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_27_164351_create_level_statuses_table.php',
         'CreateLevelsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_10_043832_create_levels_table.php',
         'CreateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_31_114422_create_messages_table.php',

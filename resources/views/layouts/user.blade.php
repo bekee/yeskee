@@ -48,7 +48,7 @@
 		<link href="{{URL::asset('loggedin/assets/css/style.css')}}" rel="stylesheet" type="text/css"/>
 		<!-- Extra CSS Libraries End -->
 		<link href="{{URL::asset('loggedin/assets/css/style-responsive.css')}}" rel="stylesheet"/>
-				
+
 
 
 @show
@@ -150,7 +150,7 @@
 				<div class="logo">
 					<h1 style="height: 100%"><a href="{{url('/')}}">
 							
-							<img id="" src="{{URL::asset('guest/img/logo.png')}}" width="100px;" >
+							<img id="" src="{{URL::asset('guest/img/logo.png')}}" width="50px;">
 						
 						</a>
 					</h1>
@@ -167,59 +167,8 @@
 				<div class="container">
 					<div class="navbar-collapse2">
 						
-						<ul class="nav navbar-nav hidden-xs">
-							@section('select_widget')
-						<li><div class="pull-right">My Wallet: ₦ {{number_format(auth()->user()->mywallet->sum('amount'),2)}}</div></li>
-								{{----<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-												class="icon-th"></i></a>
-									<div class="dropdown-menu grid-dropdown">
-										<div class="row stacked">
-											<div class="col-xs-4">
-												<a href="javascript:;" data-app="notes-app" data-status="active"><i
-															class="icon-edit"></i>Notes</a>
-											</div>
-											<div class="col-xs-4">
-												<a href="javascript:;" data-app="todo-app" data-status="active"><i
-															class="icon-check"></i>Todo List</a>
-											</div>
-											<div class="col-xs-4">
-												<a href="javascript:;" data-app="calc" data-status="inactive"><i
-															class="fa fa-calculator"></i>Calculator</a>
-											</div>
-										</div>
-										<div class="row stacked">
-											<div class="col-xs-4">
-												<a href="javascript:;" data-app="weather-widget"
-												   data-status="active"><i class="icon-cloud-3"></i>Weather</a>
-											</div>
-											<div class="col-xs-4">
-												<a href="javascript:;" data-app="calendar-widget2"
-												   data-status="active"><i class="icon-calendar"></i>Calendar</a>
-											</div>
-											<div class="col-xs-4">
-												<a href="javascript:;" data-app="stock-app"
-												   data-status="inactive"><i class="icon-chart-line"></i>Stocks</a>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-								</li>----}}
-							@show <!-- widget-->
-							@section('language') <!--Localization -->
-							{{---<li class="language_bar dropdown hidden-xs">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">English (US) <i
-											class="fa fa-caret-down"></i></a>
-								<ul class="dropdown-menu pull-right">
-									<li><a href="#">German</a></li>
-									<li><a href="#">French</a></li>
-									<li><a href="#">Italian</a></li>
-									<li><a href="#">Spanish</a></li>
-									<li><a href="#">Chineese</a></li>
-								</ul>
-							</li>----}}
-							@show
-						</ul>
+						
+						
 						<ul class="nav navbar-nav navbar-right top-navbar">
 							<!--Chat-->
 							{{----<li class="dropdown iconify hide-phone">
@@ -345,11 +294,11 @@
 											class="icon-resize-full-2"></i></a></li>
 							<li class="dropdown topbar-profile">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                {{---<span class="rounded-image topbar-profile-image">
-                                   
-		                                <img src="{{URL::asset('loggedin/images/users/user-35.jpg')}}">
-	                               
-                                </span>--}}
+									{{---<span class="rounded-image topbar-profile-image">
+									   
+											<img src="{{URL::asset('loggedin/images/users/user-35.jpg')}}">
+									   
+									</span>--}}
 									{{Auth::user()->user->first_name}}
 									<strong>{{Auth::user()->user->last_name}}</strong>
 									<i class="fa fa-caret-down"></i>
@@ -370,6 +319,16 @@
 								<a href="javascript:;" class="open-right"><i class="fa fa-angle-double-left"></i><i
 											class="fa fa-angle-double-right"></i></a>
 							</li>---}}
+						</ul>
+						<ul class="nav navbar-nav navbar-right top-navbar">
+							<li class="dropdown topbar-profile">
+								<a class="text-center">My Wallet:
+									₦ {{number_format(auth()->user()->mywallet->sum('amount'),2)}}</a>
+							</li>
+							<li class="dropdown topbar-profile">
+								<a class="text-center">Pending Bonuses:
+									₦ {{number_format(auth()->user()->bonus->sum('amount'),2)}}</a>
+							</li>
 						</ul>
 					</div>
 					<!--/.nav-collapse -->
@@ -472,15 +431,12 @@
 								
 								</ul>
 							</li>
-						
-							
-							
 							
 							
 							<li class='has_sub'>
 								<a href='javascript:void(0);'>
 									<i class='fa fa-envelope'></i>
-									<span>Messages</span>
+									<span>News</span>
 									<span class="pull-right">
                                 <i class="fa fa-angle-down"></i>
                             </span>
@@ -488,14 +444,14 @@
 								<ul>
 									
 									<li>
-										<a href='{{url('admin/messages')}}'
+										<a href='{{url('admin/latest-updates')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/messages' ? 'active' : ''}}">
-											<span>Messages</span>
+											<span>Latest Updates</span>
 										</a>
 									</li>
 								</ul>
 							</li>
-							
+						
 						
 						</ul>
 						<div class="clearfix"></div>
@@ -827,6 +783,10 @@
 		<!-- ============================================================== -->
 		<div class="content">
 			
+			<div class="col-sm-12">
+				<div class="col-sm-10">
+				
+			
 			<div class="row">
 				
 				<div class="col-sm-6">
@@ -839,7 +799,7 @@
 				
 				<div class="col-sm-6">
 					<div class="page-heading pull-right">
-						<a href="{{ URL::previous() }}" class="btn btn-blue-1"><i class='fa fa-backward'></i> Back</a>
+						{{----<a href="{{ URL::previous() }}" class="btn btn-blue-1"><i class='fa fa-backward'></i> Back</a>---}}
 						@section('heading_right')
 						@show
 					</div>
@@ -1652,7 +1612,17 @@
 					</div>
 				@show
 			</footer>
-			
+				
+				</div>
+				<div class="col-sm-2">
+					<div class="row">
+					<img src="{{asset('loggedin/images/advert/food.jpg')}}"
+				                           height="100%;" width="100%;">
+						<img src="{{asset('loggedin/images/advert/food.jpg')}}"
+						     height="100%;" width="100%;">
+					</div>
+				</div>
+			</div>
 			<!-- Footer End -->
 		</div>
 		<!-- ============================================================== -->

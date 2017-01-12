@@ -13,6 +13,7 @@ return array(
     'CreateBonusesTable' => $baseDir . '/database/migrations/2017_01_11_121107_create_bonuses_table.php',
     'CreateDuePaymentsTable' => $baseDir . '/database/migrations/2016_12_27_181055_create_due_payments_table.php',
     'CreateForeignKeysTable' => $baseDir . '/database/migrations/2017_12_27_193219_create_foreign_keys_table.php',
+    'CreateLevelMessagesTable' => $baseDir . '/database/migrations/2017_01_11_212239_create_level_messages_table.php',
     'CreateLevelStatusesTable' => $baseDir . '/database/migrations/2016_12_27_164351_create_level_statuses_table.php',
     'CreateLevelsTable' => $baseDir . '/database/migrations/2016_12_10_043832_create_levels_table.php',
     'CreateMessagesTable' => $baseDir . '/database/migrations/2016_12_31_114422_create_messages_table.php',

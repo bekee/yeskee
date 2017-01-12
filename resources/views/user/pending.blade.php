@@ -8,7 +8,7 @@
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-air'></i>WAITING APPROVAL</h1>
+		<h3><i class='icon icon-air'></i>WAITING APPROVAL</h3>
 	</div>
 @stop
 
@@ -69,15 +69,32 @@
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header transparent">
-					<h2><span style="color: #1b7e5a">Level Name:</span> <strong>{{$level->level->name}}</strong> <span style="color: #ee1e2d;">Investing Amount:</span> <strong>₦ {{number_format($level->level->amount)}}</strong></h2>
-					<h2><span style="color: #1b7e5a">Expected Payout:</span> <strong>₦ {{(number_format(round($level->level->amount)*.33333*6,2))}}</strong></h2>
+					<div class="col-sm-12">
+						<div class="col-sm-2"><span style="color: #1b7e5a">Level Name:</span></div>
+						<div class="col-sm-9"><span
+									style="color: #1b7e5a"><strong>{{$level->level->name}}</strong></span></div>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-2"><span style="color: #1b7e5a">Amount Invested:</span></div>
+						<div class="col-sm-9"><span
+									style="color: #ee1e2d"><strong>₦ {{number_format($level->level->amount)}}</strong></span>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
+						<div class="col-sm-9"><span
+									style="color: #1b7e5a"><strong> ₦{{(number_format(round($level->level->amount)*.33333*6,2))}}</strong></span>
+						</div>
+					</div>
+					
+					
 					<div class="additional-btn">
 						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
 						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
 						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
 					</div>
 				</div>
-				<div class="col-sm-7">
+				<div class="col-sm-8">
 					<div class="widget-content padding">
 						<div class="text-center">
 							<div class="{{empty($level->y) ?'yesk':'yeskee'}}">Y</div>
@@ -88,11 +105,18 @@
 							<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
 						</div>
 					</div>
-					
+				<div class="text-left text-red-1"><strong>Note</strong>, your level will be approved within 24hrs of payment. <br/> For any issue regarding your transaction, kindly drop a request message as we will respond to you swiftly. <br/>
+					The good news here is that, when you register and find it difficult introducing two people or the system is unable to queue you up with somebody within the the space of two weeks, you can humbly apply for a refund of money or send us email – ecn@yeskeinterconnect.com
+					This is possible because we operate a single account and a registered platform to avoid delay and issues in payment. Invest your money and see how things turns swiftly with ease. We are reliable and trusted
 				</div>
-				<div class="col-sm-5">
-					<h5>My Teller</h5>
-					<img  src="{{\Illuminate\Support\Facades\Storage::disk('local')->url('images/teller/'.$level->payment->image)}}">
+				</div>
+				<div class="col-sm-4">
+					<h5 class="text-center"><strong>My Teller</strong></h5>
+					<img src="{{Storage::disk('local')->url('images/teller/'.$level->payment->image)}}"
+					     height="250px;" width="100%;">
+				</div>
+				<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
+					<div class="pull-right"><a class="btn btn-yellow-1" href="{{url('my-request')}}">Make a Request <span class="icon icon-message"></span></a></div>
 				</div>
 			</div>
 		</div>

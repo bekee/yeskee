@@ -155,13 +155,10 @@
 							<button class="btn btn-sm btn-primary btn-block" type="submit">SUBMIT</button>
 						</div>
 					</div>
-					
-					
 				</div>
 				{!! Form::close() !!}
 			</div>
 		</div>
-	</div>
 	</div>
 @stop
 

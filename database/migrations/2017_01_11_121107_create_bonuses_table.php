@@ -16,12 +16,14 @@ class CreateBonusesTable extends Migration
 		Schema::create('bonuses', function (Blueprint $table) {
 			$table->increments('id');
 			$table->integer('user_level_id')->unsigned();
-			$table->integer('userid')->unsigned();
+			$table->integer('user_id')->unsigned();
 			$table->double('amount');
 			$table->enum('status', ['approved', 'unapproved','cancelled'])->default('unapproved');
 			$table->string('purpose');
 			$table->timestamps();
 		});
+		
+		
 	}
 	
 	/**
