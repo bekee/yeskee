@@ -18,6 +18,9 @@ Route::post('signup', ['uses' => 'IndexController@store']);
 Route::get('login', ['uses' => 'LoginController@index']);
 Route::post('login', ['uses' => 'LoginController@login']);
 
+//Contact Us Message
+Route::post('contact_us', ['uses' => 'ContactUsController@contact']);
+
 //newsletter
 Route::post('newsletter', ['uses' => 'NewsLetterController@store']);
 

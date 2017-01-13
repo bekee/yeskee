@@ -417,7 +417,6 @@
 					<div class="col-sm-4">
 						<h4>CONTACT US</h4>
 						<ul class="list-unstyled company-info">
-							<li><i class="icon-map-marker"></i> 1375 Richmond Avenue<br>Minneapolis, MN 90017</li>
 							<li><i class="icon-phone3"></i> +2349060595949</li>
 							<li><i class="icon-envelope"></i> <a
 										href="mailto:ecn@yeskeinterconnect.com">ecn@yeskeinterconnect.com</a></li>

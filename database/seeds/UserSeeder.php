@@ -29,5 +29,22 @@ class UserSeeder extends Seeder
 		$admin->last_name = 'Franklin';
 		$admin->user_id = $user->id;
 		$admin->save();
+		
+		
+		$user = new User();
+		$user->email = 'ecn@yeskeinterconnect.com';
+		$user->password = bcrypt('admin12345');
+		$user->active = 1;
+		$user->route = 'admin';
+		$user->save();
+		
+		$role = Role::where('name', 'admin')->first();
+		$user->attachRole($role);
+		
+		$admin = new Admin();
+		$admin->first_name = 'Katchy';
+		$admin->last_name = 'Onyedikachi';
+		$admin->user_id = $user->id;
+		$admin->save();
 	}
 }

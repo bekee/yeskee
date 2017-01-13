@@ -73,10 +73,11 @@
 <body class="home page page-id-4311 page-parent page-template-default template-slider  sticky-header layout-full-width">
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>(function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
+        js = d.createElement(s);
+        js.id = id;
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1014831538540996";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
@@ -89,6 +90,19 @@
 			Linking People Together.
 		</p>
 		<div class="contact_info">
+			
+			@if(Auth::user())
+				<p>
+					<a href="{{url('logout')}}" class="login-button">LOGOUT</a>
+				</p>
+			@else
+				<p style="padding-right: 20px;">
+					<a href="{{url('login')}}" class="login-button" style="padding-right: 8px;">LOGIN</a>
+					<a href="{{url('signup')}}"
+					   class="signup-button" >CREATE ACCOUNT</a>
+				</p>
+			@endif
+			
 			<p class="phone">
 				<i class="fa fa-phone"></i><a href="#"> +234-9060-595-949</a>
 			</p>
@@ -170,9 +184,9 @@
 						       class="menu-item {{Route::getCurrentRoute()->getPath() == 'become_an_agent' ? 'active' : ''}}">BECOME
 								AN AGENTS</a>
 						</li>
-						<li><a href="{{url('contact')}}"
-						       class="menu-item {{Route::getCurrentRoute()->getPath() == 'contact' ? 'active' : ''}}">CONTACT</a>
-						</li>
+						{{-----	<li><a href="{{url('contact')}}"
+								   class="menu-item {{Route::getCurrentRoute()->getPath() == 'contact' ? 'active' : ''}}">CONTACT</a>
+							</li>----}}
 						@if(Auth::user())
 							<li class="menu-item "><a href="{{url(Auth::user()->route)}}">MY ACCOUNT</a></li>
 						@endif
@@ -316,9 +330,22 @@
 		</div>
 		<!-- END REVOLUTION SLIDER -->
 	</div>
-	
+	<div id="Subheader">
+		<div class="container">
+			<div class="column one">
+				<h5 class="title1">Stay up for our lot's of freebis coming this week. You be a winner</h5>
+			
+			</div>
+		</div>
+	</div>
 	<!-- #Content -->
 	<div id="Content">
+		@if (session()->has('flash_notification.message'))
+			<div class="alert alert-{{ session('flash_notification.level') }}">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				{!! session('flash_notification.message') !!}
+			</div>
+		@endif
 		<div class="content_wrapper clearfix">
 			<!-- .sections_group -->
 			<div class="sections_group">
@@ -561,51 +588,51 @@
 								</div>
 							</div>
 							@section('our_post')
-							<div class="column one-fourth latest_posts">
-								<div class="latest_posts">
-									<h3>Latest posts</h3>
-									<div class="inside">
-										<ul>
-											<li>
-												<div class="photo">
-													<img width="148" height="80"
-													     src="{{asset('rcoco/upload/blog_1-148x80.jpg')}}"
-													     class="scale-with-grid wp-post-image" alt="blog_1"/>
-												</div>
-												<div class="desc">
-													<h6><a class="title" href="#">new! Content Builder for posts</a>
-													</h6>
-													<span class="comments"><a href="#">2</a> Comments</span>
-												</div>
-											</li>
-											<li>
-												<div class="photo">
-													<img width="148" height="80"
-													     src="{{asset('rcoco/upload/blog_2-148x80.jpg')}}"
-													     class="scale-with-grid wp-post-image" alt="blog_2"/>
-												</div>
-												<div class="desc">
-													<h6><a class="title" href="#">Post with right sidebar</a></h6>
-													<span class="comments"><a href="#">0</a> Comments</span>
-												</div>
-											</li>
-											<li>
-												<div class="photo">
-													<img width="148" height="80"
-													     src="{{asset('rcoco/upload/blog_3-148x80.jpg')}}"
-													     class="scale-with-grid wp-post-image" alt="blog_3"/>
-												</div>
-												<div class="desc">
-													<h6><a class="title" href="#">Revolution Slider left sidebar</a>
-													</h6>
-													<span class="comments"><a href="#">2</a> Comments</span>
-												</div>
-											</li>
-										</ul>
-										<a class="button" href="#">Go to blog →</a>
+								<div class="column one-fourth latest_posts">
+									<div class="latest_posts">
+										<h3>Latest posts</h3>
+										<div class="inside">
+											<ul>
+												<li>
+													<div class="photo">
+														<img width="148" height="80"
+														     src="{{asset('rcoco/upload/blog_1-148x80.jpg')}}"
+														     class="scale-with-grid wp-post-image" alt="blog_1"/>
+													</div>
+													<div class="desc">
+														<h6><a class="title" href="#">new! Content Builder for posts</a>
+														</h6>
+														<span class="comments"><a href="#">2</a> Comments</span>
+													</div>
+												</li>
+												<li>
+													<div class="photo">
+														<img width="148" height="80"
+														     src="{{asset('rcoco/upload/blog_2-148x80.jpg')}}"
+														     class="scale-with-grid wp-post-image" alt="blog_2"/>
+													</div>
+													<div class="desc">
+														<h6><a class="title" href="#">Post with right sidebar</a></h6>
+														<span class="comments"><a href="#">0</a> Comments</span>
+													</div>
+												</li>
+												<li>
+													<div class="photo">
+														<img width="148" height="80"
+														     src="{{asset('rcoco/upload/blog_3-148x80.jpg')}}"
+														     class="scale-with-grid wp-post-image" alt="blog_3"/>
+													</div>
+													<div class="desc">
+														<h6><a class="title" href="#">Revolution Slider left sidebar</a>
+														</h6>
+														<span class="comments"><a href="#">2</a> Comments</span>
+													</div>
+												</li>
+											</ul>
+											<a class="button" href="#">Go to blog →</a>
+										</div>
 									</div>
 								</div>
-							</div>
 							@show
 							<div class="column one-fourth contact_box">
 								<div class="get_in_touch">
@@ -732,6 +759,33 @@
 						</div>
 					</div>
 				@show
+				
+				@section('newsletter')
+					<div class="widgets_wrapper clearfix">
+						<div class="container">
+							<div class="one-fourth column">
+								.
+							</div>
+							<div class="one-second column">
+								{!! Form::open(array('action' => 'NewsLetterController@store','role'=>'form','class'=>'contact')) !!}
+								<h6 style="color: #000;">Subscribe to our newsletter and don't miss out on any
+									opportunity</h6>
+								<span class="wpcf7-form-control-wrap email">
+							{!! Form::email('email',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','aria-required'=>'true','aria-invalid'=>"false",'size'=>"40",'placeholder'=>"Your email"]) !!}
+							</span>
+								<input type="submit" id="submit_contact1" value="SUBSCRIBE"
+								       class="wpcf7-form-control wpcf7-submit"/>
+								@if ($errors->has('email'))
+									<span class="help-block clearfix" style="color: red">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+								@endif
+								{!! Form::close() !!}
+							</div>
+						</div>
+					</div>
+				@show
+			
 			</div>
 			<!-- .four-columns - sidebar -->
 		</div>
@@ -740,6 +794,7 @@
 	
 	<!-- #Footer -->
 	<footer id="Footer" class="clearfix">
+		
 		<!-- .Our_clients_slider -->
 		@section('our_clients')
 			<div class="Our_clients_slider">
@@ -809,6 +864,8 @@
 				</div>
 			</div>
 		@show
+		
+		
 		<div class="widgets_wrapper">
 			<div class="container">
 				
@@ -930,36 +987,34 @@
 		<div>
 			<div class="screen-reader-response">
 			</div>
-			<form id="contact-form" class="contact">
-				<p>
+			
+			{!! Form::open(array('action' => 'ContactUsController@contact','role'=>'form','class'=>'contact')) !!}
+			<p>
 						<span class="wpcf7-form-control-wrap name">
-							<input type="text" name="name" value="" size="40"
-							       class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-							       aria-required="true" aria-invalid="false" placeholder="Your name"/>
+							{!! Form::text('name',null,
+							['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','aria-required'=>'true','aria-invalid'=>"false",'size'=>"40",'placeholder'=>"Your name"]) !!}
 						</span>
-					
-					<span class="wpcf7-form-control-wrap email">
-							 <input type="text" name="mail" value="" size="40"
-							        class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-							        aria-required="true" aria-invalid="false" placeholder="Your email"/>
+				
+				<span class="wpcf7-form-control-wrap email">
+							
+					{!! Form::email('email',null,
+							['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','aria-required'=>'true','aria-invalid'=>"false",'size'=>"40",'placeholder'=>"Your email"]) !!}
 						</span>
-					
-					<span class="wpcf7-form-control-wrap subject">
-							 <input type="text" name="website" value="" size="40"
-							        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-							        aria-required="true" aria-invalid="false" placeholder="Subject"/>
+				
+				<span class="wpcf7-form-control-wrap subject">
+					{!! Form::text('subject',null,
+						['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','aria-required'=>'true','aria-invalid'=>"false",'size'=>"40",'placeholder'=>"Subject"]) !!}
 						</span>
-					
-					<span class="wpcf7-form-control-wrap message">
-							<textarea name="comment" id="comment" cols="40" rows="6"
-							          class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
-							          aria-required="true" aria-invalid="false" placeholder="Message"></textarea>
+				
+				<span class="wpcf7-form-control-wrap message">
+					{!! Form::textarea('comment',null,
+					['class'=>'wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required','aria-required'=>'true','aria-invalid'=>"false",'cols'=>"40", 'rows'=>"6" ,'placeholder'=>"Message"]) !!}
 						</span>
-					<input type="submit" id="submit_contact" value="Send message"
-					       class="wpcf7-form-control wpcf7-submit"/>
-				<div id="msg" class="message"></div>
-				<p></p>
-			</form>
+				<input type="submit" id="submit_contact" value="Send message"
+				       class="wpcf7-form-control wpcf7-submit"/>
+			<div id="msg" class="message"></div>
+			<p></p>
+			{!! Form::close() !!}
 		</div>
 		<span class="arrow"></span>
 	</div>

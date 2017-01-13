@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewsLetterRequest extends FormRequest
+class ContactRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -30,7 +30,10 @@ class NewsLetterRequest extends FormRequest
 			}
 			case 'POST': {
 				return [
-					'email' => 'required|unique:news_letters',
+					'name' => 'required|min:3|max:50',
+					'subject' => 'required|min:3|max:50',
+					'email' => 'required|email',
+					'comment' => 'required',
 				];
 			}
 			case 'PUT':
@@ -42,13 +45,5 @@ class NewsLetterRequest extends FormRequest
 			default:
 				break;
 		}
-	}
-	
-	public function messages()
-	{
-		return [
-			'email.required' => 'Email is required',
-			'email.unique' => 'You have already subscribed',
-		];
 	}
 }

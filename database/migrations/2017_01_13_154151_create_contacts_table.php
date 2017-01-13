@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLevelMessagesTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateLevelMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('level_messages', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sender_id')->unsigned();
-	        $table->integer('receiver_id')->unsigned();
-	        $table->integer('user_level_id')->unsigned();
-	        $table->text('comment');
-	        $table->enum('status',['read','unread'])->default('unread');
+            $table->string('email');
+            $table->integer('user_id')->unsigned()->nullable();
+	        $table->string('subject');
+	        $table->text('message');
             $table->timestamps();
         });
-	
-	    
     }
 
     /**
@@ -33,6 +30,6 @@ class CreateLevelMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('level_messages');
+        Schema::dropIfExists('contacts');
     }
 }

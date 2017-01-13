@@ -330,6 +330,7 @@ class ComposerStaticInitaa6df4255a86cc85a8cab78ca67ca5ff
         'CreateAgentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_27_183945_create_agents_table.php',
         'CreateBanksTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_27_050002_create_banks_table.php',
         'CreateBonusesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_121107_create_bonuses_table.php',
+        'CreateContactsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_13_154151_create_contacts_table.php',
         'CreateDuePaymentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_27_181055_create_due_payments_table.php',
         'CreateForeignKeysTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_27_193219_create_foreign_keys_table.php',
         'CreateLevelMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_212239_create_level_messages_table.php',
@@ -890,6 +891,7 @@ class ComposerStaticInitaa6df4255a86cc85a8cab78ca67ca5ff
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UpdateUsertable' => __DIR__ . '/../..' . '/database/migrations/2017_01_13_165412_update_usertable.php',
         'UserSeeder' => __DIR__ . '/../..' . '/database/seeds/UserSeeder.php',
     );
 
