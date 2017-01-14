@@ -17,7 +17,7 @@ class CreateUserReferersTable extends Migration
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->integer('referred')->unsigned()->nullable();
-			$table->enum('user_type', ['normal', 'user', 'agent'])->unsigned()->nullable();
+			$table->enum('user_type', ['normal', 'user', 'agent'])->nullable();
 			$table->timestamps();
 		});
 	}
