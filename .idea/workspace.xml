@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e26f8b0d-fdf5-4c44-b7f2-2bf3d89a4a79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_12_10_043559_create_user_referers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_12_10_043559_create_user_referers_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_12_27_193219_create_foreign_keys_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_12_27_193219_create_foreign_keys_table.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2016_12_10_043559_create_user_referers_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2016_12_10_043559_create_user_referers_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2016_12_10_043559_create_user_referers_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -127,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017_12_27_193219_create_foreign_keys_table.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2017_12_27_193219_create_foreign_keys_table.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_27_193219_create_foreign_keys_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="72" column="91" lean-forward="false" selection-start-line="72" selection-start-column="91" selection-end-line="72" selection-end-column="91" />
+            <state relative-caret-position="425">
+              <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -232,8 +232,8 @@
         <option value="$PROJECT_DIR$/resources/views/signup.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_13_165412_update_usertable.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_12_27_193219_create_foreign_keys_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_12_10_043559_create_user_referers_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_12_27_193219_create_foreign_keys_table.php" />
       </list>
     </option>
   </component>
@@ -726,7 +726,7 @@
       <workItem from="1484168086902" duration="5253000" />
       <workItem from="1484196533783" duration="19299000" />
       <workItem from="1484321593931" duration="9603000" />
-      <workItem from="1484343405552" duration="2102000" />
+      <workItem from="1484343405552" duration="2480000" />
     </task>
     <task id="LOCAL-00001" summary="Construction File">
       <created>1484147910846</created>
@@ -739,7 +739,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47053000" />
+    <option name="totallyTimeSpent" value="47431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
@@ -1108,14 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_27_193219_create_foreign_keys_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="72" column="91" lean-forward="false" selection-start-line="72" selection-start-column="91" selection-end-line="72" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_13_154151_create_contacts_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1179,6 +1171,14 @@
           <folding>
             <element signature="e#7#52#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_12_27_193219_create_foreign_keys_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+          <folding />
         </state>
       </provider>
     </entry>
