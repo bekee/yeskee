@@ -77,27 +77,27 @@
 					<div class="form-group">
 						
 						<div class="col-sm-12">
-							<div class="col-sm-1"><strong>First Name: </strong></div>
+							<div class="col-sm-2"><strong>First Name: </strong></div>
 							<div class="col-sm-5"><h4 style="margin-top: 0px;">{{$profile->first_name}}</h4></div>
 						</div>
 						<div class="col-sm-12">
-							<div class="col-sm-1"><strong>Last Name: </strong></div>
+							<div class="col-sm-2"><strong>Last Name: </strong></div>
 							<div class="col-sm-5"><h4 style="margin-top: 0px;"> {{$profile->last_name}}</h4></div>
 						</div>
 						<div class="col-sm-12">
-							<div class="col-sm-1"><strong>Other Name: </strong></div>
+							<div class="col-sm-2"><strong>Other Name: </strong></div>
 							<div class="col-sm-5"><h4
 										style="margin-top: 0px;"> {{$profile->other_name?$profile->other_name:'Nil'}}</h4>
 							</div>
 						</div>
 						<div class="col-sm-12">
-							<div class="col-sm-1"><strong>Gender: </strong></div>
+							<div class="col-sm-2"><strong>Gender: </strong></div>
 							<div class="col-sm-5"><h4
 										style="margin-top: 0px;"> {{\Illuminate\Support\Str::ucfirst($profile->sex)}}</h4>
 							</div>
 						</div>
 						<div class="col-sm-12">
-							<div class="col-sm-1"><strong>Email: </strong></div>
+							<div class="col-sm-2"><strong>Email: </strong></div>
 							<div class="col-sm-5"><h4 style="margin-top: 0px;"> {{$profile->user->email}}</h4></div>
 						</div>
 						<br/>
@@ -162,7 +162,7 @@
 					<div class="form-group">
 						<label for="name">Other Name</label>
 						
-						{!! Form::text('other_name',null,['class'=>'form-control','id'=>'name','placeholder'=>'Other Name']) !!}
+						{!! Form::text('other_name',null,['class'=>'form-control','id'=>'name','placeholder'=>'Other Name (Optional)']) !!}
 						
 						@if ($errors->has('other_name'))
 							<span class="help-inline">
@@ -198,7 +198,7 @@
 											   ],null,['class'=>'form-control selectpicker']
 											) }}
 								@if ($errors->has('bank_id'))
-									<span class="help-block">
+									<span class="help-inline">
 		                                <strong>{{ $errors->first('bank_id') }}</strong>
 		                            </span>
 								@endif

@@ -43,14 +43,24 @@ class NewUserRequest extends FormRequest
 			case 'PUT':
 			case 'PATCH': {
 				return [
-					
-					'bank_id' => 'numeric',
-					'acc_name' => 'required|min:2|max:50',
-					'acc_number' => 'required',
+					'bank_id' => 'required|numeric',
+					'acc_name' => 'required|min:4|max:50',
+					'acc_number' => 'required|numeric'
 				];
 			}
 			default:
 				break;
 		}
+	}
+	public function messages()
+	{
+		return [
+			'bank_id.required' => 'The bank field is required',
+			'acc_name.required' => 'Your account name is required',
+			'acc_name.min' => 'Your account name cannot be less than 4 characters',
+			'acc_name.max' => 'Your account name cannot be less than 50 characters',
+			'acc_number.required' => 'Your account number is required',
+			'acc_number.numeric' => 'Your account number must be digits'
+		];
 	}
 }

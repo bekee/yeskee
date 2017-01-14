@@ -327,7 +327,7 @@
 							</li>
 							<li class="dropdown topbar-profile">
 								<a class="text-center">Pending Bonuses:
-									₦ {{number_format(auth()->user()->bonus->sum('amount'),2)}}</a>
+									₦ {{number_format(auth()->user()->bonus->where('status','unapproved')->sum('amount'),2)}}</a>
 							</li>
 						</ul>
 					</div>
@@ -426,6 +426,12 @@
 										<a href='{{url('admin/all_levels')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/blocked_clients' ? 'active' : ''}}">
 											<span>My Transactions</span>
+										</a>
+									</li>
+									<li>
+										<a href='{{url('admin/all_levels')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/blocked_clients' ? 'active' : ''}}">
+											<span>Bonuses</span>
 										</a>
 									</li>
 								

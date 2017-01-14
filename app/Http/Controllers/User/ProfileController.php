@@ -22,8 +22,9 @@ class ProfileController extends Controller
 	{
 		$userDetail = UserDetail::where('user_id', Auth::user()->id)->first();
 		$userDetail->other_name = $request->other_name;
-		$userDetail->save();
+		$userDetail->update();
 		
+		//dd($request);
 		$bank = new UserBank();
 		$bank->bank_id = $request->bank_id;
 		$bank->user_id = Auth::user()->id;
@@ -32,6 +33,6 @@ class ProfileController extends Controller
 		$bank->save();
 		
 		flash('Account Successfully updated', 'success');
-		redirect('dashboard');
+		return redirect('dashboard');
 	}
 }
