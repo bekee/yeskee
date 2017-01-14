@@ -19,6 +19,10 @@ class CreateUsersTable extends Migration
 			$table->string('password');
 			$table->string('route');
 			$table->boolean('active')->default(0);
+			$table->boolean('new_user')->default(1);
+			$table->boolean('email_confirm')->default(0);
+			$table->boolean('blocked')->default(0);
+			$table->boolean('suspend')->default(0);
 			$table->rememberToken();
 			$table->timestamps();
 		});

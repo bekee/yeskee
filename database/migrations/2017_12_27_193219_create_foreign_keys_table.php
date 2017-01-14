@@ -69,6 +69,9 @@ class CreateForeignKeysTable extends Migration
 			$table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
 			$table->foreign('user_level_id')->references('id')->on('user_levels')->onDelete('cascade');
 		});
+		Schema::table('contacts', function (Blueprint $table) {
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+		});
 		
 	}
 	
