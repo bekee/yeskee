@@ -3,12 +3,12 @@
 
 
 @section('title')
-	DASHBOARD
+	MY TRANSACTIONS
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-air'></i>DASHBOARD</h1>
+		<h3><i class='icon icon-compass-2'></i>MY TRANSACTIONS</h3>
 	</div>
 @stop
 
@@ -65,47 +65,100 @@
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header transparent">
-					<h2><strong>Active</strong> levels</h2>
 					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
 					</div>
 				</div>
 				<div class="widget-content padding">
-					<h5 class="text-center">You currently do not have any LEVEL</h5>
+					<h5 class="text-center">You do not have any transaction</h5>
 				</div>
 			</div>
 		</div>
 	@endunless
 @stop
 
+
 @section('row2')
-	
-	@foreach($transactions as $level)
+	@if(count($transactions))
 		<div class="col-md-12 portlets">
 			<div class="widget">
-				<div class="widget-header transparent">
-					<h2><strong>{{$level->level->name}}</strong></h2>
-					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
-					</div>
+				<div class="widget-header">
+					<h2>My Transactions
+						<small>(completed)</small>
+					</h2>
+				
 				</div>
 				<div class="widget-content padding">
-					<div class="text-center">
-						<div class="{{empty($level->y) ?'yesk':'yeskee'}}">Y</div>
-						<div class="{{empty($level->e) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->s) ?'yesk':'yeskee'}}">S</div>
-						<div class="{{empty($level->k) ?'yesk':'yeskee'}}">K</div>
-						<div class="{{empty($level->e1) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
+					
+					<div class="row">
+						<div class="col-md-12">
+							<div class="widget">
+								
+								<div class="widget-content">
+									
+									<div class="table-responsive">
+										<table data-sortable class="table table-hover table-striped">
+											<thead>
+											<tr>
+												<th>No</th>
+												<th>Level</th>
+												<th>Date</th>
+												<th>My Payouts (₦)</th>
+												<th>Y</th>
+												<th>E</th>
+												<th>S</th>
+												<th>K</th>
+												<th>E</th>
+												<th>E</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												@if($transactions->isEmpty())
+													<td colspan="10"><p class="text-center">You do not have any
+															transaction</p></td>
+												@endif
+											</tr>
+											@foreach($transactions as $key => $level )
+												<tr>
+													<td>{{$key +1}}</td>
+													<td><strong>{{$level->level->name}}</strong></td>
+													<td>{{$level->created_at}}</td>
+													<td>{{ (empty($level->y)? 0 : ($level->level->amount)*.33333*6)}}</td>
+													
+													<td>{{$level->y->user->first_name}} {{$level->y->user->last_name}}
+														<span>({{$level->y->email}})</span></td>
+													
+													<td>{{$level->e->user->first_name}} {{$level->e->user->last_name}}
+														<span>({{$level->e->email}})</span></td>
+													<td>{{$level->s->user->first_name}} {{$level->s->user->last_name}}
+														<span>({{$level->k->email}})</span></td>
+													<td>{{$level->k->user->first_name}} {{$level->k->user->last_name}}
+														<span>({{$level->k->email}})</span></td>
+													<td>{{$level->e1->user->first_name}} {{$level->e1->user->last_name}}
+														<span>({{$level->e1->email}})</span></td>
+													<td>{{$level->e2->user->first_name}} {{$level->e2->user->last_name}}
+														<span>({{$level->e2->email}})</span></td>
+												</tr>
+											
+											@endforeach
+											</tbody>
+										</table>
+									</div>
+									
+									<div class="data-table-toolbar">
+										<ul class="pagination">
+											{{$transactions->links()}}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					
 					</div>
 				</div>
 			</div>
 		</div>
-	@endforeach
+	@endif
 @stop
 
 @section('row3')

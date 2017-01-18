@@ -406,31 +406,31 @@
 								<ul>
 									<li>
 										<a href='{{url('dashboard/new_level')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/new_level' ? 'active' : ''}}">
+										   class="{{Route::getCurrentRoute()->getPath() == 'dashboard/new_level' ? 'active' : ''}}">
 											<span>Choose a level</span>
 										</a>
 									</li>
 									<li>
 										<a href='{{url('dashboard/pending_level')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/active_levels' ? 'active' : ''}}">
+										   class="{{Route::getCurrentRoute()->getPath() == 'dashboard/pending_level' ? 'active' : ''}}">
 											<span>Pending Levels</span>
 										</a>
 									</li>
 									<li>
-										<a href='{{url('dashboard/active_levels')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/active_levels' ? 'active' : ''}}">
+										<a href='{{url('dashboard/active_level')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'dashboard/active_level' ? 'active' : ''}}">
 											<span>Active Levels</span>
 										</a>
 									</li>
 									<li>
-										<a href='{{url('admin/all_levels')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/blocked_clients' ? 'active' : ''}}">
+										<a href='{{url('dashboard/my_transactions')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'dashboard/my_transactions' ? 'active' : ''}}">
 											<span>My Transactions</span>
 										</a>
 									</li>
 									<li>
-										<a href='{{url('admin/all_levels')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/blocked_clients' ? 'active' : ''}}">
+										<a href='{{url('dashboard/bonus')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'dashboard/bonus' ? 'active' : ''}}">
 											<span>Bonuses</span>
 										</a>
 									</li>

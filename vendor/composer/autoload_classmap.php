@@ -572,6 +572,6 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'UpdateUsertable' => $baseDir . '/database/migrations/2017_01_13_165412_update_usertable.php',
+    'UpdateBonusAndUserTable' => $baseDir . '/database/migrations/2017_01_18_122102_update_bonus_and_user_table.php',
     'UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
 );

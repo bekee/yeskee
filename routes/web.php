@@ -90,11 +90,20 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::group(['namespace' => 'User', 'middleware' => ['role:user'], 'prefix' => 'dashboard'], function () {
 		Route::get('/', ['uses' => 'DashboardController@index']);
 		Route::get('new_level', ['uses' => 'DashboardController@level']);
+		
 		Route::get('level/{id}', ['uses' => 'DashboardController@nextAction']);
 		Route::post('selected_level', ['uses' => 'DashboardController@saveSelectedLevel'])->name('selected_level');
 		
+		Route::get('bonus', ['uses' => 'BonusController@index']);
+		
 		//Pending
 		Route::get('pending_level', ['uses' => 'DashboardController@pending']);
+		
+		//active level
+		Route::get('active_level', ['uses' => 'DashboardController@active']);
+		
+		//my transaction
+		Route::get('my_transactions', ['uses' => 'DashboardController@myTransaction']);
 		
 		Route::get('profile', ['uses' => 'ProfileController@profile']);
 		Route::patch('profile/{id}', ['uses' => 'ProfileController@update']);

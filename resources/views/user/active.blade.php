@@ -3,12 +3,12 @@
 
 
 @section('title')
-	DASHBOARD
+	ACTIVE LEVELS
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-air'></i>DASHBOARD</h1>
+		<h3><i class='icon icon-adult'></i>MY ACTIVE LEVELS</h3>
 	</div>
 @stop
 
@@ -65,43 +65,164 @@
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header transparent">
-					<h2><strong>Active</strong> levels</h2>
 					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
 					</div>
 				</div>
 				<div class="widget-content padding">
-					<h5 class="text-center">You currently do not have any LEVEL</h5>
+					<h5 class="text-center">You do not have any active level</h5>
 				</div>
 			</div>
 		</div>
 	@endunless
 @stop
 
+
 @section('row2')
-	
 	@foreach($transactions as $level)
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header transparent">
-					<h2><strong>{{$level->level->name}}</strong></h2>
+					<div class="col-sm-12">
+						<div class="col-sm-2"><span style="color: #1b7e5a">Level Name:</span></div>
+						<div class="col-sm-9"><span
+									style="color: #1b7e5a"><strong>{{$level->level->name}}</strong></span></div>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-2"><span style="color: #1b7e5a">Amount Invested:</span></div>
+						<div class="col-sm-9"><span
+									style="color: #ee1e2d"><strong>₦ {{number_format($level->level->amount)}}</strong></span>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
+						<div class="col-sm-9"><span
+									style="color: #1b7e5a"><strong> ₦{{(number_format(round(( $level->level->amount)*.33333*6),2))}} </strong></span>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-2"><span style="color: #1b7e5a">Current Payout:</span></div>
+						<div class="col-sm-9"><span
+									style="color: #ee1e2d"><strong>₦ {{number_format(round(
+									 (empty($level->y)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->e)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->s)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->k)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->e1)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->e2)? 0 : ($level->level->amount)*.33333)
+									 ),2)
+									   }}</strong></span>
+						</div>
+					</div>
+					
 					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+					
 					</div>
 				</div>
-				<div class="widget-content padding">
-					<div class="text-center">
-						<div class="{{empty($level->y) ?'yesk':'yeskee'}}">Y</div>
-						<div class="{{empty($level->e) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->s) ?'yesk':'yeskee'}}">S</div>
-						<div class="{{empty($level->k) ?'yesk':'yeskee'}}">K</div>
-						<div class="{{empty($level->e1) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
+				<div class="col-sm-12">
+					<div class="widget-content padding">
+						<div class="text-center">
+							<table style=" margin: auto;">
+								<tr>
+									<td>
+										<div class="{{empty($level->y) ?'yesk':'yeskee'}}">Y</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->e) ?'yesk':'yeskee'}}">E</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->s) ?'yesk':'yeskee'}}">S</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->k) ?'yesk':'yeskee'}}">K</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->e1) ?'yesk':'yeskee'}}">E</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="{{empty($level->y) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->y))
+												₦ 0.0<span
+														class="icon icon-down-3"></span>
+											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+											<span class="icon icon-up-3"></span>
+											@endif
+										</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->e) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->e))
+												₦ 0.0<span
+														class="icon icon-down-3"></span>
+											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+											<span class="icon icon-up-3"></span>
+											@endif
+										</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->s) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->s))
+												₦ 0.0<span
+														class="icon icon-down-3"></span>
+											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+											<span class="icon icon-up-3"></span>
+											@endif
+										</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->k) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->k))
+												₦ 0.0<span
+														class="icon icon-down-3"></span>
+											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+											<span class="icon icon-up-3"></span>
+											@endif
+										</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->e1) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->e1))
+												₦ 0.0<span
+														class="icon icon-down-3"></span>
+											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+											<span class="icon icon-up-3"></span>
+											@endif
+										</div>
+									</td>
+									
+									<td>
+										<div class="{{empty($level->e2) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->e2))
+												₦ 0.0<span
+														class="icon icon-down-3"></span>
+											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+											<span class="icon icon-up-3"></span>
+											@endif
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
 					</div>
+				
+				</div>
+				
+				<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
+					<div class="pull-right"><a class="btn btn-yellow-1" href="{{url('my-request')}}">Make a Request
+							<span class="icon icon-message"></span></a></div>
 				</div>
 			</div>
 		</div>

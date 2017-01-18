@@ -3,12 +3,12 @@
 
 
 @section('title')
-	DASHBOARD
+	Bonuses
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-air'></i>DASHBOARD</h1>
+		<h1><i class='icon icon-window'></i> Bonuses</h1>
 	</div>
 @stop
 
@@ -46,12 +46,12 @@
 	<link href="{{URL::asset('loggedin/assets/libs/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet"
 	      type="text/css"/>
 	<link href="{{URL::asset('loggedin/assets/libs/summernote/summernote.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{URL::asset('loggedin/assets/css/custom.css')}}" rel="stylesheet"/>
+
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-arrows-alt'></i> My Bonuses</h1>
 	</div>
 @stop
 
@@ -61,51 +61,82 @@
 
 @stop
 @section('row1')
-	@unless(count($transactions))
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header transparent">
-					<h2><strong>Active</strong> levels</h2>
-					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
-					</div>
+	<div class="col-md-12 portlets">
+		<div class="widget">
+			<div class="widget-header">
+				<h2>My Earned Bonuses
+				</h2>
+				<div class="additional-btn">
+					<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+					<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
+					<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
 				</div>
-				<div class="widget-content padding">
-					<h5 class="text-center">You currently do not have any LEVEL</h5>
+			</div>
+			<div class="widget-content padding">
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							
+							<div class="widget-content">
+								<div class="table-responsive">
+									<table data-sortable class="table table-hover table-striped">
+										<thead>
+										<tr>
+											<th>No</th>
+											<th>Description</th>
+											<th>Amount Earned</th>
+											<th>Status</th>
+											<th>Date</th>
+										</tr>
+										</thead>
+										
+										<tbody>
+										
+										@if($bonuses->isEmpty())
+											<tr>
+												<td colspan="11"><p class="text-center">You have not received any bonus
+														yet</p></td>
+											</tr>
+										@endif
+										
+										@foreach($bonuses as $key => $bonus )
+											
+											<tr class='clickable-row'>
+												<td>{{$key +1}}</td>
+												<td>
+													<strong>{{$bonus->purpose}}</strong>
+												</td>
+												<td>₦ {!! number_format($bonus->amount,2) !!} </td>
+												
+												
+												<td>{!! $bonus->status == 'approved' ? "<span class='label label-success'>Approved</span>":
+												 $bonus->status == 'unapproved' ? "<span class='label label-info'>Waiting Approval</span>" : "<span class='label label-danger'>Cancelled</span>" !!} </td>
+												<td>{{$bonus->created_at}}</td>
+											</tr>
+										
+										@endforeach
+										</tbody>
+									</table>
+								</div>
+								
+								<div class="data-table-toolbar">
+									<ul class="pagination">
+										{{$bonuses->links()}}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				
 				</div>
 			</div>
 		</div>
-	@endunless
+	</div>
 @stop
 
 @section('row2')
-	
-	@foreach($transactions as $level)
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header transparent">
-					<h2><strong>{{$level->level->name}}</strong></h2>
-					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
-					</div>
-				</div>
-				<div class="widget-content padding">
-					<div class="text-center">
-						<div class="{{empty($level->y) ?'yesk':'yeskee'}}">Y</div>
-						<div class="{{empty($level->e) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->s) ?'yesk':'yeskee'}}">S</div>
-						<div class="{{empty($level->k) ?'yesk':'yeskee'}}">K</div>
-						<div class="{{empty($level->e1) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	@endforeach
+
 @stop
 
 @section('row3')

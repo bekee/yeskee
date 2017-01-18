@@ -68,9 +68,7 @@
 			<div class="widget-header transparent">
 				<h2><strong>Choose a LEVEL</strong></h2>
 				<div class="additional-btn">
-					<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-					<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-					<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+					
 				</div>
 			</div>
 			<div class="widget-content padding">

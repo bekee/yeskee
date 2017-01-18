@@ -61,8 +61,27 @@
 
 @stop
 @section('row1')
-
+	@unless(count($transactions))
+		<div class="col-md-12 portlets">
+			<div class="widget">
+				<div class="widget-header transparent">
+					
+					<div class="additional-btn">
+					
+					</div>
+				</div>
+				<div class="widget-content padding">
+					
+					<h5 class="text-center">You do not have any pending level</h5>
+				
+				
+				</div>
+			
+			</div>
+		</div>
+	@endunless
 @stop
+
 
 @section('row2')
 	@foreach($transactions as $level)
@@ -89,9 +108,7 @@
 					
 					
 					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+						
 					</div>
 				</div>
 				<div class="col-sm-8">
@@ -105,10 +122,16 @@
 							<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
 						</div>
 					</div>
-				<div class="text-left text-red-1"><strong>Note</strong>, your level will be approved within 24hrs of payment. <br/> For any issue regarding your transaction, kindly drop a request message as we will respond to you swiftly. <br/>
-					The good news here is that, when you register and find it difficult introducing two people or the system is unable to queue you up with somebody within the the space of two weeks, you can humbly apply for a refund of money or send us email – ecn@yeskeinterconnect.com
-					This is possible because we operate a single account and a registered platform to avoid delay and issues in payment. Invest your money and see how things turns swiftly with ease. We are reliable and trusted
-				</div>
+					<div class="text-left text-red-1"><strong>Note</strong>, your level will be approved within 24hrs of
+						payment. <br/> For any issue regarding your transaction, kindly drop a request message as we
+						will respond to you swiftly. <br/>
+						The good news here is that, when you register and find it difficult introducing two people or
+						the system is unable to queue you up with somebody within the the space of two weeks, you can
+						humbly apply for a refund of money or send us email – ecn@yeskeinterconnect.com
+						This is possible because we operate a single account and a registered platform to avoid delay
+						and issues in payment. Invest your money and see how things turns swiftly with ease. We are
+						reliable and trusted
+					</div>
 				</div>
 				<div class="col-sm-4">
 					<h5 class="text-center"><strong>My Teller</strong></h5>
@@ -116,7 +139,8 @@
 					     height="250px;" width="100%;">
 				</div>
 				<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
-					<div class="pull-right"><a class="btn btn-yellow-1" href="{{url('my-request')}}">Make a Request <span class="icon icon-message"></span></a></div>
+					<div class="pull-right"><a class="btn btn-yellow-1" href="{{url('my-request')}}">Make a Request
+							<span class="icon icon-message"></span></a></div>
 				</div>
 			</div>
 		</div>
