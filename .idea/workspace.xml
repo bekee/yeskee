@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e26f8b0d-fdf5-4c44-b7f2-2bf3d89a4a79" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_01_18_122102_update_bonus_and_user_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_01_18_122102_update_bonus_and_user_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/level.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/level.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -96,9 +94,11 @@
       <file leaf-file-name="2017_01_18_122102_update_bonus_and_user_table.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_18_122102_update_bonus_and_user_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <folding>
+                <element signature="e#7#52#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -785,7 +785,7 @@
       <workItem from="1484391729337" duration="89000" />
       <workItem from="1484392758300" duration="11000" />
       <workItem from="1484404440583" duration="42000" />
-      <workItem from="1484740279807" duration="12143000" />
+      <workItem from="1484740279807" duration="12357000" />
     </task>
     <task id="LOCAL-00001" summary="Construction File">
       <created>1484147910846</created>
@@ -798,7 +798,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66910000" />
+    <option name="totallyTimeSpent" value="67124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1240,9 +1240,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_18_122102_update_bonus_and_user_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="e#7#52#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

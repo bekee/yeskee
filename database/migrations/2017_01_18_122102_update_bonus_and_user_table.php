@@ -17,7 +17,7 @@ class UpdateBonusAndUserTable extends Migration
 			$table->boolean('referral_paid')->default(0);
 		});
 		Schema::table('bonuses', function (Blueprint $table) {
-		$table->enum('user_type', ['mine', 'referral', 'agent'])->default(0);
+			$table->enum('user_type', ['mine', 'referral', 'agent'])->default('mine');
 		});
 	}
 	
