@@ -65,12 +65,6 @@
 @section('row1')
 	<div class="col-md-12 portlets">
 		<div class="widget">
-			<div class="widget-header transparent">
-				<h3><strong>Choose a LEVEL</strong></h3>
-				<div class="additional-btn">
-					
-				</div>
-			</div>
 			<div class="widget-content padding">
 				@if(($levels->isEmpty()))
 					<h5 class="text-center">There is no active level</h5>
