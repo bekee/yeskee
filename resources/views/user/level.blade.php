@@ -8,7 +8,7 @@
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-arrow-combo'></i>LEVEL SELECTION</h1>
+		<h3><i class='icon icon-arrow-combo'></i>LEVEL SELECTION</h3>
 	</div>
 @stop
 
@@ -66,7 +66,7 @@
 	<div class="col-md-12 portlets">
 		<div class="widget">
 			<div class="widget-header transparent">
-				<h2><strong>Choose a LEVEL</strong></h2>
+				<h3><strong>Choose a LEVEL</strong></h3>
 				<div class="additional-btn">
 					
 				</div>
@@ -77,7 +77,6 @@
 					<h5 class="text-center">Kindly Try Again Later</h5>
 				@endif
 				@foreach($levels as $level)
-					
 					<div class="chart">
 						<div class="percentage easyPieChart" data-percent="{{$level->amount}}"><span
 									class="cpercent"></span>
@@ -85,8 +84,6 @@
 						<div class="label text-orange-2">{{$level->name}}</div>
 						<a href="{{url('dashboard/level/'.$level->id)}}" class="btn btn-yellow-1">CHOOSE LEVEL</a>
 					</div>
-				
-				
 				@endforeach
 			</div>
 		
