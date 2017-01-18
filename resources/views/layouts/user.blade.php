@@ -438,7 +438,6 @@
 								</ul>
 							</li>
 							
-							
 							<li class='has_sub'>
 								<a href='javascript:void(0);'>
 									<i class='fa fa-envelope'></i>
@@ -448,17 +447,14 @@
                             </span>
 								</a>
 								<ul>
-									
 									<li>
-										<a href='{{url('admin/latest-updates')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/messages' ? 'active' : ''}}">
+										<a href='{{url('dashboard/latest-updates')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/latest-updates' ? 'active' : ''}}">
 											<span>Latest Updates</span>
 										</a>
 									</li>
 								</ul>
 							</li>
-						
-						
 						</ul>
 						<div class="clearfix"></div>
 					</div>

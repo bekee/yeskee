@@ -11,7 +11,8 @@
         "laracasts/flash": "^2.0",
         "rych/random": "^0.1.0",
         "santigarcor/laratrust": "4.0.0-rc.1",
-        "arcanedev/currencies": "~0.9"
+        "arcanedev/currencies": "~0.9",
+        "nesbot/carbon": "^1.22"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

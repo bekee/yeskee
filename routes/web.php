@@ -105,6 +105,10 @@ Route::group(['middleware' => 'auth'], function () {
 		//my transaction
 		Route::get('my_transactions', ['uses' => 'DashboardController@myTransaction']);
 		
+		//Messages
+		Route::get('latest-updates', ['uses' => 'MessageController@index']);
+		Route::get('latest-updates/{id}', ['uses' => 'MessageController@readMessage']);
+		
 		Route::get('profile', ['uses' => 'ProfileController@profile']);
 		Route::patch('profile/{id}', ['uses' => 'ProfileController@update']);
 		
