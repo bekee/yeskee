@@ -73,10 +73,8 @@
 			</div>
 			<div class="widget-content padding">
 				@if(($levels->isEmpty()))
-					<h4 class="text-center">There is no active level</h4>
-					<div class="col-sm-offset-5 col-lg-12">
-						Kindly Try Again
-					</div>
+					<h5 class="text-center">There is no active level</h5>
+					<h5 class="text-center">Kindly Try Again Later</h5>
 				@endif
 				@foreach($levels as $level)
 					
