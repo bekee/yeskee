@@ -447,15 +447,21 @@
 										</a>
 									</li>
 									<li>
-										<a href='{{url('admin/approved_clients')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/approved_clients' ? 'active' : ''}}">
-											<span>Approved Clients</span>
+										<a href='{{url('admin/active_clients')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/active_clients' ? 'active' : ''}}">
+											<span>Active Clients</span>
 										</a>
 									</li>
 									<li>
 										<a href='{{url('admin/blocked_clients')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/blocked_clients' ? 'active' : ''}}">
 											<span>Blocked Clients</span>
+										</a>
+									</li>
+									<li>
+										<a href='{{url('admin/suspended_clients')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/suspended_clients' ? 'active' : ''}}">
+											<span>Suspended Clients</span>
 										</a>
 									</li>
 								
@@ -484,8 +490,8 @@
 									</li>
 									
 									<li>
-										<a href='{{url('admin/completed')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/new_assign' ? 'active' : ''}}">
+										<a href='{{url('admin/completed_downline')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/completed_downline' ? 'active' : ''}}">
 											<span>Completed Levels</span>
 										</a>
 									</li>
@@ -496,6 +502,36 @@
 							<li class='has_sub'>
 								<a href='javascript:void(0);'>
 									<i class='fa fa-money'></i>
+									<span>Bonuses</span>
+									<span class="pull-right">
+                                <i class="fa fa-angle-down"></i>
+                            </span>
+								</a>
+								<ul>
+									<li>
+										<a href='{{url('admin/bonus_pending_approval')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/bonus_pending_approval' ? 'active' : ''}}">
+											<span>Pending Approval</span>
+										</a>
+									</li>
+									<li>
+										<a href='{{url('admin/approved_bonuses')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/approved_bonuses' ? 'active' : ''}}">
+											<span>Approved</span>
+										</a>
+									</li>
+									<li>
+										<a href='{{url('admin/cancelled_bonuses')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/cancelled_bonuses' ? 'active' : ''}}">
+											<span>Cancelled</span>
+										</a>
+									</li>
+								
+								</ul>
+							</li>
+							<li class='has_sub'>
+								<a href='javascript:void(0);'>
+									<i class='fa fa-money'></i>
 									<span>Client Payments</span>
 									<span class="pull-right">
                                 <i class="fa fa-angle-down"></i>
@@ -503,8 +539,8 @@
 								</a>
 								<ul>
 									<li>
-										<a href='{{url('admin/pending_payment')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/pending_payment' ? 'active' : ''}}">
+										<a href='{{url('admin/client_deposits')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/client_deposits' ? 'active' : ''}}">
 											<span>Client Deposit</span>
 										</a>
 									</li>
@@ -514,7 +550,12 @@
 											<span>Approved Payments</span>
 										</a>
 									</li>
-								
+									<li>
+										<a href='{{url('admin/cancelled_deposits')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/cancelled_deposits' ? 'active' : ''}}">
+											<span>Cancelled Deposits</span>
+										</a>
+									</li>
 								
 								</ul>
 							</li>

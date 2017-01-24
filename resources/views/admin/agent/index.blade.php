@@ -58,27 +58,40 @@
 						@foreach($agents as $key => $agent )
 							<tr>
 								<td>{{$key +1}}</td>
-								<td><strong>{{$agent->first_name}}</strong></td>
+								<td>{{$agent->first_name}}</td>
+								<td>{{$agent->last_name}}</td>
+								<td>{{$agent->other_name}}</td>
+								<td>{{$agent->code}}</td>
+								<td>{{$agent->url}}</td>
+								<td class="text-center">{{$agent->referral->count()}}</td>
+								<td>{{$agent->user->active ?"Yes":"No" }}</td>
+								<td>{{$agent->user->block ?"Yes":"No" }}</td>
+								<td><a href='{{url("admin/agents/$agent->id")}}'><span class="fa fa-eye"></span></a>
+								</td>
 								<td>
 									<div class="btn-group btn-group-xs">
-										@if($agent->published == 1)
-											<a href='{{url(Auth::user()->route."/d_agent/".$agent->id)}}'
-											   data-toggle="tooltip" title="Deactivate Agent"
+										@if($agent->block == 0)
+											<a href='{{url(Auth::user()->route."/b_agent/".$agent->id)}}'
+											   data-toggle="tooltip" title="Block Agent"
 											   class="btn btn-success"><i
 														class="fa fa-unlock"></i></a>
 										@else
-											<a href='{{url(Auth::user()->route."/a_agent/".$agent->id)}}'
-											   data-toggle="tooltip" title="Activate Agent"
+											<a href='{{url(Auth::user()->route."/unb_agent/".$agent->id)}}'
+											   data-toggle="tooltip" title="Unblock Agent"
 											   class="btn btn-danger"><i
 														class="fa fa-lock"></i></a>
 										@endif
-										<a href='{{url(Auth::user()->route."/agent/$agent->id/edit")}}'
-										   data-toggle="tooltip" title="Edit agent"
-										   class="btn btn-default"><i
-													class="fa fa-edit"></i></a>
-										<a href='{{url(Auth::user()->route."/r_agent/$agent->id")}}'
-										   data-toggle="tooltip" title="Delete agent"
-										   class="btn btn-danger"><i class="fa fa-remove"></i></a>
+										@if($agent->suspend == 1)
+											<a href='{{url(Auth::user()->route."/uns_agent/$agent->id")}}'
+											   data-toggle="tooltip" title="UnSuspend agent"
+											   class="btn btn-default"><i
+														class="fa fa-ban"></i></a>
+										@else
+											<a href='{{url(Auth::user()->route."/s_agent/$agent->id")}}'
+											   data-toggle="tooltip" title="Suspend agent"
+											   class="btn btn-default"><i
+														class="fa fa-circle-o-notch"></i></a>
+										@endif
 									</div>
 								</td>
 							</tr>

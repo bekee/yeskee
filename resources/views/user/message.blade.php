@@ -51,7 +51,7 @@
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-arrows-alt'></i> Updates</h1>
 	</div>
 @stop
 
@@ -64,47 +64,52 @@
 	
 	
 	<div class="col-md-12">
-		<div class="mail-list">
-			<div class="clearfix"></div>
+		<div class="widget">
 			
-			<!-- Message table -->
-			<div class="table-responsive">
-				<table class="table table-hover table-message">
-					<thead>
-					<td>S/N</td>
-					<td></td>
-					<td>TITLE</td>
-					<td>MESSAGE</td>
-					<td>DATE</td>
-					</thead>
-					<tbody>
-					@foreach($messages as $key => $message)
-						<tr class="unread">
-							<td style="width: 20px">{{ $key+1}}</td>
-							<td style="width: 20px;"><a href="javascript:;"><i
-											class="{{$message->important?'icon-star-1 warning':''}}"></i></a>
-							</td>
-							<td><a href="{{url('dashboard/latest-updates/'.$message->id)}}">{{$message->title}}</a></td>
-							<td>
-								<a href="read-message.html">{!! \Illuminate\Support\Str::limit($message->message,50,'....')!!}</a>
-							</td>
-							
-							<td> {{\Carbon\Carbon::parse($message->updated_at)->diffForHumans()}}</td>
+			
+			<div class="widget-content">
+				<!-- Message table -->
+				<div class="table-responsive">
+					<table class="table table-hover table-message">
+						<thead>
+						<tr>
+							<td>S/N</td>
+							<td></td>
+							<td>TITLE</td>
+							<td>MESSAGE</td>
+							<td>DATE</td>
 						</tr>
-					@endforeach
-					</tbody>
-				</table>
-			</div><!-- End div .table-responsive -->
-			<!-- End message table -->
-			
-			<!-- Footer message toolbar -->
-			
-			<div class="data-table-toolbar-footer">
-				<ul class="pagination">
-					{{$messages->links()}}
-				</ul>
+						</thead>
+						<tbody>
+						@foreach($messages as $key => $message)
+							<tr class="unread">
+								<td style="width: 20px">{{ $key+1}}</td>
+								<td style="width: 20px;"><a href="javascript:;"><i
+												class="{{$message->important?'icon-star-1 warning':''}}"></i></a>
+								</td>
+								<td><a href="{{url('dashboard/latest-updates/'.$message->id)}}">{{$message->title}}</a>
+								</td>
+								<td>
+									<a href="{{url('dashboard/latest-updates/'.$message->id)}}"><div class="col-sm-12">{!!  \Illuminate\Support\Str::limit($message->message,50,'....')!!}</div></a>
+								</td>
+								
+								<td> {{\Carbon\Carbon::parse($message->updated_at)->diffForHumans()}}</td>
+							</tr>
+						@endforeach
+						</tbody>
+					</table>
+				</div><!-- End div .table-responsive -->
+				<!-- End message table -->
+				
+				<!-- Footer message toolbar -->
+				
+				<div class="data-table-toolbar-footer">
+					<ul class="pagination">
+						{{$messages->links()}}
+					</ul>
+				</div>
+				<!-- End Footer message toolbar -->
 			</div>
-			<!-- End Footer message toolbar -->
 		</div>
 	</div><!-- End div .col-md-10 -->
 

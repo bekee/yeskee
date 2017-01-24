@@ -67,7 +67,7 @@ class DashboardController extends Controller
 		
 		flash('Level have successfully been created, Payment will be confirmed within 24 hrs');
 		
-		return redirect('dashboard/pending');
+		return redirect('dashboard/pending_level');
 	}
 	
 	public function pending()

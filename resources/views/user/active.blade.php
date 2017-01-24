@@ -103,12 +103,12 @@
 						<div class="col-sm-2"><span style="color: #1b7e5a">Current Payout:</span></div>
 						<div class="col-sm-9"><span
 									style="color: #ee1e2d"><strong>₦ {{number_format(round(
-									 (empty($level->y)? 0 : ($level->level->amount)*.33333)+
-									 (empty($level->e)? 0 : ($level->level->amount)*.33333)+
-									 (empty($level->s)? 0 : ($level->level->amount)*.33333)+
-									 (empty($level->k)? 0 : ($level->level->amount)*.33333)+
-									 (empty($level->e1)? 0 : ($level->level->amount)*.33333)+
-									 (empty($level->e2)? 0 : ($level->level->amount)*.33333)
+									 (empty($level->levelStatus->y)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->s)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->k)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e1)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e2)? 0 : ($level->level->amount)*.33333)
 									 ),2)
 									   }}</strong></span>
 						</div>
@@ -124,33 +124,33 @@
 							<table style=" margin: auto;">
 								<tr>
 									<td>
-										<div class="{{empty($level->y) ?'yesk':'yeskee'}}">Y</div>
+										<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
 									</td>
 									
 									<td>
-										<div class="{{empty($level->e) ?'yesk':'yeskee'}}">E</div>
+										<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
 									</td>
 									
 									<td>
-										<div class="{{empty($level->s) ?'yesk':'yeskee'}}">S</div>
+										<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
 									</td>
 									
 									<td>
-										<div class="{{empty($level->k) ?'yesk':'yeskee'}}">K</div>
+										<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
 									</td>
 									
 									<td>
-										<div class="{{empty($level->e1) ?'yesk':'yeskee'}}">E</div>
+										<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
 									</td>
 									
 									<td>
-										<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
+										<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<div class="{{empty($level->y) ?'yesk2':'yeskee2'}}">
-											@if(empty($level->y))
+										<div class="{{empty($level->levelStatus->y) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->levelStatus->y))
 												₦ 0.0<span
 														class="icon icon-down-3"></span>
 											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
@@ -160,8 +160,8 @@
 									</td>
 									
 									<td>
-										<div class="{{empty($level->e) ?'yesk2':'yeskee2'}}">
-											@if(empty($level->e))
+										<div class="{{empty($level->levelStatus->e) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->levelStatus->e))
 												₦ 0.0<span
 														class="icon icon-down-3"></span>
 											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
@@ -171,8 +171,8 @@
 									</td>
 									
 									<td>
-										<div class="{{empty($level->s) ?'yesk2':'yeskee2'}}">
-											@if(empty($level->s))
+										<div class="{{empty($level->levelStatus->s) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->levelStatus->s))
 												₦ 0.0<span
 														class="icon icon-down-3"></span>
 											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
@@ -182,8 +182,8 @@
 									</td>
 									
 									<td>
-										<div class="{{empty($level->k) ?'yesk2':'yeskee2'}}">
-											@if(empty($level->k))
+										<div class="{{empty($level->levelStatus->k) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->levelStatus->k))
 												₦ 0.0<span
 														class="icon icon-down-3"></span>
 											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
@@ -193,8 +193,8 @@
 									</td>
 									
 									<td>
-										<div class="{{empty($level->e1) ?'yesk2':'yeskee2'}}">
-											@if(empty($level->e1))
+										<div class="{{empty($level->levelStatus->e1) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->levelStatus->e1))
 												₦ 0.0<span
 														class="icon icon-down-3"></span>
 											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
@@ -204,8 +204,8 @@
 									</td>
 									
 									<td>
-										<div class="{{empty($level->e2) ?'yesk2':'yeskee2'}}">
-											@if(empty($level->e2))
+										<div class="{{empty($level->levelStatus->e2) ?'yesk2':'yeskee2'}}">
+											@if(empty($level->levelStatus->e2))
 												₦ 0.0<span
 														class="icon icon-down-3"></span>
 											@else    ₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}

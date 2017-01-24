@@ -114,12 +114,12 @@
 				<div class="col-sm-8">
 					<div class="widget-content padding">
 						<div class="text-center">
-							<div class="{{empty($level->y) ?'yesk':'yeskee'}}">Y</div>
-							<div class="{{empty($level->e) ?'yesk':'yeskee'}}">E</div>
-							<div class="{{empty($level->s) ?'yesk':'yeskee'}}">S</div>
-							<div class="{{empty($level->k) ?'yesk':'yeskee'}}">K</div>
-							<div class="{{empty($level->e1) ?'yesk':'yeskee'}}">E</div>
-							<div class="{{empty($level->e2) ?'yesk':'yeskee'}}">E</div>
+							<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
+							<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
+							<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
+							<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
+							<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
+							<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
 						</div>
 					</div>
 					<div class="text-left text-red-1"><strong>Note</strong>, your level will be approved within 24hrs of

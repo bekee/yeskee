@@ -76,9 +76,41 @@ Route::group(['middleware' => 'auth'], function () {
 		//Agent
 		Route::get('agents', ['uses' => 'AgentController@index']);
 		Route::get('agent/{id}/edit', ['uses' => 'AgentController@edit']);
-		Route::get('r_agent/{id}', ['uses' => 'AgentController@destroy']);
-		Route::get('a_agent/{id}', ['uses' => 'AgentController@activate']);
-		Route::get('d_agent/{id}', ['uses' => 'AgentController@deactivate']);
+		//	Route::get('r_agent/{id}', ['uses' => 'AgentController@destroy']);
+		//	Route::get('a_agent/{id}', ['uses' => 'AgentController@activate']);
+		//	Route::get('d_agent/{id}', ['uses' => 'AgentController@deactivate']);
+		Route::get('unb_agent/{id}', ['uses' => 'AgentController@unblock']);
+		Route::get('b_agent/{id}', ['uses' => 'AgentController@block']);
+		Route::get('uns_agent/{id}', ['uses' => 'AgentController@unsuspend']);
+		Route::get('s_agent/{id}', ['uses' => 'AgentController@suspend']);
+		
+		Route::get('unapproved_clients', ['uses' => 'ClientsController@unapproved']);
+		Route::get('active_clients', ['uses' => 'ClientsController@active']);
+		Route::get('a_approve_client/{id}', ['uses' => 'ClientsController@approveClient']);
+		Route::get('blocked_clients', ['uses' => 'ClientsController@blocked']);
+		Route::get('suspended_clients', ['uses' => 'ClientsController@suspended']);
+		Route::get('a_block_client/{id}', ['uses' => 'ClientsController@block']);
+		Route::get('a_suspend_client/{id}', ['uses' => 'ClientsController@suspend']);
+		Route::get('a_unsuspend_client/{id}', ['uses' => 'ClientsController@unsuspend']);
+		Route::get('a_unblock_client/{id}', ['uses' => 'ClientsController@unblock']);
+		
+		///Level Activities
+		Route::get('unassigned', ['uses' => 'ClientsController@unassigned']);
+		
+		
+		//Deposits
+		Route::get('client_deposits', ['uses' => 'ClientDepositController@deposits']);
+		Route::get('a_view_payment_detail/{id}', ['uses' => 'ClientDepositController@details']);
+		Route::get('a_view_payment_reject/{id}', ['uses' => 'ClientDepositController@approve']);
+		Route::get('a_view_payment_approve/{id}', ['uses' => 'ClientDepositController@reject']);
+		Route::get('approved_payment', ['uses' => 'ClientDepositController@approved']);
+		Route::get('cancelled_deposits', ['uses' => 'ClientDepositController@cancelled']);
+		
+		
+		//DownLine Processing
+		Route::get('assigned_downlines', ['uses' => 'LevelActivityController@progress']);
+		Route::get('completed_downline', ['uses' => 'LevelActivityController@completed']);
+		
 		
 	});
 	

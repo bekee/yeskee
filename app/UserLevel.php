@@ -15,34 +15,13 @@ class UserLevel extends Model
 	{
 		return $this->hasOne(Payment::class);
 	}
-	
-	public function y()
+	public function user()
 	{
-		return $this->belongsTo(User::class, 'left_leg');
+		return $this->belongsTo(User::class);
 	}
 	
-	public function e()
+	public function levelStatus()
 	{
-		return $this->belongsTo(User::class, 'right_leg');
-	}
-	
-	public function s()
-	{
-		return $this->belongsTo(User::class, 'left_leg1');
-	}
-	
-	public function k()
-	{
-		return $this->belongsTo(User::class, 'left_leg2');
-	}
-	
-	public function e1()
-	{
-		return $this->belongsTo(User::class, 'right_leg1');
-	}
-	
-	public function e2()
-	{
-		return $this->belongsTo(User::class, 'right_leg2');
+		return $this->belongsTo(LevelStatus::class);
 	}
 }

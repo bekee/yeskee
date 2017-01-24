@@ -3,12 +3,12 @@
 
 
 @section('title')
-	DASHBOARD
+	Updates
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h3><i class='icon icon-air'></i>DASHBOARD</h3>
+		<h3><i class='icon icon-newspaper'></i> Latest News</h3>
 	</div>
 @stop
 
@@ -46,12 +46,12 @@
 	<link href="{{URL::asset('loggedin/assets/libs/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet"
 	      type="text/css"/>
 	<link href="{{URL::asset('loggedin/assets/libs/summernote/summernote.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{URL::asset('loggedin/assets/css/custom.css')}}" rel="stylesheet"/>
+
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-arrows-alt'></i> Updates</h1>
 	</div>
 @stop
 
@@ -61,49 +61,62 @@
 
 @stop
 @section('row1')
-	@unless(count($transactions))
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header transparent">
-					<h2><strong>Active</strong> levels</h2>
-					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
-					</div>
+	
+	
+	<div class="col-md-12">
+		<div class="widget">
+		
+			
+			<div class="widget-content">
+				<!-- Message table -->
+				<div class="table-responsive">
+					<table class="table table-hover table-message">
+						<thead>
+						<tr>
+							<td>S/N</td>
+							<td></td>
+							<td>TITLE</td>
+							<td>MESSAGE</td>
+							<td>DATE</td>
+						</tr>
+						</thead>
+						<tbody>
+						@foreach($messages as $key => $message)
+							<tr class="unread">
+								<td style="width: 20px">{{ $key+1}}</td>
+								<td style="width: 20px;"><a href="javascript:;"><i
+												class="{{$message->important?'icon-star-1 warning':''}}"></i></a>
+								</td>
+								<td><a href="{{url('dashboard/latest-updates/'.$message->id)}}">{{$message->title}}</a>
+								</td>
+								<td>
+									<a href="read-message.html">{!! \Illuminate\Support\Str::limit($message->message,50,'....')!!}</a>
+								</td>
+								
+								<td> {{\Carbon\Carbon::parse($message->updated_at)->diffForHumans()}}</td>
+							</tr>
+						@endforeach
+						</tbody>
+					</table>
+				</div><!-- End div .table-responsive -->
+				<!-- End message table -->
+				
+				<!-- Footer message toolbar -->
+				
+				<div class="data-table-toolbar-footer">
+					<ul class="pagination">
+						{{$messages->links()}}
+					</ul>
 				</div>
-				<div class="widget-content padding">
-					<h5 class="text-center">You currently do not have any LEVEL</h5>
-				</div>
+				<!-- End Footer message toolbar -->
 			</div>
 		</div>
-	@endunless
+	</div><!-- End div .col-md-10 -->
+
 @stop
 
 @section('row2')
-	
-	@foreach($transactions as $level)
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header transparent">
-					<h2><strong>{{$level->level->name}}</strong></h2>
-					<div class="additional-btn">
-						
-					</div>
-				</div>
-				<div class="widget-content padding">
-					<div class="text-center">
-						<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
-						<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
-						<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
-						<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	@endforeach
+
 @stop
 
 @section('row3')
