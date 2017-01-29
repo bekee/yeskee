@@ -922,7 +922,6 @@ class ComposerStaticInitaa6df4255a86cc85a8cab78ca67ca5ff
         'UpdateBonusAndUserTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_18_122102_update_bonus_and_user_table.php',
         'UpdateLevelMessageTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_29_200607_Update_Level_Message_Table.php',
         'UpdateMessageTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_18_163549_update_message_table.php',
-        'UpdateUserTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_29_205748_Update_User_Table.php',
         'UserSeeder' => __DIR__ . '/../..' . '/database/seeds/UserSeeder.php',
     );
 
