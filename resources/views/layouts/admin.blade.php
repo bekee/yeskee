@@ -483,12 +483,17 @@
 										</a>
 									</li>
 									<li>
+										<a href='{{url('admin/processing_downlines')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/processing_downlines' ? 'active' : ''}}">
+											<span>Processing DownLines</span>
+										</a>
+									</li>
+									<li>
 										<a href='{{url('admin/assigned_downlines')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/assigned_downlines' ? 'active' : ''}}">
 											<span>Inprogress DownLines</span>
 										</a>
 									</li>
-									
 									<li>
 										<a href='{{url('admin/completed_downline')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/completed_downline' ? 'active' : ''}}">

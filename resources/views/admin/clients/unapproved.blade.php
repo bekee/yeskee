@@ -65,6 +65,7 @@
 										   data-toggle="tooltip" title="Approve This Client"
 										   class="btn btn-primary"><i
 													class="fa fa-lock"></i></a>
+									</div>
 										<div class="btn-group btn-group-xs">
 											<a href='{{url(Auth::user()->route."/a_approve_client/".$client->id)}}'
 											   data-toggle="tooltip" title="Cancel This Client"

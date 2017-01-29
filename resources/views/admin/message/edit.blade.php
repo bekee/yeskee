@@ -67,6 +67,16 @@
 					
 					{!! Form::model($message,array('method'=>'PATCH','url' => ['admin/message',$message->id],'role'=>'form')) !!}
 					<div class="form-group">
+						<label for="name">Title</label>
+						
+						{!! Form::text('title',null,['class'=>'form-control','id'=>'title','placeholder'=>'Message Title']) !!}
+						@if ($errors->has('title'))
+							<span class="help-inline">
+                              <strong>{{ $errors->first('title') }}</strong>
+                              </span>
+						@endif
+					</div>
+					<div class="form-group">
 						<label for="name">Message</label>
 						@if ($errors->has('message'))
 							<span class="help-inline">
@@ -86,7 +96,7 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								
-								{{ Form::submit('Save',['class'=>'btn btn-primary md-trigger']) }}
+								{{ Form::submit('Update',['class'=>'btn btn-primary md-trigger']) }}
 							
 							</div>
 						</div>

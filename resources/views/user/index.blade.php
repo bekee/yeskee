@@ -83,6 +83,7 @@
 @section('row2')
 	
 	@foreach($transactions as $level)
+		<a href="{{url('dashboard/active_level')}}">
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header transparent">
@@ -103,6 +104,7 @@
 				</div>
 			</div>
 		</div>
+		</a>
 	@endforeach
 @stop
 

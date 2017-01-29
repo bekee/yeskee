@@ -102,7 +102,7 @@
 					<div class="col-sm-12">
 						<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
 						<div class="col-sm-9"><span
-									style="color: #1b7e5a"><strong> ₦{{(number_format(round($level->level->amount)*.33333*6,2))}}</strong></span>
+									style="color: #1b7e5a"><strong> ₦{{(number_format(round($level->level->amount)*.33333*6))}}</strong></span>
 						</div>
 					</div>
 					

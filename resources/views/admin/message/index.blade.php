@@ -68,6 +68,16 @@
 					{!! Form::open(array('url' => 'admin/message','role'=>'form')) !!}
 					
 					<div class="form-group">
+						<label for="name">Title</label>
+						
+						{!! Form::text('title',null,['class'=>'form-control','id'=>'title','placeholder'=>'Message Title']) !!}
+						@if ($errors->has('title'))
+							<span class="help-inline">
+                              <strong>{{ $errors->first('title') }}</strong>
+                              </span>
+						@endif
+					</div>
+					<div class="form-group">
 						<label for="name">Message</label>
 						@if ($errors->has('message'))
 							<span class="help-inline">
@@ -118,6 +128,7 @@
 						<thead>
 						<tr>
 							<th>No</th>
+							<th>Title</th>
 							<th>Message</th>
 							<th>Published</th>
 							<th data-sortable="false">Action</th>
@@ -133,6 +144,7 @@
 						@foreach($messages as $key => $message )
 							<tr>
 								<td>{{$key +1}}</td>
+								<td>{{$message->title}}</td>
 								<td>{!! \Illuminate\Support\Str::limit( $message->message,55,'...')!!}</td>
 								<td>{!! $message->published == 1 ? "<span class='label label-success'>YES</span>": "<span class='label label-danger'>NO</span>"!!} </td>
 								<td>

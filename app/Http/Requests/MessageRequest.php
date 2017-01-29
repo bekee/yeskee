@@ -34,6 +34,7 @@ class MessageRequest extends FormRequest
 			{
 				return [
 					'message' => 'required',
+					'title' => 'required',
 				];
 			}
 			case 'PUT':
@@ -41,7 +42,7 @@ class MessageRequest extends FormRequest
 			{
 				return [
 					'message' => 'required',
-					
+					'title' => 'required',
 				];
 			}
 			default:break;

@@ -62,4 +62,12 @@ class User extends Authenticatable
 	{
 		return $this->hasMany(Bonus::class);
 	}
+	public function referredBy()
+	{
+		return $this->hasOne(UserReferer::class);
+	}
+		public function parentOf()
+	{
+		return $this->hasOne(UserReferer::class,'referred');
+	}
 }

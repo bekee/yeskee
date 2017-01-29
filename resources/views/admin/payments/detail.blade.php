@@ -39,7 +39,7 @@
 					@if($payment->status =='pending')
 						<div class="btn-group ">
 							<a href='{{url(Auth::user()->route."/a_view_payment_approve/".$payment->id)}}'
-							   data-toggle="tooltip" title="Approve PAyment"
+							   data-toggle="tooltip" title="Approve Payment"
 							   class="btn btn-primary">Approve</a>
 						</div>
 						<div class="btn-group ">

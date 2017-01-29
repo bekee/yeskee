@@ -18,6 +18,17 @@ Route::post('signup', ['uses' => 'IndexController@store']);
 Route::get('login', ['uses' => 'LoginController@index']);
 Route::post('login', ['uses' => 'LoginController@login']);
 
+
+//Signup Referral
+Route::get('account/{code}', ['uses' => 'IndexController@Showreferral']);
+Route::post('account}', ['uses' => 'IndexController@referral']);
+
+
+//Signup Agent
+Route::get('myaccount/{code}', ['uses' => 'IndexController@ShowreferralAgent']);
+Route::post('myaccount}', ['uses' => 'IndexController@referralAgent']);
+
+
 //Contact Us Message
 Route::post('contact_us', ['uses' => 'ContactUsController@contact']);
 
@@ -94,22 +105,36 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('a_unsuspend_client/{id}', ['uses' => 'ClientsController@unsuspend']);
 		Route::get('a_unblock_client/{id}', ['uses' => 'ClientsController@unblock']);
 		
-		///Level Activities
-		Route::get('unassigned', ['uses' => 'ClientsController@unassigned']);
-		
 		
 		//Deposits
 		Route::get('client_deposits', ['uses' => 'ClientDepositController@deposits']);
 		Route::get('a_view_payment_detail/{id}', ['uses' => 'ClientDepositController@details']);
-		Route::get('a_view_payment_reject/{id}', ['uses' => 'ClientDepositController@approve']);
-		Route::get('a_view_payment_approve/{id}', ['uses' => 'ClientDepositController@reject']);
+		Route::get('a_view_payment_reject/{id}', ['uses' => 'ClientDepositController@reject']);
+		Route::get('a_view_payment_approve/{id}', ['uses' => 'ClientDepositController@approve']);
 		Route::get('approved_payment', ['uses' => 'ClientDepositController@approved']);
 		Route::get('cancelled_deposits', ['uses' => 'ClientDepositController@cancelled']);
 		
 		
 		//DownLine Processing
+		Route::get('assign_to_root/{id2}', ['uses' => 'LevelActivityController@assignToRoot']);
+		Route::get('assign_to_left/{user_id}/{user_level_id}/{child}', ['uses' => 'LevelActivityController@assignToLeft']);
+		Route::get('assign_to_right/{user_id}/{user_level_id}/{child}', ['uses' => 'LevelActivityController@assignToRight']);
+		Route::get('assign_to/{id1}', ['uses' => 'LevelActivityController@pullToAssign']);
+		Route::get('unassigned', ['uses' => 'LevelActivityController@unassigned']);
 		Route::get('assigned_downlines', ['uses' => 'LevelActivityController@progress']);
 		Route::get('completed_downline', ['uses' => 'LevelActivityController@completed']);
+		Route::get('processing_downlines', ['uses' => 'LevelActivityController@processing']);
+		
+		
+		//Bonuses
+		
+		Route::get('bonus_pending_approval', ['uses' => 'BonusController@pending']);
+		Route::get('approved_bonuses', ['uses' => 'BonusController@approved']);
+		Route::get('cancelled_bonuses', ['uses' => 'BonusController@cancelled']);
+		Route::get('approve_bonus/{id}', ['uses' => 'BonusController@approve']);
+		Route::get('cancel_bonus/{id}', ['uses' => 'BonusController@cancel']);
+		
+		Route::get('issues', ['uses' => 'IssueTrackerController@index']);
 		
 		
 	});
@@ -144,6 +169,9 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('profile', ['uses' => 'ProfileController@profile']);
 		Route::patch('profile/{id}', ['uses' => 'ProfileController@update']);
 		
+		//Issue Tracker
+		Route::get('my-request/{userLevelId}', ['uses' => 'IssueTrackerController@index']);
+		Route::post('my-request', ['uses' => 'IssueTrackerController@send']);
 		
 	});
 });

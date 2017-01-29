@@ -22,6 +22,6 @@ class UserLevel extends Model
 	
 	public function levelStatus()
 	{
-		return $this->belongsTo(LevelStatus::class);
+		return $this->hasOne(LevelStatus::class);
 	}
 }

@@ -86,6 +86,7 @@
 											<th>No</th>
 											<th>Description</th>
 											<th>Amount Earned</th>
+											<th>Level</th>
 											<th>Status</th>
 											<th>Date</th>
 										</tr>
@@ -106,12 +107,22 @@
 												<td>{{$key +1}}</td>
 												<td>
 													<strong>{{$bonus->purpose}}</strong>
+													@if($bonus->user_type =='referral')
+														<small>--- Referred Client</small>
+														{{$bonus->user->parentOf->referredParentOfUser->user->first_name . ' ' . $bonus->user->parentOf->referredParentOfUser->user->last_name}}
+														({{$bonus->user->parentOf->referredParentOfUser->email}})
+													@endif
 												</td>
 												<td>₦ {!! number_format($bonus->amount,2) !!} </td>
+												<td>₦ {{$bonus->userLevel->level->name }} </td>
 												
-												
-												<td>{!! $bonus->status == 'approved' ? "<span class='label label-success'>Approved</span>":
-												 $bonus->status == 'unapproved' ? "<span class='label label-info'>Waiting Approval</span>" : "<span class='label label-danger'>Cancelled</span>" !!} </td>
+												<td>@if($bonus->status == 'approved')
+														{!!  "<span class='label label-success'>Approved</span>"!!}
+													@elseif($bonus->status == 'unapproved')
+														{!!  "<span class='label label-info'>Waiting Approval</span>"!!}
+													@else{!!  "<span class='label label-danger'>Cancelled</span>" !!}
+													@endif
+												</td>
 												<td>{{$bonus->created_at}}</td>
 											</tr>
 										

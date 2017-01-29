@@ -1,4 +1,4 @@
-.yesk{
+.yesk {
 	font-size: 140px;
 	font-family: 'Droid Sans Mono', 'CPMono_v07 Bold', 'Droid Sans';
 	font-weight: 800;
@@ -6,13 +6,13 @@
 	display: inline-block;
 	-webkit-text-fill-color: #ffffff;
 	-webkit-background-clip: text;
-	text-shadow:
-			-1px -1px 0 #000,
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			1px 1px 0 #000;;
+	text-shadow: -1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;;
 }
-.yeskee{
+
+.yeskee {
 	font-size: 140px;
 	font-family: 'Droid Sans Mono', 'CPMono_v07 Bold', 'Droid Sans';
 	font-weight: 800;
@@ -20,14 +20,13 @@
 	display: inline-block;
 	-webkit-text-fill-color: #ee3353;
 	-webkit-background-clip: text;
-	text-shadow:
-			-1px -1px 0 #000,
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			1px 1px 0 #000;;
+	text-shadow: -1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;;
 }
 
-.yesk2{
+.yesk2 {
 	font-size: 20px;
 	font-family: 'Droid Sans Mono', 'CPMono_v07 Bold', 'Droid Sans';
 	font-weight: 800;
@@ -35,23 +34,33 @@
 	display: inline-block;
 	-webkit-text-fill-color: #ffffff;
 	-webkit-background-clip: text;
-	text-shadow:
-			-1px -1px 0 #000,
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			1px 1px 0 #000;;
+	text-shadow: -1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;;
 }
-.yeskee2{
-	font-size: 10px;
+
+.yeskee2 {
+	font-size: 20px;
 	font-family: 'Droid Sans Mono', 'CPMono_v07 Bold', 'Droid Sans';
 	font-weight: 800;
 	margin-left: 30px;
 	display: inline-block;
 	-webkit-text-fill-color: #ee3353;
 	-webkit-background-clip: text;
-	text-shadow:
-			-1px -1px 0 #000,
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			1px 1px 0 #000;;
+
+}
+
+.level_message {
+	height: 800px;
+	overflow-y: scroll;
+}
+
+.sender{
+	margin-top: 10px;
+	margin-bottom: 19px;
+}
+.reciver{
+	margin-top: 10px;
+	margin-bottom: 19px;
 }

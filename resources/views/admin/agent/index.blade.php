@@ -63,7 +63,7 @@
 								<td>{{$agent->other_name}}</td>
 								<td>{{$agent->code}}</td>
 								<td>{{$agent->url}}</td>
-								<td class="text-center">{{$agent->referral->count()}}</td>
+								<td class="text-center">{{$agent->AdminAgentreferral->count()}}</td>
 								<td>{{$agent->user->active ?"Yes":"No" }}</td>
 								<td>{{$agent->user->block ?"Yes":"No" }}</td>
 								<td><a href='{{url("admin/agents/$agent->id")}}'><span class="fa fa-eye"></span></a>

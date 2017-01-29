@@ -17,7 +17,7 @@ class DashboardController extends Controller
 {
 	public function index()
 	{
-		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->paginate(20);
+		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->whereOr('status','processing')->paginate(20);
 		$account = UserBank::where('user_id', Auth::user()->id)->first();
 		if (empty($account)) {
 			flash('Update your profile', 'danger');
@@ -96,7 +96,7 @@ class DashboardController extends Controller
 	
 	public function active()
 	{
-		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->paginate(20);
+		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->whereOr('status','processing')->paginate(20);
 		$account = UserBank::where('user_id', Auth::user()->id)->first();
 		if (empty($account)) {
 			flash('Update your profile', 'danger');
@@ -130,28 +130,5 @@ class DashboardController extends Controller
 		}
 	}
 	
-	///To be implemented in the admin section
-	private function myReferral($level_id, $userLevelid)
-	{
-		$level = Level::find($level_id);
-		
-		
-		if (auth()->user()->referral_paid == false) {
-			$bonus = new Bonus();
-			$bonus->user_level_id = $userLevelid;
-			$bonus->user_id = auth()->user()->id;
-			$bonus->amount = round(($level->discount * $level->amount) / 100, 2);
-			$bonus->user_type = 'referral';
-			$bonus->status = 'unapproved';
-			$bonus->purpose = "My Referral bonus of " . $bonus->amount . " for level " . $level->name;
-			$bonus->save();
-			
-			//Update user as not new
-			$user = User::findOrFail(auth()->user()->id);
-			$user->referral_paid = true;
-			$user->update();
-			
-			
-		}
-	}
+	
 }

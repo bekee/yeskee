@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class LevelStatus extends Model
 {
+	public function UserLevel()
+	{
+		return $this->belongsTo(UserLevel::class);
+	}
+	
 	public function y()
 	{
 		return $this->belongsTo(User::class, 'left_leg');

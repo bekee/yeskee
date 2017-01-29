@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Agent;
+use App\Http\Requests\NewUserReferralRequest;
 use App\Http\Requests\NewUserRequest;
 use App\Role;
 use App\User;
@@ -21,6 +23,22 @@ class IndexController extends Controller
 		return view('signup');
 	}
 	
+	public function Showreferral($code)
+	{
+		$userDetail = UserDetail::where('code', $code)->first();
+		$user_id = $userDetail->user_id;
+		
+		return view('referral', compact('user_id'));
+	}
+	
+	public function ShowreferralAgent($code)
+	{
+		$userDetail = Agent::where('code', $code)->first();
+		$user_id = $userDetail->user_id;
+		
+		return view('agent', compact('user_id'));
+	}
+	
 	public function store(NewUserRequest $request)
 	{
 		$code = $this->checkCode();
@@ -31,7 +49,7 @@ class IndexController extends Controller
 		$user->password = bcrypt($request->password);
 		$user->save();
 		
-		$role = Role::where('name','user')->first();
+		$role = Role::where('name', 'user')->first();
 		$user->attachRole($role);
 		
 		$userDetail = new UserDetail();
@@ -56,8 +74,9 @@ class IndexController extends Controller
 		
 	}
 	
-	public function referral(NewUserRequest $request)
+	public function referral(NewUserReferralRequest $request)
 	{
+		
 		$code = $this->checkCode();
 		$user = new User();
 		$user->email = $request->email;
@@ -66,7 +85,7 @@ class IndexController extends Controller
 		$user->password = bcrypt($request->password);
 		$user->save();
 		
-		$role = Role::where('name','user')->first();
+		$role = Role::where('name', 'user')->first();
 		$user->attachRole($role);
 		
 		$userDetail = new UserDetail();
@@ -85,6 +104,45 @@ class IndexController extends Controller
 		$referral->user_id = $user->id;
 		$referral->user_type = 'user';
 		$referral->referred = $request->code;
+		$referral->save();
+		
+		
+		Auth::attempt(['email' => $request['email'], 'password' => $request['password'], 'active' => 1], 1);
+		
+		return redirect('dashboard');
+		
+	}
+	
+	public function referralAgent(NewUserReferralRequest $request)
+	{
+		
+		$code = $this->checkCode();
+		$user = new User();
+		$user->email = $request->email;
+		$user->active = 1;
+		$user->route = 'dashboard';
+		$user->password = bcrypt($request->password);
+		$user->save();
+		
+		$role = Role::where('name', 'user')->first();
+		$user->attachRole($role);
+		
+		$userDetail = new UserDetail();
+		$userDetail->first_name = $request->first_name;
+		$userDetail->last_name = $request->last_name;
+		$userDetail->sex = $request->sex;
+		$userDetail->phone = $request->mobile;
+		$userDetail->hear_us = $request->hear_about_us;
+		$userDetail->user_id = $user->id;
+		$userDetail->code = $code;
+		$userDetail->url = env('APP_URL') . "/account/$code";
+		$userDetail->save();
+		
+		
+		$referral = new UserReferer();
+		$referral->user_id = $user->id;
+		$referral->user_type = 'agent';
+		$referral->agent_id = $request->code;
 		$referral->save();
 		
 		

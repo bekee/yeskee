@@ -80,10 +80,10 @@
 							<small>{{\Carbon\Carbon::parse($message->updated_at)->diffForHumans()}}</small>
 						</div>
 					</div>
-					
+					<hr>
 				</div>
 				<div class="row">
-					<div class="col-sm-12 mail-body">
+					<div class="col-sm-12 mail-body" style="margin-left: 8px;">
 						{!! $message->message!!}
 						
 					</div>

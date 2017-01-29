@@ -28,6 +28,21 @@ class MessageController extends Controller
 	{
 		$message = new Message();
 		$message->message = $request->message;
+		$message->title = $request->title;
+		$message->published = $request->published == 'on' ? 1 : 0;
+		$message->save();
+		
+		if ($message->published == 1)
+			$this->callMessage($message);
+		flash('Message created and posted', 'success');
+		return redirect(Auth::user()->route . '/messages');
+	}
+	
+	public function update($id, MessageRequest $request)
+	{
+		$message = Message::findOrFail($id);
+		$message->message = $request->message;
+		$message->title = $request->title;
 		$message->published = $request->published == 'on' ? 1 : 0;
 		$message->save();
 		

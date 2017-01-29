@@ -129,7 +129,14 @@
 													<td>{{\Carbon\Carbon::parse($level->created_at)->diffForHumans()}}</td>
 													
 													
-													<td>{{ (empty($level->levelStatus->y)? 0 : ($level->level->amount)*.33333*6)}}</td>
+													<td>₦ {{number_format(round((empty($level->levelStatus->y)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->s)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->k)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e1)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e2)? 0 : ($level->level->amount)*.33333)
+									 ),2)
+									   }}</td>
 													
 													
 													
