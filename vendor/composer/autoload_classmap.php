@@ -578,5 +578,6 @@ return array(
     'UpdateBonusAndUserTable' => $baseDir . '/database/migrations/2017_01_18_122102_update_bonus_and_user_table.php',
     'UpdateLevelMessageTable' => $baseDir . '/database/migrations/2017_01_29_200607_Update_Level_Message_Table.php',
     'UpdateMessageTable' => $baseDir . '/database/migrations/2017_01_18_163549_update_message_table.php',
+    'UpdateUserTable' => $baseDir . '/database/migrations/2017_01_29_205748_Update_User_Table.php',
     'UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
 );
