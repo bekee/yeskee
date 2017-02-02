@@ -143,7 +143,7 @@
 						<div class="col-sm-12">
 							<div class="col-sm-3"><strong>Upload Teller: </strong></div>
 							<div class="col-sm-5">
-								<label>{!! Form::file('teller',['class'=>'btn btn-default','title'=>'Upload Logo','id'=>'imagep']) !!}</label>
+								<label>{!! Form::file('teller',['class'=>'btn btn-default','title'=>'Upload Teller','id'=>'imagep']) !!}</label>
 								@if ($errors->has('teller'))
 									<span class="help-block">
                                         <strong>{{ $errors->first('teller') }}</strong>

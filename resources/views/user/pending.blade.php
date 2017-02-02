@@ -135,7 +135,7 @@
 				</div>
 				<div class="col-sm-4">
 					<h5 class="text-center"><strong>My Teller</strong></h5>
-					<img src="{{Storage::disk('local')->url('images/teller/'.$level->payment->image)}}"
+					<img src="{{Storage::disk('teller')->url('images/teller/'.$level->payment->image)}}"
 					     height="250px;" width="100%;">
 				</div>
 				<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
