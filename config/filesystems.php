@@ -50,7 +50,7 @@ return [
 		'teller' => [
 			'driver' => 'local',
 			'root' => storage_path('app/public/images/teller'),
-			'visibility' => 'private',
+			'visibility' => 'public',
 		],
 		
 		'public' => [
