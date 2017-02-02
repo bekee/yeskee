@@ -472,8 +472,8 @@
 									<i class='icon-feather'></i>
 									<span>DownLine Processing</span>
 									<span class="pull-right">
-                                <i class="fa fa-angle-down"></i>
-                            </span>
+                                       <i class="fa fa-angle-down"></i>
+                                     </span>
 								</a>
 								<ul>
 									<li>

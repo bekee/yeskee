@@ -222,7 +222,7 @@
 				
 				<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
 					<div class="pull-right"><a class="btn btn-yellow-1"
-					                           href="{{url('dashboard/my-request/'.$level->id)}}">Issue Tracker
+					                           href="{{url('dashboard/my-request/'.$level->id.'/')}}">Issue Tracker
 							<span class="icon icon-message"></span></a></div>
 				</div>
 			</div>

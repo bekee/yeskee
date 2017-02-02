@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Bonus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FileUploadRequest;
+use App\IssueHeader;
 use App\Level;
 use App\LevelStatus;
 use App\Payment;

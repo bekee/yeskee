@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
-use App\LevelMessage;
+use App\IssueHeader;
 
 class IssueTrackerController extends Controller
 {
 	public function index()
 	{
-		$messages = LevelMessage::paginate(100)->groupBy('user_level_id');
-		return $messages;
-		return view('admin.issue');
+		$issueHeaders = IssueHeader::orderBy('created_at', 'desc')->paginate(100);
+		
+		return view('admin.issue.index', compact('issueHeaders'));
 	}
 }
