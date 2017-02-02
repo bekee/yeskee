@@ -1,14 +1,14 @@
-@extends('layouts.user')
+@extends('layouts.admin')
 
 
 
 @section('title')
-	Proceed
+	Issue Tracker
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-address-book-alt'></i> Checkout</h1>
+		<h3><i class='icon icon-newspaper'></i> Issue Tracker</h3>
 	</div>
 @stop
 
@@ -46,12 +46,12 @@
 	<link href="{{URL::asset('loggedin/assets/libs/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet"
 	      type="text/css"/>
 	<link href="{{URL::asset('loggedin/assets/libs/summernote/summernote.css')}}" rel="stylesheet" type="text/css"/>
-
+	<link href="{{URL::asset('loggedin/assets/css/custom.css')}}" rel="stylesheet" type="text/css"/>
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-arrows-alt'></i> Issue Tracker</h1>
 	</div>
 @stop
 
@@ -61,110 +61,63 @@
 
 @stop
 @section('row1')
-	<div class="col-lg-12">
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header">
-					<h2>My Profile </h2>
-					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+	<div class="col-md-12">
+		<div class="widget">
+			<div class="col-sm-12">
+				
+				<div class="row ">
+					<div class="col-sm-12 level_message">
+						@unless(count($messages))
+							<div class="text-center">You currently do not have any issue</div>
+						@endunless
+						
+						@foreach($messages as $message)
+							@if($message->sender_id)
+								<div class="row">
+									<div class="col-sm-6 sender">{{$message->comment}}
+										<div class="clearfix"></div>
+										<span style="line-height: 29px; color: #0aac7c"><small><i>SENT: {{$message->created_at}}</i></small></span>
+									</div>
+								</div>
+							@else
+								<div class="row">
+									<div class="col-sm-6 "></div>
+									<div class="col-sm-6 reciver text-right">{{$message->comment}}
+										<div class="clearfix"></div>
+										<span style="line-height: 29px; color: #0aac7c"><small><i>REPLIED: {{$message->created_at}}</i></small></span>
+									</div>
+								</div>
+							@endif
+						@endforeach
 					</div>
 				</div>
-				<div class="widget-content padding">
-					{!! Form::open(array('route' => 'selected_level','role'=>'form','class'=>'form-horizontal','files' => true)) !!}
-					<input type="hidden" name="selected" value="{{$level->id}}">
-					<div class="col-sm-6">
-						<h4>Level Details</h4>
-						<legend></legend>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Selected Level: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">{{$level->name}}</h4></div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Level Amount: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">₦ {{$level->amount}}</h4></div>
-						</div>
-						@if(($level->discounted == true) && ($level->set_users == 'new'))
-							<div class="col-sm-12">
-								<div class="col-sm-3"><strong>Bonus per entry: </strong></div>
-								<div class="col-sm-5"><h4 style="margin-top: 0px;">
-										₦ {{round(($level->discount*$level->amount)/100)}}</h4></div>
-							</div>
-						@endif
-						<p style="color: green; padding-top: 185px;"><br/><br/>
-							<strong>NOTE</strong> The good news here is that, when you register and find it difficult
-							introducing two people or the system is unable to queue you up with somebody within the the
-							space of two weeks, you can humbly apply for a refund of money or send us email –
-							ecn@yeskeinterconnect.com
-							<br/>This is possible because we operate a single account and a registered platform to avoid
-							delay and issues in payment. Invest your money and see how things turns swiftly with ease.
-							We are reliable and trusted
-						</p>
-					
-					</div>
-					<div class="col-sm-6">
-						<h4>Payment Details</h4>
-						<legend></legend>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Bank: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;"> DIAMOND BANK</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Account Name: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;"> YESKE INTERCONNECT</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Account Number: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">0086072880</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Pay: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">₦ {{$level->amount}}</h4></div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Payment Type: </strong></div>
-							<div class="col-sm-5">
-								{{ Form::select('payment_type', [
-											   'Payment Type' => [''=>'Select-One','bank-transfer'=>'Bank Transfer','bank-deposit'=>'Bank Deposit'] ,
-											   ],null,['class'=>'form-control selectpicker']
-											) }}
-								@if ($errors->has('payment_type'))
-									<span class="help-block">
-                                <strong>{{ $errors->first('payment_type') }}</strong>
-                            </span>
-								@endif
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Upload Teller: </strong></div>
-							<div class="col-sm-5">
-								<label>{!! Form::file('teller',['class'=>'btn btn-default','title'=>'Upload Logo','id'=>'imagep']) !!}</label>
-								@if ($errors->has('teller'))
-									<span class="help-block">
-                                        <strong>{{ $errors->first('teller') }}</strong>
-                                    </span>
-								@endif
-							</div>
-						</div>
-						<div class="col-sm-4 pull-right">
-							<button class="btn btn-sm btn-primary btn-block" type="submit">SUBMIT</button>
-						</div>
-					</div>
-					{!! Form::close() !!}
-				</div>
-			
 			</div>
 		</div>
-	</div>
+	</div><!-- End div .col-md-10 -->
 @stop
 
 @section('row2')
-
+	<div class="col-md-12">
+		<div class="widget">
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 mail-body">
+						{!! Form::open(array('url' => 'admin/reply-request','role'=>'form','class'=>'contact')) !!}
+						{!! Form::hidden('tracker',$Header->user_level_id) !!}
+						<div class="form-group">
+							<label>Type Message</label>
+							{!! Form::textarea('message',null,['class'=>'form-control']) !!}
+						</div>
+						<div class="form-group-sm">
+							{!! Form::submit('SEND',['class'=>'btn btn-primary pull-right']) !!}
+						</div>
+						{!! Form::close() !!}
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div><!-- End div .col-md-10 -->
 @stop
 
 @section('row3')

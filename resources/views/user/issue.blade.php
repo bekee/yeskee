@@ -46,7 +46,7 @@
 	<link href="{{URL::asset('loggedin/assets/libs/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet"
 	      type="text/css"/>
 	<link href="{{URL::asset('loggedin/assets/libs/summernote/summernote.css')}}" rel="stylesheet" type="text/css"/>
-	<link href="{{URL::asset('loggedin/assets/css/custom.css')}}" rel="stylesheet" type="text/css"/>
+	
 @stop
 
 @section('heading')
@@ -76,14 +76,15 @@
 								<div class="row">
 									<div class="col-sm-6 sender">{{$message->comment}}
 										<div class="clearfix"></div>
-										<span style="line-height: 29px; color: #0aac7c"><small><i>SENT: {{$message->created_at}}</i></small></span>
+										<span style="line-height: 29px; color: #0aac7c"><small><i>SENT: {{\Carbon\Carbon::parse( $message->created_at)->diffForHumans()}}</i></small></span>
 									</div>
 								</div>
 							@else
 								<div class="row">
+									<div class="col-sm-6 "></div>
 									<div class="col-sm-6 reciver text-right">{{$message->comment}}
 										<div class="clearfix"></div>
-										<span style="line-height: 29px; color: #0aac7c"><small><i>REPLIED: {{$message->created_at}}</i></small></span>
+										<span style="line-height: 29px; color: #0aac7c"><small><i>REPLIED: {{\Carbon\Carbon::parse( $message->created_at)->diffForHumans()}}</i></small></span>
 									</div>
 								</div>
 							@endif

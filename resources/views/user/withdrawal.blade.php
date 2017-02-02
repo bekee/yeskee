@@ -3,12 +3,12 @@
 
 
 @section('title')
-	Proceed
+	Withdrawals
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-address-book-alt'></i> Checkout</h1>
+		<h1><i class='icon icon-window'></i> Withdrawals</h1>
 	</div>
 @stop
 
@@ -51,7 +51,7 @@
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-arrows-alt'></i> My Withdrawals</h1>
 	</div>
 @stop
 
@@ -61,111 +61,131 @@
 
 @stop
 @section('row1')
-	<div class="col-lg-12">
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header">
-					<h2>My Profile </h2>
-					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
-					</div>
-				</div>
-				<div class="widget-content padding">
-					{!! Form::open(array('route' => 'selected_level','role'=>'form','class'=>'form-horizontal','files' => true)) !!}
-					<input type="hidden" name="selected" value="{{$level->id}}">
-					<div class="col-sm-6">
-						<h4>Level Details</h4>
-						<legend></legend>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Selected Level: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">{{$level->name}}</h4></div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Level Amount: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">₦ {{$level->amount}}</h4></div>
-						</div>
-						@if(($level->discounted == true) && ($level->set_users == 'new'))
-							<div class="col-sm-12">
-								<div class="col-sm-3"><strong>Bonus per entry: </strong></div>
-								<div class="col-sm-5"><h4 style="margin-top: 0px;">
-										₦ {{round(($level->discount*$level->amount)/100)}}</h4></div>
-							</div>
-						@endif
-						<p style="color: green; padding-top: 185px;"><br/><br/>
-							<strong>NOTE</strong> The good news here is that, when you register and find it difficult
-							introducing two people or the system is unable to queue you up with somebody within the the
-							space of two weeks, you can humbly apply for a refund of money or send us email –
-							ecn@yeskeinterconnect.com
-							<br/>This is possible because we operate a single account and a registered platform to avoid
-							delay and issues in payment. Invest your money and see how things turns swiftly with ease.
-							We are reliable and trusted
-						</p>
-					
-					</div>
-					<div class="col-sm-6">
-						<h4>Payment Details</h4>
-						<legend></legend>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Bank: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;"> DIAMOND BANK</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Account Name: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;"> YESKE INTERCONNECT</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Account Number: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">0086072880</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Pay: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">₦ {{$level->amount}}</h4></div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Payment Type: </strong></div>
-							<div class="col-sm-5">
-								{{ Form::select('payment_type', [
-											   'Payment Type' => [''=>'Select-One','bank-transfer'=>'Bank Transfer','bank-deposit'=>'Bank Deposit'] ,
-											   ],null,['class'=>'form-control selectpicker']
-											) }}
-								@if ($errors->has('payment_type'))
-									<span class="help-block">
-                                <strong>{{ $errors->first('payment_type') }}</strong>
-                            </span>
-								@endif
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Upload Teller: </strong></div>
-							<div class="col-sm-5">
-								<label>{!! Form::file('teller',['class'=>'btn btn-default','title'=>'Upload Logo','id'=>'imagep']) !!}</label>
-								@if ($errors->has('teller'))
-									<span class="help-block">
-                                        <strong>{{ $errors->first('teller') }}</strong>
+	<div class="col-md-12 portlets">
+		<div class="widget">
+			
+			<div class="widget-content padding">
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							
+							<div class="widget-content">
+								<h3 class="text-center ">Place Withdrawal</h3>
+								{!! Form::open(array('url' => 'dashboard/place_withdrawal','role'=>'form','class'=>'form-horizontal')) !!}
+								<div class="col-sm-12">
+									
+									<legend></legend>
+									<div class="col-sm-12">
+										<div class="col-sm-5"><h2><strong>My Wallet: </strong>
+												₦ {{number_format(auth()->user()->mywallet->sum('amount'),2)}} </h2>
+										</div>
+									</div>
+									
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="control-label"><strong>Amount: </strong></label>
+											{{Form::text('amount',null,['class'=>'form-control'])}}
+											@if ($errors->has('amount'))
+												<span class="help-block">
+                                        <strong>{{ $errors->first('amount') }}</strong>
                                     </span>
-								@endif
+											@endif
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 pull-right">
+									<button class="btn btn-sm btn-primary btn-block" type="submit">PLACE WITHDRAWAL
+									</button>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-4 pull-right">
-							<button class="btn btn-sm btn-primary btn-block" type="submit">SUBMIT</button>
+							{!! Form::close() !!}
 						</div>
 					</div>
-					{!! Form::close() !!}
 				</div>
 			
 			</div>
 		</div>
 	</div>
 @stop
-
 @section('row2')
-
+	<div class="col-md-12 portlets">
+		<div class="widget">
+			<div class="widget-header">
+				<h2>My Withdrawals
+				</h2>
+				<div class="additional-btn">
+					<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
+					<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
+					<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
+				</div>
+			</div>
+			<div class="widget-content padding">
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							
+							<div class="widget-content">
+								<div class="table-responsive">
+									<table data-sortable class="table table-hover table-striped">
+										<thead>
+										<tr>
+											<th>No</th>
+											<th>Description</th>
+											<th>Amount Placed</th>
+											<th>Status</th>
+											<th>Date</th>
+										</tr>
+										</thead>
+										
+										<tbody>
+										
+										@if($withdrawals->isEmpty())
+											<tr>
+												<td colspan="11"><p class="text-center">You do not have any withdrawals
+														yet</p></td>
+											</tr>
+										@endif
+										
+										@foreach($withdrawals as $key => $withdrawal )
+											
+											<tr class='clickable-row'>
+												<td>{{$key +1}}</td>
+												<td>{{$withdrawal->response}}</td>
+												<td>₦ {!! number_format($withdrawal->amount,2) !!} </td>
+												
+												<td>@if($withdrawal->status == 'approved')
+														{!!  "<span class='label label-success'>Approved</span>"!!}
+													@elseif($withdrawal->status == 'pending')
+														{!!  "<span class='label label-info'>Waiting Approval</span>"!!}
+													@else{!!  "<span class='label label-danger'>Cancelled</span>" !!}
+													@endif
+												</td>
+												<td>{{\Carbon\Carbon::parse( $withdrawal->created_at)->diffForHumans()}}</td>
+											</tr>
+										
+										@endforeach
+										</tbody>
+									</table>
+								</div>
+								
+								<div class="data-table-toolbar">
+									<ul class="pagination">
+										{{$withdrawals  ->links()}}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
 @stop
+
+
 
 @section('row3')
 @stop

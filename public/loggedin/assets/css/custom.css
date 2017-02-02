@@ -52,15 +52,24 @@
 }
 
 .level_message {
-	height: 800px;
+	height: 600px;
 	overflow-y: scroll;
 }
 
-.sender{
+.sender {
 	margin-top: 10px;
 	margin-bottom: 19px;
 }
-.reciver{
+
+.reciver {
 	margin-top: 10px;
 	margin-bottom: 19px;
+}
+
+.withdraw a {
+	color: #ffffff !important;
+}
+
+.withdraw a:hover {
+	color: #000 !important;
 }

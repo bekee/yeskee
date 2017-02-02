@@ -1,14 +1,14 @@
-@extends('layouts.user')
+@extends('layouts.admin')
 
 
 
 @section('title')
-	Proceed
+	Withdrawals Details
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-address-book-alt'></i> Checkout</h1>
+		<h1><i class='icon icon-window'></i> Withdrawals</h1>
 	</div>
 @stop
 
@@ -51,7 +51,7 @@
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-arrows-alt'></i> Withdrawals Details</h1>
 	</div>
 @stop
 
@@ -61,111 +61,89 @@
 
 @stop
 @section('row1')
-	<div class="col-lg-12">
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header">
-					<h2>My Profile </h2>
-					<div class="additional-btn">
-						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
-						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
-						<a href="#" class="widget-close"><i class="icon-cancel-3"></i></a>
-					</div>
-				</div>
-				<div class="widget-content padding">
-					{!! Form::open(array('route' => 'selected_level','role'=>'form','class'=>'form-horizontal','files' => true)) !!}
-					<input type="hidden" name="selected" value="{{$level->id}}">
-					<div class="col-sm-6">
-						<h4>Level Details</h4>
-						<legend></legend>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Selected Level: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">{{$level->name}}</h4></div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Level Amount: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">₦ {{$level->amount}}</h4></div>
-						</div>
-						@if(($level->discounted == true) && ($level->set_users == 'new'))
-							<div class="col-sm-12">
-								<div class="col-sm-3"><strong>Bonus per entry: </strong></div>
-								<div class="col-sm-5"><h4 style="margin-top: 0px;">
-										₦ {{round(($level->discount*$level->amount)/100)}}</h4></div>
-							</div>
-						@endif
-						<p style="color: green; padding-top: 185px;"><br/><br/>
-							<strong>NOTE</strong> The good news here is that, when you register and find it difficult
-							introducing two people or the system is unable to queue you up with somebody within the the
-							space of two weeks, you can humbly apply for a refund of money or send us email –
-							ecn@yeskeinterconnect.com
-							<br/>This is possible because we operate a single account and a registered platform to avoid
-							delay and issues in payment. Invest your money and see how things turns swiftly with ease.
-							We are reliable and trusted
-						</p>
-					
-					</div>
-					<div class="col-sm-6">
-						<h4>Payment Details</h4>
-						<legend></legend>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Bank: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;"> DIAMOND BANK</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Account Name: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;"> YESKE INTERCONNECT</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Account Number: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">0086072880</h4>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Pay: </strong></div>
-							<div class="col-sm-5"><h4 style="margin-top: 0px;">₦ {{$level->amount}}</h4></div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Payment Type: </strong></div>
-							<div class="col-sm-5">
-								{{ Form::select('payment_type', [
-											   'Payment Type' => [''=>'Select-One','bank-transfer'=>'Bank Transfer','bank-deposit'=>'Bank Deposit'] ,
-											   ],null,['class'=>'form-control selectpicker']
-											) }}
-								@if ($errors->has('payment_type'))
-									<span class="help-block">
-                                <strong>{{ $errors->first('payment_type') }}</strong>
-                            </span>
-								@endif
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-3"><strong>Upload Teller: </strong></div>
-							<div class="col-sm-5">
-								<label>{!! Form::file('teller',['class'=>'btn btn-default','title'=>'Upload Logo','id'=>'imagep']) !!}</label>
-								@if ($errors->has('teller'))
-									<span class="help-block">
-                                        <strong>{{ $errors->first('teller') }}</strong>
+	<div class="col-md-12 portlets">
+		<div class="widget">
+			
+			<div class="widget-content padding">
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="widget">
+							
+							<div class="widget-content">
+								<h3 class="text-center ">Withdrawal Details</h3>
+								{!! Form::open(array('url' => ['admin/withdrawal_cancel',$withdrawal->id],'role'=>'form','class'=>'form-horizontal')) !!}
+								<div class="col-sm-12">
+									
+									<legend></legend>
+									<div class="col-sm-12">
+										<div class="col-sm-2"><h5><strong>Wallet: </strong></h5>
+										</div>
+										<div class="col-sm-5"><h5>
+												₦ {{number_format($withdrawal->user->mywallet->sum('amount'),2)}} </h5>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="col-sm-2"><h5><strong>Withdrawal Amount: </strong></h5>
+										</div>
+										<div class="col-sm-5"><h5>
+												₦ {{number_format(round($withdrawal->amount),2)}} </h5>
+											{{Form::hidden('amount',round($withdrawal->amount))}}
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="col-sm-2"><h5><strong>Client: </strong></h5></div>
+										<div class="col-sm-5">
+											<h5>{{$withdrawal->user->user->first_name}} {{$withdrawal->user->user->last_name}}</h5>
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="col-sm-2"><h5><strong>Account Number: </strong></h5></div>
+										<div class="col-sm-5"><h5>{{$withdrawal->user->userBank->acc_number}}</h5></div>
+									</div>
+									<div class="col-sm-12">
+										<div class="col-sm-2"><h5><strong>Account Name: </strong></h5></div>
+										<div class="col-sm-5"><h5>{{$withdrawal->user->userBank->acc_name}}</h5></div>
+									</div>
+									<div class="col-sm-12">
+										<div class="col-sm-2"><h5><strong>Bank: </strong></h5></div>
+										<div class="col-sm-5"><h5>{{$withdrawal->user->userBank->bank->name}}</h5></div>
+									</div>
+									
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="control-label"><strong>Comment: </strong></label>
+											{{Form::textarea('comment',null,['class'=>'form-control'])}}
+											@if ($errors->has('comment'))
+												<span class="help-block">
+                                        <strong>{{ $errors->first('comment') }}</strong>
                                     </span>
-								@endif
+											@endif
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4 pull-right">
+									
+									<div class="col-sm-6">
+										<button class="btn btn-sm btn-danger btn-block" type="submit">CANCEL
+										</button>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-4 pull-right">
-							<button class="btn btn-sm btn-primary btn-block" type="submit">SUBMIT</button>
+							{!! Form::close() !!}
 						</div>
 					</div>
-					{!! Form::close() !!}
 				</div>
 			
 			</div>
 		</div>
 	</div>
 @stop
-
 @section('row2')
 
 @stop
+
+
 
 @section('row3')
 @stop

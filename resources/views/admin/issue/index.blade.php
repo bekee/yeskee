@@ -63,44 +63,33 @@
 						<tr>
 							<th>No</th>
 							<th>Sender</th>
-							<th>Message</th>
+							<th>Last Message</th>
+							<th>Last Update</th>
 							<th>Level</th>
 						</tr>
 						</thead>
 						
 						<tbody>
 						<tr>
-							@if($messages->isEmpty())
-								<td colspan="8"><p class="text-center">No Message Added</p></td>
+							@if($issueHeaders->isEmpty())
+								<td colspan="8"><p class="text-center">No Issues Yet</p></td>
 							@endif
 						</tr>
-						@foreach($messages as $key => $message )
+						@foreach($issueHeaders as $key => $message )
 							<tr>
-								<td>{{$key +1}}</td>
-								<td>{{$message->title}}</td>
-								<td>{!! \Illuminate\Support\Str::limit( $message->message,55,'...')!!}</td>
-								<td>{!! $message->published == 1 ? "<span class='label label-success'>YES</span>": "<span class='label label-danger'>NO</span>"!!} </td>
+								<td><a href="{{url('admin/read_issue/'.$message->id)}}">{{$key +1}}</a></td>
 								<td>
-									<div class="btn-group btn-group-xs">
-										@if($message->published == 1)
-											<a href='{{url(Auth::user()->route."/d_message/".$message->id)}}'
-											   data-toggle="tooltip" title="Unpublish Message"
-											   class="btn btn-success"><i
-														class="fa fa-unlock"></i></a>
-										@else
-											<a href='{{url(Auth::user()->route."/a_message/".$message->id)}}'
-											   data-toggle="tooltip" title="Publish Message"
-											   class="btn btn-danger"><i
-														class="fa fa-lock"></i></a>
-										@endif
-										<a href='{{url(Auth::user()->route."/message/$message->id/edit")}}'
-										   data-toggle="tooltip" title="Edit Message"
-										   class="btn btn-default"><i
-													class="fa fa-edit"></i></a>
-										<a href='{{url(Auth::user()->route."/r_message/$message->id")}}'
-										   data-toggle="tooltip" title="Delete Message"
-										   class="btn btn-danger"><i class="fa fa-remove"></i></a>
-									</div>
+									<a href="{{url('admin/read_issue/'.$message->id)}}">{{$message->userLevel->user->user->first_name}} {{$message->userLevel->user->user->last_name}}
+										<small>({{$message->userLevel->user->email}})</small>
+									</a></td>
+								<td>
+									<a href="{{url('admin/read_issue/'.$message->id)}}">{{\Illuminate\Support\Str::limit( $message->issueTracker->first()->comment,50)}}</a>
+								</td>
+								<td>
+									<a href="{{url('admin/read_issue/'.$message->id)}}">{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans()}}</a>
+								</td>
+								<td>
+									<a href="{{url('admin/read_issue/'.$message->id)}}">{{$message->userLevel->level->name}}</a>
 								</td>
 							</tr>
 						@endforeach
@@ -110,7 +99,7 @@
 				
 				<div class="data-table-toolbar">
 					<ul class="pagination">
-						{{$messages->links()}}
+						{{$issueHeaders->links()}}
 					</ul>
 				</div>
 			</div>

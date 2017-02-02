@@ -134,9 +134,19 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('approve_bonus/{id}', ['uses' => 'BonusController@approve']);
 		Route::get('cancel_bonus/{id}', ['uses' => 'BonusController@cancel']);
 		
-		Route::get('issues', ['uses' => 'IssueTrackerController@index']);
+		//Issue Tracker
+		Route::get('issue_tracker', ['uses' => 'IssueTrackerController@index']);
+		Route::get('read_issue/{issue_header}', ['uses' => 'IssueTrackerController@readIssue']);
+		Route::post('reply-request', ['uses' => 'IssueTrackerController@reply']);
 		
-		
+		//Withdrawal
+		Route::get('withdrawal_pending', ['uses' => 'WithdrawalController@pending']);
+		Route::get('withdrawal_cancelled', ['uses' => 'WithdrawalController@cancelled']);
+		Route::get('withdrawal_approved', ['uses' => 'WithdrawalController@approved']);
+		Route::get('withdrawal_pay/{id}', ['uses' => 'WithdrawalController@pay']);
+		Route::get('withdrawal_cancel/{id}', ['uses' => 'WithdrawalController@cancel']);
+		Route::post('withdrawal_pay/{id}', ['uses' => 'WithdrawalController@payNow']);
+		Route::post('withdrawal_cancel/{id}', ['uses' => 'WithdrawalController@cancelNow']);
 	});
 	
 	Route::group(['namespace' => 'Agent', 'middleware' => ['role:agent'], 'prefix' => 'agent'], function () {
@@ -173,5 +183,9 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('my-request/{userLevelId}', ['uses' => 'IssueTrackerController@index']);
 		Route::post('my-request', ['uses' => 'IssueTrackerController@send']);
 		
+		
+		//Withdrawals
+		Route::get('place_withdrawal', ['uses' => 'WithdrawalController@withdrawal']);
+		Route::post('place_withdrawal', ['uses' => 'WithdrawalController@placeOrder']);
 	});
 });
