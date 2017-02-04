@@ -309,12 +309,11 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li><a href="{{url('dashboard/profile')}}">My Profile</a></li>
-									<li><a href="{{url('password')}}">Change Password</a></li>
 									
 									<li class="divider"></li>
 									<li><a href="#"><i class="icon-help-2"></i> Help</a></li>
 									<!--<li><a href="lockscreen.html"><i class="icon-lock-1"></i> Lock me</a></li>-->
-									<li><a class="md-trigger" data-modal="logout-modal"><i
+									<li><a class="md-trigger" href="{{url('logout')}}"><i
 													class="icon-logout-1"></i> Logout</a></li>
 								</ul>
 							</li>
@@ -1614,21 +1613,18 @@
 					<footer>
 						@section('footer')
 							YESKEINTERCONNECT &copy; {{date('Y')}}, All right reserved</a>
-							<div class="footer-links pull-right">
-								<a href="#">About</a><a href="#">Support</a><a href="#">Terms of Service</a><a
-										href="#">Legal</a><a
-										href="#">Help</a><a href="#">Contact Us</a>
-							</div>
+							
 						@show
 					</footer>
 				
 				</div>
 				<div class="col-sm-2">
 					<div class="row">
-						<img src="{{asset('loggedin/images/advert/food.jpg')}}"
+						<h3 class="text-center">Advertise Here</h3>
+						<img src="{{asset('loggedin/images/advert/user.jpg')}}"
 						     height="100%;" width="100%;">
-						<img src="{{asset('loggedin/images/advert/food.jpg')}}"
-						     height="100%;" width="100%;">
+						
+						<div class="clearfix text-center">Send Us a mail to info@yeskeinterconnect.com</div>
 					</div>
 				</div>
 			</div>

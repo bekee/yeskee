@@ -180,12 +180,11 @@
 									<i class="fa fa-caret-down"></i>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="{{url('password')}}">Change Password</a></li>
 									
 									<li class="divider"></li>
 									<li><a href="#"><i class="icon-help-2"></i> Help</a></li>
 									<!--<li><a href="lockscreen.html"><i class="icon-lock-1"></i> Lock me</a></li>-->
-									<li><a class="md-trigger" data-modal="logout-modal"><i
+									<li><a class="md-trigger" href="{{url('logout')}}"><i
 													class="icon-logout-1"></i> Logout</a></li>
 								</ul>
 							</li>
@@ -462,7 +461,7 @@
 							<li class='has_sub'>
 								<a href='javascript:void(0);'>
 									<i class='fa fa-envelope'></i>
-									<span>Messages</span>
+									<span>News Updates</span>
 									<span class="pull-right">
                                 <i class="fa fa-angle-down"></i>
                             </span>
@@ -472,7 +471,7 @@
 									<li>
 										<a href='{{url('admin/messages')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'admin/messages' ? 'active' : ''}}">
-											<span>Messages</span>
+											<span>News Updates</span>
 										</a>
 									</li>
 								</ul>
@@ -1658,11 +1657,7 @@
 			<footer>
 				@section('footer')
 					YESKEINTERCONNECT &copy; {{date('Y')}}, All right reserved</a>
-					<div class="footer-links pull-right">
-						<a href="#">About</a><a href="#">Support</a><a href="#">Terms of Service</a><a
-								href="#">Legal</a><a
-								href="#">Help</a><a href="#">Contact Us</a>
-					</div>
+					
 				@show
 			</footer>
 			

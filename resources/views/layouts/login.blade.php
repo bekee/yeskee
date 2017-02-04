@@ -41,7 +41,7 @@
 
 </head>
 <body class="fixed-left login-page"
-      style="background-image: url({{URL::asset('guest/images/headers/portal2.jpg')}}); background-size:auto; ">
+      style="background-image: url({{URL::asset('guest/images/headers/login.png')}}); background-size:cover; ">
 <!-- Modal Start -->
 <!-- Modal Task Progress -->
 

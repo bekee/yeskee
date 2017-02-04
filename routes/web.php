@@ -12,6 +12,8 @@
 */
 
 
+Auth::routes();
+
 Route::get('/', ['uses' => 'IndexController@index']);
 Route::get('signup', ['uses' => 'IndexController@signup']);
 Route::post('signup', ['uses' => 'IndexController@store']);
@@ -43,6 +45,7 @@ Route::get('about', ['uses' => 'AboutUsController@index']);
 Route::get('how_it_works', ['uses' => 'HowItWorksController@index']);
 Route::get('contact', ['uses' => 'ContactUsController@index']);
 Route::get('become_an_agent', ['uses' => 'BecomeAgentController@index']);
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('logout', ['uses' => 'LoginController@destroy']);
@@ -148,44 +151,58 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('withdrawal_pay/{id}', ['uses' => 'WithdrawalController@payNow']);
 		Route::post('withdrawal_cancel/{id}', ['uses' => 'WithdrawalController@cancelNow']);
 	});
-	
-	Route::group(['namespace' => 'Agent', 'middleware' => ['role:agent'], 'prefix' => 'agent'], function () {
-		Route::get('/', ['uses' => 'AgentController@index']);
+	Route::group(['middleware' => 'email'], function () {
+		Route::group(['namespace' => 'Agent', 'middleware' => ['role:agent'], 'prefix' => 'agent'], function () {
+			Route::get('/', ['uses' => 'AgentController@index']);
+		});
 	});
-	
 	
 	Route::group(['namespace' => 'User', 'middleware' => ['role:user'], 'prefix' => 'dashboard'], function () {
-		Route::get('/', ['uses' => 'DashboardController@index']);
-		Route::get('new_level', ['uses' => 'DashboardController@level']);
 		
-		Route::get('level/{id}', ['uses' => 'DashboardController@nextAction']);
-		Route::post('selected_level', ['uses' => 'DashboardController@saveSelectedLevel'])->name('selected_level');
-		
-		Route::get('bonus', ['uses' => 'BonusController@index']);
-		
-		//Pending
-		Route::get('pending_level', ['uses' => 'DashboardController@pending']);
-		
-		//active level
-		Route::get('active_level', ['uses' => 'DashboardController@active']);
-		
-		//my transaction
-		Route::get('my_transactions', ['uses' => 'DashboardController@myTransaction']);
-		
-		//Messages
-		Route::get('latest-updates', ['uses' => 'MessageController@index']);
-		Route::get('latest-updates/{id}', ['uses' => 'MessageController@readMessage']);
-		
-		Route::get('profile', ['uses' => 'ProfileController@profile']);
-		Route::patch('profile/{id}', ['uses' => 'ProfileController@update']);
-		
-		//Issue Tracker
-		Route::get('my-request/{userLevelId}', ['uses' => 'IssueTrackerController@index']);
-		Route::post('my-request', ['uses' => 'IssueTrackerController@send']);
+		//Email Confirmation
+		Route::get('email_sent', ['uses' => 'EmailController@emailSent']);
+		Route::get('email_not_confirmed', ['uses' => 'EmailController@notConfirmed']);
+		Route::get('resend_email', ['uses' => 'EmailController@resend']);
+		Route::get('confirm_email/{code}', ['uses' => 'EmailController@confirm']);
 		
 		
-		//Withdrawals
-		Route::get('place_withdrawal', ['uses' => 'WithdrawalController@withdrawal']);
-		Route::post('place_withdrawal', ['uses' => 'WithdrawalController@placeOrder']);
+		Route::group(['middleware' => 'email'], function () {
+			
+			Route::get('/', ['uses' => 'DashboardController@index']);
+			Route::get('new_level', ['uses' => 'DashboardController@level']);
+			
+			Route::get('level/{id}', ['uses' => 'DashboardController@nextAction']);
+			Route::post('selected_level', ['uses' => 'DashboardController@saveSelectedLevel'])->name('selected_level');
+			
+			Route::get('bonus', ['uses' => 'BonusController@index']);
+			
+			//Pending
+			Route::get('pending_level', ['uses' => 'DashboardController@pending']);
+			
+			//active level
+			Route::get('active_level', ['uses' => 'DashboardController@active']);
+			
+			//my transaction
+			Route::get('my_transactions', ['uses' => 'DashboardController@myTransaction']);
+			
+			//Messages
+			Route::get('latest-updates', ['uses' => 'MessageController@index']);
+			Route::get('latest-updates/{id}', ['uses' => 'MessageController@readMessage']);
+			
+			Route::get('profile', ['uses' => 'ProfileController@profile']);
+			Route::patch('profile/{id}', ['uses' => 'ProfileController@update']);
+			
+			//Issue Tracker
+			Route::get('my-request/{userLevelId}', ['uses' => 'IssueTrackerController@index']);
+			Route::post('my-request', ['uses' => 'IssueTrackerController@send']);
+			
+			
+			//Withdrawals
+			Route::get('place_withdrawal', ['uses' => 'WithdrawalController@withdrawal']);
+			Route::post('place_withdrawal', ['uses' => 'WithdrawalController@placeOrder']);
+		});
 	});
+	
 });
+
+

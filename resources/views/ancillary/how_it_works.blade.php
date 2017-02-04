@@ -65,9 +65,9 @@
 							50,000 = 8,000.<br/>
 							
 							<h3>Summary of the registration process</h3>
-							1. Chose the level or stage you want to apply for<br/>
+							1. Choose the level or stage you want to apply for<br/>
 							2. Pay for the level or stage<br/>
-							3. Bring two people that are going to join you in that stage and give them your referral code<br/>
+							3. Bring two people that will join you in that stage and give them your referral code<br/>
 							4. Immediately you bring two people under you and payment made, you are getting paid (no time
 							wasting)<br/>
 							5. You get bonus upon each referral.<br/>

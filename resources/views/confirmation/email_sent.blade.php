@@ -1,9 +1,51 @@
-@extends('layouts.index2')
+@extends('layouts.anciliary')
 
 
 
 @section('title')
-	YESKEINTERCONNECT1
+	YESKEINTERCONNECT
+@stop
+@section('slider')
+@stop
+@section('message_banner')
+	<section class="brands-block" style="background: #46a546 url({{asset('guest/img/people.jpg')}}); ">
+		<div class="container text-center">
+			
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1" style="margin-top: 200px;">
+					<h1>Email <span class="invert bg-success">Sent</span></h1>
+				</div>
+			</div>
+		</div>
+	</section>
+@stop
+
+@section('name')
+	Verification Email Sent
+@stop
+
+@section('about_us')
+	<div class="sections_group">
+		<div class="section " style="padding:20px 0;">
+			<div class="section_wrapper clearfix">
+				<div class="items_group clearfix">
+					<div class="column one column">
+						<div style="text-align: center;">
+							
+							<p style="font-size: 15px; line-height: 24px; text-align: left; line-height: 35px;">
+								An mail have been sent to your email ({{auth()->user()->email}}), kindly check to
+								confirm your mail
+							</p>
+						
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	<!-- .four-columns - sidebar -->
 @stop
 
 @section('portfolio')
@@ -11,6 +53,8 @@
 
 @section('our_clients')
 @stop
+
+
 
 
 @section('one-fourth-1')
@@ -61,13 +105,4 @@
 			</div>
 		</div>
 	</div>
-@stop
-
-@section('recharge')
-	<h5 class="title1">
-		@if(empty($recharge))Stay up for our lot's of freebis coming this week. You be a winner
-		@else
-			{{$recharge}}
-		@endif
-	</h5>
 @stop

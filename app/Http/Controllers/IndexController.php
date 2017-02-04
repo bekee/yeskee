@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Agent;
 use App\Http\Requests\NewUserReferralRequest;
 use App\Http\Requests\NewUserRequest;
+use App\RechargeCard;
 use App\Role;
 use App\User;
 use App\UserDetail;
@@ -15,7 +16,8 @@ class IndexController extends Controller
 {
 	public function index()
 	{
-		return view('index2');
+		$recharge = RechargeCard::where('active', 1)->where('used', 0)->orderby('created_at', 'desc')->first();
+		return view('index2', compact('recharge'));
 	}
 	
 	public function signup()

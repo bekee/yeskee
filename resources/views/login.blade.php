@@ -68,7 +68,7 @@
 								</label>
 							</div>
 							<div class="col-sm-6 pull-right">
-								<a href="#" class="btn btn-link">forgotten password?</a>
+								<a href="{{url('password/reset')}}" class="btn btn-link">forgotten password?</a>
 							</div>
 						</div>
 					</div>

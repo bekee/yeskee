@@ -99,17 +99,14 @@
 				<p style="padding-right: 20px;">
 					<a href="{{url('login')}}" class="login-button" style="padding-right: 8px;">LOGIN</a>
 					<a href="{{url('signup')}}"
-					   class="signup-button" >CREATE ACCOUNT</a>
+					   class="signup-button">CREATE ACCOUNT</a>
 				</p>
 			@endif
 			
 			<p class="phone">
-				<i class="fa fa-phone"></i><a href="#"> +234-9060-595-949</a>
+				<i class="fa fa-phone"></i><a href="tel"> +234-9060-595-949</a>
 			</p>
-			<p class="mail">
-				<i class="fa fa-envelope-o"></i>
-				<a href="mailto:ecn@yeskeinterconnect.com">ecn@yeskeinterconnect.com</a>
-			</p>
+			
 			<p class="mail">
 				<i class="fa fa-envelope-o"></i>
 				<a href="mailto:info@yeskeinterconnect.com">info@yeskeinterconnect.com</a>
@@ -126,11 +123,7 @@
 		<div class="container">
 			<div class="column one">
 				<div class="addons">
-					<form method="get" id="searchform" action="#">
-						<a class="icon" href="#"><i class="fa fa-search"></i></a>
-						<input type="text" class="field" name="s" id="s" placeholder="Enter your search"/>
-						<input type="submit" class="submit" value="" style="display:none;"/>
-					</form>
+					
 					<!-- .social -->
 					<div class="social">
 						<ul>
@@ -275,14 +268,14 @@
 						     data-start="2200" data-easing="easeInOutSine" data-splitin="none" data-splitout="none"
 						     data-elementdelay="0" data-endelementdelay="0" data-end="5700" data-endspeed="300"
 						     style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-							Your customers will love your page
+							You will love YESKEINTERCONNECT
 						</div>
 						<!-- LAYER NR. 3 -->
 						<div class="tp-caption boxed_medium_light lft" data-x="76" data-y="169" data-speed="1000"
 						     data-start="1800" data-easing="easeInOutSine" data-splitin="none" data-splitout="none"
 						     data-elementdelay="0" data-endelementdelay="0" data-end="5700" data-endspeed="300"
 						     style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">
-							100% Responsive & Retina ready
+							100% Money GUARANTEED
 						</div>
 						<!-- LAYER NR. 4 -->
 						<div class="tp-caption randomrotate" data-x="240" data-y="286" data-speed="1000"
@@ -333,7 +326,9 @@
 	<div id="Subheader">
 		<div class="container">
 			<div class="column one">
-				<h5 class="title1">Stay up for our lot's of freebis coming this week. You be a winner</h5>
+				@section('recharge')
+					<h5 class="title1">Stay up for our lot's of freebis coming this week. You be a winner</h5>
+				@show
 			
 			</div>
 		</div>
@@ -409,10 +404,9 @@
 										<div class="inner-padding">
 											<h4>Face of Yeske</h4>
 											<p>
-												Yeske award winning context, giving you the opportunity to actualize
-												your dream<br/>
+												Apply for the NEXT FACE OF YESKE<br/>
 											</p><br/>
-											<h5 style="color:#ffffff;">Become the next</h5>
+											
 											<strong>FACE of YESKE</strong>
 											
 											<a href="http://face.yeskeinterconnect.com" class="button">&mdash;
@@ -651,12 +645,6 @@
 											<li class="mail"><i class="fa fa-envelope"></i>
 												<p>
 													<a href="mailto:info@yeskeinterconnect.com">info@yeskeinterconnect
-														.com</a>
-												</p>
-											</li>
-											<li class="mail"><i class="fa fa-envelope"></i>
-												<p>
-													<a href="mailto:ecn@yeskeinterconnect.com">ecn@yeskeinterconnect
 														.com</a>
 												</p>
 											</li>

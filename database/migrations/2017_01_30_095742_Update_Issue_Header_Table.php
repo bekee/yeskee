@@ -15,7 +15,7 @@ class UpdateIssueHeaderTable extends Migration
 	{
 		Schema::table('issue_headers', function (Blueprint $table) {
 			$table->integer('user_level_id')->unsigned()->nullable();
-				$table->foreign('user_level_id')->references('id')->on('user_levels')->onDelete('cascade');
+			$table->foreign('user_level_id')->references('id')->on('user_levels')->onDelete('cascade');
 		});
 	}
 	

@@ -3,12 +3,12 @@
 
 
 @section('title')
-	Message
+	News Update
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='icon icon-address-book-alt'></i> Message</h1>
+		<h1><i class='icon icon-address-book-alt'></i> News Update</h1>
 	</div>
 @stop
 
@@ -56,7 +56,7 @@
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header">
-					<h2>New Message </h2>
+					<h2>News Update </h2>
 					<div class="additional-btn">
 						<a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
 						<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>

@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RechargeCardRequest;
+use App\Notifications\NewUser;
 use App\RechargeCard;
 
 class RechargeController extends Controller
 {
 	public function index()
 	{
+		
 		$cards = RechargeCard::paginate(100);
 		return view('admin.card.index', compact('cards'));
 	}
@@ -53,6 +55,7 @@ class RechargeController extends Controller
 		flash('Recharge card ' . $card->number . ' for ' . $card->network . ' network successfully unpublished', 'success');
 		return redirect()->back();
 	}
+	
 	public function activate($id)
 	{
 		$card = RechargeCard::findOrFail($id);

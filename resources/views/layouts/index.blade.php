@@ -419,8 +419,6 @@
 						<ul class="list-unstyled company-info">
 							<li><i class="icon-phone3"></i> +2349060595949</li>
 							<li><i class="icon-envelope"></i> <a
-										href="mailto:ecn@yeskeinterconnect.com">ecn@yeskeinterconnect.com</a></li>
-							<li><i class="icon-envelope"></i> <a
 										href="mailto:info@yeskeinterconnect.com">info@yeskeinterconnect.com</a></li>
 							<li><i class="icon-alarm2"></i> Monday - Sunday: <strong>24hrs</strong><br></li>
 						</ul>
