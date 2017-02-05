@@ -126,7 +126,7 @@
 						<div class="col-sm-12">
 							<div class="col-sm-2"><strong>Referral Code: </strong></div>
 							<div class="col-sm-5"><h4
-										style="margin-top: 0px;"> {{empty($profile->user->userBank) ?'Nil':$profile->user->userBank->acc_name}}</h4>
+										style="margin-top: 0px;"> {{$profile->code}}</h4>
 							</div>
 						</div>
 						<div class="col-sm-12">
