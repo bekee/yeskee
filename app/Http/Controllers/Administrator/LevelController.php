@@ -40,7 +40,7 @@ class LevelController extends Controller
 			$level->set_users = $request->set_users;
 		}
 		if ($request->referral == 'on') {
-			$request->referral = 'on' ? 1 : 0;
+			$level->referral = $request->referral == 'on' ? 1 : 0;
 			$level->referred_discount = $request->referred_discount;
 		}
 		$level->save();
