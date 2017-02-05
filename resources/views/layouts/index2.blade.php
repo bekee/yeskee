@@ -470,20 +470,18 @@
 											<blockquote>
 												<a href="#">
 													<p>
-														Ha, have to just take off the hat for this Theme. I purchased
-														over 30 themes here and this is absolutely the best. Awesome
-														work mate [&#8230;]
+														It was just in two days that i was able to complete my level and checkout the sum of 12,000 naira [&#8230;]
 													</p>
 													<span class="arrow"></span></a>
 												<div class="author">
 													<div class="photo">
 														<img width="80" height="80"
-														     src="{{asset('rcoco/upload/team_3-80x80.png')}}"
+														     src="{{asset('rcoco/images/testimonials-placeholder.png')}}"
 														     class="scale-with-grid wp-post-image" alt="team_3"/>
 													</div>
 													<div class="desc">
-														<h6>Mrnicoo</h6>
-														<a target="_blank" href="#"><span>Themeforest</span></a>
+														<h6>Ade</h6>
+														<a target="_blank" href="#"><span>Wilson</span></a>
 													</div>
 												</div>
 											</blockquote>
@@ -492,20 +490,18 @@
 											<blockquote>
 												<a href="index.html">
 													<p>
-														thank you very much… just to reiterate what everyone else seems
-														to be saying this is without a doubt the simplest and most user
-														friendly Html experience I [&#8230;]
+														I better invest my money here than saving in the bank[&#8230;]
 													</p>
 													<span class="arrow"></span></a>
 												<div class="author">
 													<div class="photo">
 														<img width="80" height="80"
-														     src="{{asset('rcoco/upload/team_4-80x80.png')}}"
+														     src="{{asset('rcoco/images/testimonials-placeholder.png')}}"
 														     class="scale-with-grid wp-post-image" alt="team_4"/>
 													</div>
 													<div class="desc">
-														<h6>philparris</h6>
-														<a target="_blank" href="#"><span>Bretheon Theme</span></a>
+														<h6>Maureen</h6>
+														<a target="_blank" href="#"><span>Oluwatobi</span></a>
 													</div>
 												</div>
 											</blockquote>
@@ -514,9 +510,7 @@
 											<blockquote>
 												<a href="index.html">
 													<p>
-														Someone said they built a website in 3 hours with this template.
-														I built out an entire site in about the same time. This theme is
-														the best [&#8230;]
+														Yeske is so good, i will keep investing in this platform [&#8230;]
 													</p>
 													<span class="arrow"></span></a>
 												<div class="author">
@@ -526,8 +520,8 @@
 														     alt="HyacinthMarketing"/>
 													</div>
 													<div class="desc">
-														<h6>HyacinthMarketing</h6>
-														<a target="_blank" href="#"><span>Max Themes</span></a>
+														<h6>Abuchi</h6>
+														<a target="_blank" href="#"><span>Emmanuel</span></a>
 													</div>
 												</div>
 											</blockquote>
