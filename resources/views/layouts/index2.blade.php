@@ -226,7 +226,7 @@
 						     data-start="1800" data-easing="easeInOutSine" data-splitin="none" data-splitout="none"
 						     data-elementdelay="0" data-endelementdelay="0" data-end="5700" data-endspeed="300"
 						     style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">
-							100% Money GUARANTEED
+							100% Money BACK
 						</div>
 						<!-- LAYER NR. 4 -->
 						<div class="tp-caption randomrotate" data-x="240" data-y="286" data-speed="1000"
