@@ -1620,11 +1620,10 @@
 				</div>
 				<div class="col-sm-2">
 					<div class="row">
-						<h3 class="text-center">Advertise Here</h3>
-						<img src="{{asset('loggedin/images/advert/user.jpg')}}"
+						<h3 class="text-center"></h3>
+						<img src="{{asset('loggedin/images/advert/users1.jpg')}}"
 						     height="100%;" width="100%;">
 						
-						<div class="clearfix text-center">Send Us a mail to info@yeskeinterconnect.com</div>
 					</div>
 				</div>
 			</div>

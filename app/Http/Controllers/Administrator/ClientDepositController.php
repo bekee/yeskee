@@ -48,7 +48,7 @@ class ClientDepositController extends Controller
 		
 		$this->myReferral($payment->user_id, $userLevel->id);
 		
-		return redirect('admin');
+		return redirect('admin/approved_payment');
 	}
 	
 	public function reject($id)
@@ -67,7 +67,10 @@ class ClientDepositController extends Controller
 		$level = Level::find($user_level->level_id);
 		
 		
-		if ($user->referral_paid == false && !empty($user->referredBy)) {
+		
+		
+		if ($user->referral_paid == false && !empty($user->referredBy->referred)) {
+			
 			$bonus = new Bonus();
 			$bonus->user_level_id = $userLevelid;
 			$bonus->user_id = $user->referredBy->referred;

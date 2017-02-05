@@ -74,6 +74,11 @@
 							6. Completion of six, your complete payment/money will be wired into your bank account<br/>
 							7. Below is a schematic representation of the process.<br/>
 							
+							<img src="{{asset('guest/img/instant.JPG')}}">
+							<br/>
+							<strong>NB: </strong>Anytime one person comes under you, you get paid immediately. Therefore, the process does not wait to be completed before you get paid. As Obi is getting paid, Joy and Ade are also getting paid.
+							<br/>
+							<p></p>
 							<h3>REQUIREMENTS</h3>
 							To be a beneficiary or partaker, one must be ready with the following;<br/>
 							i. An active bank account<br/>

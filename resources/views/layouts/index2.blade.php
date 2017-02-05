@@ -87,7 +87,7 @@
 	<!-- #top_bar -->
 	<div id="top_bar">
 		<p class="slogan">
-			Linking People Together.
+			Welcome to Yeske...    Linking People Together.
 		</p>
 		<div class="contact_info">
 			
@@ -199,69 +199,20 @@
 			     style="display:none;max-height:480px;height:480px;">
 				<ul>
 					<!-- SLIDE  1-->
-					<li data-transition="slidehorizontal" data-slotamount="7" data-masterspeed="300" data-delay="7000"
-					    data-saveperformance="off">
-						<!-- MAIN IMAGE -->
-						<img src="{{asset('rcoco/upload/slide_2.jpg')}}" alt="slide_2" data-bgposition="center top"
-						     data-bgfit="cover" data-bgrepeat="no-repeat">
-						<!-- LAYERS -->
-						<!-- LAYER NR. 1 -->
-						<div class="tp-caption lft" data-x="35" data-y="0" data-speed="1000" data-start="1000"
-						     data-easing="easeInOutSine" data-elementdelay="0" data-endelementdelay="0" data-end="5700"
-						     data-endspeed="300" style="z-index: 5;">
-							<img src="{{asset('rcoco/upload/revslider/slider1/slide_2_2.png')}}" alt="">
-						</div>
-						<!-- LAYER NR. 2 -->
-						<div class="tp-caption lfr" data-x="770" data-y="102" data-speed="1000" data-start="1400"
-						     data-easing="easeInOutSine" data-elementdelay="0" data-endelementdelay="0" data-end="5700"
-						     data-endspeed="300" style="z-index: 6;">
-							<img src="{{asset('rcoco/upload/revslider/slider1/slide_2_4.png')}}" alt="">
-						</div>
-						<!-- LAYER NR. 3 -->
-						<div class="tp-caption lfr ltr" data-x="921" data-y="119" data-speed="700" data-start="1800"
-						     data-easing="easeInOutSine" data-elementdelay="0" data-endelementdelay="0" data-end="5700"
-						     data-endspeed="300" style="z-index: 7;">
-							<img src="{{asset('rcoco/upload/revslider/slider1/slide_2_5.png')}}" alt="">
-						</div>
-						<!-- LAYER NR. 4 -->
-						<div class="tp-caption lfb" data-x="1033" data-y="201" data-speed="1000" data-start="2200"
-						     data-easing="easeInOutSine" data-elementdelay="0" data-endelementdelay="0" data-end="5700"
-						     data-endspeed="300" style="z-index: 8;">
-							<img src="{{asset('rcoco/upload/revslider/slider1/slide_2_6.png')}}" alt="">
-						</div>
-						<!-- LAYER NR. 5 -->
-						<div class="tp-caption lft" data-x="830" data-y="0" data-speed="700" data-start="2400"
-						     data-easing="easeInOutSine" data-elementdelay="0" data-endelementdelay="0" data-end="5700"
-						     data-endspeed="300" style="z-index: 9;">
-							<img src="{{asset('rcoco/upload/revslider/slider1/slide_2_7.png')}}" alt="">
-						</div>
-						<!-- LAYER NR. 6 -->
-						<div class="tp-caption lfb" data-x="354" data-y="128" data-speed="1000" data-start="2600"
-						     data-easing="easeInOutSine" data-elementdelay="0" data-endelementdelay="0" data-end="5700"
-						     data-endspeed="300" style="z-index: 10;">
-							<img src="{{asset('rcoco/upload/revslider/slider1/slide_2_1.png')}}" alt="">
-						</div>
-						<!-- LAYER NR. 7 -->
-						<div class="tp-caption randomrotate" data-x="center" data-hoffset="0" data-y="center"
-						     data-voffset="-27" data-speed="2000" data-start="3000" data-easing="easeOutExpo"
-						     data-elementdelay="0" data-endelementdelay="0" data-end="5700" data-endspeed="300"
-						     style="z-index: 11;">
-							<a href="#"><img src="{{asset('rcoco/upload/revslider/slider1/slide_2_3.png')}}" alt=""></a>
-						</div>
-					</li>
+				
 					
 					<!-- SLIDE 2 -->
 					<li data-transition="boxslide" data-slotamount="7" data-masterspeed="300"
 					    data-saveperformance="off">
 						<!-- MAIN IMAGE -->
-						<img src="{{asset('rcoco/upload/slide_1.jpg')}}" alt="slide_1" data-bgposition="center top"
+						<img src="{{asset('rcoco/upload/revslider/slider2/slide_2_0.jpg')}}" alt="YeskeInterconnect" data-bgposition="center top"
 						     data-bgfit="cover" data-bgrepeat="no-repeat">
 						<!-- LAYERS -->
 						<!-- LAYER NR. 1 -->
 						<div class="tp-caption lfb" data-x="right" data-hoffset="-87" data-y="bottom" data-voffset="158"
 						     data-speed="1000" data-start="1400" data-easing="easeInOutSine" data-elementdelay="0"
 						     data-endelementdelay="0" data-end="5700" data-endspeed="300" style="z-index: 5;">
-							<img src="{{asset('rcoco/upload/revslider/slider1/slide_1_1.png')}}" alt="">
+							<img src="{{asset('rcoco/upload/revslider/slider2/img_02.png')}}" alt="YeskeInterconnect">
 						</div>
 						<!-- LAYER NR. 2 -->
 						<div class="tp-caption boxed_medium_light lft" data-x="63" data-y="228" data-speed="900"
@@ -282,7 +233,7 @@
 						     data-start="2600" data-easing="easeInOutSine" data-splitin="none" data-splitout="none"
 						     data-elementdelay="0" data-endelementdelay="0" data-end="5700" data-endspeed="300"
 						     style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">
-							<a href='#' class='tp-button green'>Take a tour&nbsp;&nbsp;<i class="icon-hand-up"></i></a>
+							<a href="{{url('how_it_works')}}" class='tp-button green'>Take a tour&nbsp;&nbsp;<i class="icon-hand-up"></i></a>
 						</div>
 					</li>
 					
@@ -290,7 +241,7 @@
 					<li data-transition="papercut" data-slotamount="7" data-masterspeed="300" data-delay="5000"
 					    data-saveperformance="off">
 						<!-- MAIN IMAGE -->
-						<img src="{{asset('rcoco/upload/slide_3.jpg')}}" alt="slide_3" data-bgposition="center top"
+						<img src="{{asset('rcoco/upload/revslider/slider2/slide_2_0.jpg')}}" alt="slide_3" data-bgposition="center top"
 						     data-bgfit="cover" data-bgrepeat="no-repeat">
 						<!-- LAYERS -->
 						<!-- LAYER NR. 1 -->
@@ -298,21 +249,21 @@
 						     data-start="500" data-easing="easeOutExpo" data-splitin="none" data-splitout="none"
 						     data-elementdelay="0" data-endelementdelay="0" data-end="4700" data-endspeed="300"
 						     style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-							Easy to customize
+							Get PAID Quick
 						</div>
 						<!-- LAYER NR. 2 -->
 						<div class="tp-caption boxed_medium_light tp-fade" data-x="321" data-y="226" data-speed="300"
 						     data-start="800" data-easing="easeOutExpo" data-splitin="none" data-splitout="none"
 						     data-elementdelay="0" data-endelementdelay="0" data-end="4700" data-endspeed="300"
 						     style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-							Save your time with our theme
+							We Make Your Money Count
 						</div>
 						<!-- LAYER NR. 3 -->
 						<div class="tp-caption tp-fade" data-x="547" data-y="286" data-speed="300" data-start="1100"
 						     data-easing="easeOutExpo" data-splitin="none" data-splitout="none" data-elementdelay="0"
 						     data-endelementdelay="0" data-end="4700" data-endspeed="300"
 						     style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">
-							<a href='#' class='tp-button green small'>Take a tour&nbsp;&nbsp;<i
+							<a href='{{url('how_it_works')}}' class='tp-button green small'>Take a tour&nbsp;&nbsp;<i
 										class="icon-hand-up"></i></a>
 						</div>
 					</li>
@@ -327,7 +278,7 @@
 		<div class="container">
 			<div class="column one">
 				@section('recharge')
-					<h5 class="title1">Stay up for our lot's of freebis coming this week. You be a winner</h5>
+					<h5 class="title1">Stay up for our lot's of freebis coming this week. You can be the next winner</h5>
 				@show
 			
 			</div>
@@ -353,7 +304,7 @@
 								<div class="article_box">
 									<div class="photo">
 										<a href="#" target="_blank"><img class="scale-with-grid"
-										                                 src="{{asset('rcoco/upload/articlebox_1.jpg')}}"
+										                                 src="{{asset('rcoco/upload/building_success.png')}}"
 										                                 alt="Powerful admin panel"/></a>
 									</div>
 									<div class="desc">
@@ -370,7 +321,7 @@
 								<div class="article_box">
 									<div class="photo">
 										<a href="#"><img class="scale-with-grid"
-										                 src="{{asset('rcoco/upload/articlebox_2.jpg')}}"
+										                 src="{{asset('rcoco/upload/outstanding_support.png')}}"
 										                 alt="Outstanding support"/></a>
 									</div>
 									<div class="desc">
@@ -397,18 +348,26 @@
 									</div>
 								</div>
 							</div>
-							<div class="column one-fourth call_to_action">
-								<div class="call_to_action "
-								     style="background:url('{{asset('rcoco/upload/call_to_action.jpg')}}')}}') center center;">
+							<div class="column one-fourth call_to_action1">
+								<div class="call_to_action1 "
+								     style="background-image:url('{{asset('guest/img/faceofyeske.jpg')}}'); background-size:cover; height:300px;">
 									<a href="#" class="">
-										<div class="inner-padding">
-											<h4>Face of Yeske</h4>
+										<div class="inner-padding" style="text-align: center">
+											<h4><strong>Face of Yeske</strong></h4>
 											<p>
+												<br/>
+												<br/>
+												<br/>
 												Apply for the NEXT FACE OF YESKE<br/>
 											</p><br/>
 											
+											<br/>
+											<br/>
 											<strong>FACE of YESKE</strong>
-											
+											<br/>
+											<br/>
+											<br/>
+											<br/>
 											<a href="http://face.yeskeinterconnect.com" class="button">&mdash;
 												NOW &mdash;</a>
 										</div>
@@ -441,8 +400,7 @@
 									</div>
 									<h5>Unique</h5>
 									<p>
-										Cras tempor, sapien in mattis eleifend, purus augue hendrerit nisi, in lacinia
-										felis enim at nisl. Vestibulum egestas consequat.
+										This is the fastest networking platform and one of its kinds so far. We offer a fast and guaranteed services that will suite your taste.
 									</p>
 								</div>
 							</div>
@@ -453,8 +411,7 @@
 									</div>
 									<h5>Dedicated support</h5>
 									<p>
-										Cras tempor, sapien in mattis eleifend, purus augue hendrerit nisi, in lacinia
-										felis enim at nisl. Vestibulum egestas consequat.
+										Yeske Interconnect has a dedicated service centre run by highly trained and efficient staff to ensure excellent service delivery at a regular basis..
 									</p>
 								</div>
 							</div>
@@ -465,8 +422,7 @@
 									</div>
 									<h5>Fast</h5>
 									<p>
-										Cras tempor, sapien in mattis eleifend, purus augue hendrerit nisi, in lacinia
-										felis enim at nisl. Vestibulum egestas consequat.
+										With a two by two matrix, Yeske ensures a fast service delivery from the point of registration and payment. Together we can achieve greatness.
 									</p>
 								</div>
 							</div>
@@ -477,8 +433,7 @@
 									</div>
 									<h5>Money Back Guaranteed</h5>
 									<p>
-										Cras tempor, sapien in mattis eleifend, purus augue hendrerit nisi, in lacinia
-										felis enim at nisl. Vestibulum egestas consequat.
+										Register and find it difficult introducing two people or the system is unable to queue you up within the space of two weeks, simply apply for a refund by sending us an email. We are reliable and trusted.
 									</p>
 								</div>
 							</div>
@@ -495,8 +450,7 @@
 							<div class="column one-fourth column">
 								<h3>Joining YeskeInterconnect is SIMPLE</h3>
 								<p>
-									Class aptent taciti sociosqu ad litora torquent fermentum in blandit ut per conubia
-									nostra, per inceptos himenaeos blandit ut per.
+									
 								</p>
 								<ul class="list list_tick">
 									<li>Choose the level</li>
@@ -630,7 +584,7 @@
 							@show
 							<div class="column one-fourth contact_box">
 								<div class="get_in_touch">
-									<h3>Get in touch</h3>
+									<h3>For Adverts</h3>
 									<div class="inside">
 										<div class="photo">
 											<img class="scale-with-grid"

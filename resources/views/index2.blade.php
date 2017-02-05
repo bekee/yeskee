@@ -3,7 +3,7 @@
 
 
 @section('title')
-	YESKEINTERCONNECT1
+	YESKEINTERCONNECT
 @stop
 
 @section('portfolio')

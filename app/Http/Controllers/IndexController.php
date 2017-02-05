@@ -62,7 +62,7 @@ class IndexController extends Controller
 		$userDetail->hear_us = $request->hear_about_us;
 		$userDetail->user_id = $user->id;
 		$userDetail->code = $code;
-		$userDetail->url = env('APP_URL') . "/account/$code";
+		$userDetail->url = url('/') . "/account/$code";
 		$userDetail->save();
 		
 		$referral = new UserReferer();
