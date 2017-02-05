@@ -32,7 +32,7 @@
 				</div>
 				<h4 class="text-center">Payment Detail</h4>
 				<div class="col-md-6">
-					<img src="{{Storage::disk('local')->url('images/teller/'.$payment->image)}}"
+					<img src="{{Storage::disk('teller')->url('images/teller/'.$payment->image)}}"
 					     height="250px;" width="100%;">
 				</div>
 				<div class="col-md-6">
