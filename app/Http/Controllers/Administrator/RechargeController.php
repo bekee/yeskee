@@ -28,6 +28,7 @@ class RechargeController extends Controller
 		$card = new RechargeCard();
 		$card->number = $request->number;
 		$card->network = $request->network;
+		$card->message = $request->message;
 		$card->active = empty($request->active == "on") ? 0 : 1;
 		$card->save();
 		flash('Recharge card ' . $card->number . ' for ' . $card->network . ' network successfully created', 'success');
@@ -38,6 +39,7 @@ class RechargeController extends Controller
 	{
 		$card = RechargeCard::findOrFail($id);
 		$card->number = $request->number;
+		$card->message = $request->message;
 		$card->network = $request->network;
 		$card->active = empty($request->active == "on") ? 0 : 1;
 		$card->used = empty($request->used == "on") ? 0 : 1;

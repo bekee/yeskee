@@ -67,7 +67,7 @@
 	<h5 class="title1">
 		@if(empty($recharge))Stay up for our lot's of freebis coming this week. You be a winner
 		@else
-			You too can be a winner, today's card is {{$recharge->network}} {{$recharge->number}}
+			{{$recharge->message}}
 		@endif
 	</h5>
 @stop

@@ -69,7 +69,7 @@ class ClientDepositController extends Controller
 		
 		
 		
-		if ($user->referral_paid == false && !empty($user->referredBy)) {
+		if ($user->referral_paid == false && !empty($user->referredBy->referred)) {
 			
 			$bonus = new Bonus();
 			$bonus->user_level_id = $userLevelid;

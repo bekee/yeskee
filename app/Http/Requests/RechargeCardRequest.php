@@ -6,11 +6,11 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class RechargeCardRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
+	/**
+	 * Determine if the user is authorized to make this request.
+	 *
+	 * @return bool
+	 */
 	public function authorize()
 	{
 		return true;
@@ -35,6 +35,7 @@ class RechargeCardRequest extends FormRequest
 				return [
 					'number' => 'required|unique:recharge_cards|min:10|numeric',
 					'network' => 'required',
+					'message' => 'required',
 				];
 			}
 			case 'PUT':
@@ -43,6 +44,7 @@ class RechargeCardRequest extends FormRequest
 				return [
 					'number' => 'required|min:10|numeric',
 					'network' => 'required',
+					'message' => 'required',
 				];
 			}
 			default:break;
