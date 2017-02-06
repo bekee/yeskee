@@ -91,6 +91,16 @@
 						@endif
 					</div>
 					<div class="form-group">
+						<label for="name">Display Message</label>
+						
+						{!! Form::text('message',null,['class'=>'form-control','id'=>'name','placeholder'=>'Display Message']) !!}
+						@if ($errors->has('message'))
+							<span class="help-inline">
+                              <strong>{{ $errors->first('message') }}</strong>
+                              </span>
+						@endif
+					</div>
+					<div class="form-group">
 						<label for="name">Published</label>
 						{!! Form::checkbox('active',null,$card->active?true:false,['class'=>'form-control','id'=>'active'])  !!}
 						@if ($errors->has('active'))
