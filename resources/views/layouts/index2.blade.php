@@ -351,7 +351,7 @@
 							<div class="column one-fourth call_to_action1">
 								<div class="call_to_action1 "
 								     style="background-image:url('{{asset('guest/img/faceofyeske.jpg')}}'); background-size:cover; height:300px;">
-									<a href="#" class="">
+									
 										<div class="inner-padding" style="text-align: center">
 											<h4><strong>Face of Yeske</strong></h4>
 											<p>
@@ -371,7 +371,7 @@
 											<a href="http://face.yeskeinterconnect.com" class="button">&mdash;
 												NOW &mdash;</a>
 										</div>
-									</a>
+								
 								</div>
 							</div>
 						</div>
