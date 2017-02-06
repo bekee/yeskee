@@ -87,7 +87,7 @@
 	<!-- #top_bar -->
 	<div id="top_bar">
 		<p class="slogan">
-			Linking People Together.
+			Welcome to Yeske... Linking People Together.
 		</p>
 		<div class="contact_info">
 			@if(Auth::user())
@@ -104,10 +104,7 @@
 			<p class="phone">
 				<i class="fa fa-phone"></i><a href="#"> +234-9060-595-949</a>
 			</p>
-			<p class="mail">
-				<i class="fa fa-envelope-o"></i>
-				<a href="mailto:ecn@yeskeinterconnect.com">ecn@yeskeinterconnect.com</a>
-			</p>
+		
 			<p class="mail">
 				<i class="fa fa-envelope-o"></i>
 				<a href="mailto:info@yeskeinterconnect.com">info@yeskeinterconnect.com</a>
