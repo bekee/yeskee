@@ -101,6 +101,7 @@
 												<th>No</th>
 												<th>Client</th>
 												<th>Level</th>
+												<th>Payment</th>
 												<th>Date</th>
 												<th>Action</th>
 											</tr>
@@ -120,18 +121,24 @@
 														<span>({{$level->user->email}})</span>
 													</td>
 													<td>{{$level->level->name}}</td>
+													<td>{{\Illuminate\Support\Str::upper($level->payment->status)}}</td>
 													<td>{{\Carbon\Carbon::parse($level->created_at)->diffForHumans()}}</td>
 													<td>
-														<div class="btn-group btn-group-xs">
-															<a href='{{url(Auth::user()->route."/assign_to/".$level->id)}}'
+														@if($level->payment->status == "paid")
+															<div class="btn-group btn-group-xs">
+																<a href='{{url(Auth::user()->route."/assign_to/".$level->id)}}'
+																   data-toggle="tooltip"
+																   title="Assign to an ACTIVE DOWNLINE"
+																   class="btn btn-primary">ASSIGN NOW</a>
+															</div>
+														@else
+															<a href='{{url(Auth::user()->route."/a_view_payment_detail/".$level->payment->id)}}'
 															   data-toggle="tooltip"
-															   title="Assign to an ACTIVE DOWNLINE"
-															   class="btn btn-primary">ASSIGN NOW</a>
-														</div>
+															   title="PROCESS PAYMENT FIRST"
+															   class="btn btn-danger">PROCESS PAYMENT FIRST</a>
+														@endif
 													</td>
-												
 												</tr>
-											
 											@endforeach
 											</tbody>
 										</table>

@@ -42,8 +42,8 @@ class ClientDepositController extends Controller
 		$payment->update();
 		
 		$userLevel = UserLevel::find($payment->user_level_id);
-		$userLevel->status = 'processing';
-		$userLevel->update();
+		//$userLevel->status = 'processing';
+		//$userLevel->update();
 		
 		$this->myReferral($payment->user_id, $userLevel->id);
 		
@@ -64,7 +64,6 @@ class ClientDepositController extends Controller
 		$user = User::find($user_id);
 		$user_level = UserLevel::find($userLevelid);
 		$level = $user_level->level;
-		
 		
 		if ($user->referral_paid == false) {
 			if (!empty($user->referredBy->referred)) {

@@ -116,7 +116,8 @@
 														{{$bonus->user->user->first_name . ' ' . $bonus->user->user->last_name}}
 														({{$bonus->user->email}})
 														<small>--- Referred by</small>
-														
+														{{--$bonus->user->parentOf->referredParentOfUser->user->first_name . ' ' . $bonus->user->parentOf->referredParentOfUser->user->last_name}}
+														({{$bonus->user->parentOf->referredParentOfUser->email--}}
 													@else
 														{{$bonus->user->agent->first_name . ' ' . $bonus->user->agent->last_name}}
 														({{$bonus->user->email}})
