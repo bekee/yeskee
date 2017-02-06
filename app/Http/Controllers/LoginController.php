@@ -24,7 +24,7 @@ class LoginController extends Controller
 			]
 		);
 	
-		//dd(Auth::attempt(['email' => $request['email'], 'password' => $request['password'], 'active' => 1], $request['remember']));
+		dd(Auth::attempt(['email' => $request['email'], 'password' => $request['password'], 'active' => 1], $request['remember']));
 		
 		if (!Auth::attempt(['email' => $request['email'], 'password' => $request['password'], 'active' => 1], $request['remember'])) {
 			flash("Invalid Email/Password ", 'danger');
