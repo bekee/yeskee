@@ -2,7 +2,9 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\BlockedClientMiddleware;
 use App\Http\Middleware\Emailverification;
+use App\Http\Middleware\SuspendedClientMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -57,5 +59,7 @@ class Kernel extends HttpKernel
 		'permission' => \Laratrust\Middleware\LaratrustPermission::class,
 		'ability' => \Laratrust\Middleware\LaratrustAbility::class,
 		'email' => Emailverification::class,
+		'suspend'=>SuspendedClientMiddleware::class,
+		'blocked'=>BlockedClientMiddleware::class,
 	];
 }

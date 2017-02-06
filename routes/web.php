@@ -47,6 +47,10 @@ Route::get('contact', ['uses' => 'ContactUsController@index']);
 Route::get('become_an_agent', ['uses' => 'BecomeAgentController@index']);
 
 
+//Derailed
+Route::get('blocked', ['uses' => 'DerailedController@blocked']);
+Route::get('suspend', ['uses' => 'DerailedController@suspend']);
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('logout', ['uses' => 'LoginController@destroy']);
 	
@@ -157,7 +161,7 @@ Route::group(['middleware' => 'auth'], function () {
 		});
 	});
 	
-	Route::group(['namespace' => 'User', 'middleware' => ['role:user'], 'prefix' => 'dashboard'], function () {
+	Route::group(['namespace' => 'User', 'middleware' => ['role:user','blocked','suspend'], 'prefix' => 'dashboard'], function () {
 		
 		//Email Confirmation
 		Route::get('email_sent', ['uses' => 'EmailController@emailSent']);
