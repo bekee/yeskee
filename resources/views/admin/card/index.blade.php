@@ -147,6 +147,7 @@
 							<th>No</th>
 							<th>Card Number</th>
 							<th>Network</th>
+							<th>Message</th>
 							<th>Published</th>
 							<th>Used</th>
 							<th data-sortable="false">Action</th>
@@ -164,6 +165,7 @@
 								<td>{{$key +1}}</td>
 								<td><strong>{{$card->number}}</strong></td>
 								<td>{{$card->network}}</td>
+								<td>{{$card->message}}</td>
 								<td>{!! $card->active == 1 ? "<span class='label label-success'>YES</span>": "<span class='label label-danger'>NO</span>"!!} </td>
 								<td>{!! $card->used == 1 ? "<span class='label label-success'>YES</span>": "<span class='label label-danger'>NO</span>"!!} </td>
 								<td>
