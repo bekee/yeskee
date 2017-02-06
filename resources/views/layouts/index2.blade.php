@@ -153,7 +153,7 @@
 				</div>
 				<!-- .logo -->
 				<div class="logo">
-					<h1><a id="logo" href="#" title="YeskeInterconnect">
+					<h1><a id="logo" href="{{url('/')}}" title="YeskeInterconnect">
 							
 							<img class="scale-with-grid" src="{{asset('guest/img/logo.png')}}" height="100px;"
 							     width="100px;" alt="YeskeInterconnect">
