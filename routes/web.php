@@ -59,7 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('/', ['uses' => 'AdminController@index']);
 		
 		//Bank
-		Route::get('banks', ['uses' => 'BankController@index']);
+		Route::get('bank', ['uses' => 'BankController@index']);
 		Route::get('bank/{id}/edit', ['uses' => 'BankController@edit']);
 		Route::get('r_bank/{id}', ['uses' => 'BankController@destroy']);
 		Route::patch('bank/{id}', ['uses' => 'BankController@update']);

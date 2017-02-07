@@ -493,8 +493,8 @@
 										</a>
 									</li>
 									<li>
-										<a href='{{url('admin/banks')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/banks' ? 'active' : ''}}">
+										<a href='{{url('admin/bank')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/bank' ? 'active' : ''}}">
 											<span>Banks</span>
 										</a>
 									</li>

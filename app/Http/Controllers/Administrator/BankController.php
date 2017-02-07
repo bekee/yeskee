@@ -28,7 +28,7 @@ class BankController extends Controller
 		$bank->name = $request->name;
 		$bank->save();
 		flash($request['name'] . ' successfully save', 'success');
-		return redirect(Auth::user()->route . '/banks');
+		return redirect(Auth::user()->route . '/bank');
 	}
 	
 	public function update($id, BankRequest $request)
@@ -37,7 +37,7 @@ class BankController extends Controller
 		$bank->name = $request->name;
 		$bank->update();
 		flash($request['name'] . ' successfully updated', 'success');
-		return redirect(Auth::user()->route . '/banks');
+		return redirect(Auth::user()->route . '/bank');
 	}
 	
 	public function destroy($id)
