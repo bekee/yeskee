@@ -102,43 +102,7 @@
 										
 										@foreach($bonuses as $key => $bonus )
 											
-											<tr class='clickable-row'>
-												<td>{{$key +1}}</td>
-												<td>
-													<strong>{{$bonus->purpose}}</strong>
-												</td>
-												<td>
-													@if($bonus->user_type =='mine' )
-														{{$bonus->user->user->first_name . ' ' . $bonus->user->user->last_name}}
-														({{$bonus->user->email}})
-														<small>---Client</small>
-													@elseif($bonus->user_type =='referral')
-														{{$bonus->user->user->first_name . ' ' . $bonus->user->user->last_name}}
-														({{$bonus->user->email}})
-														<small>--- Referred by</small>
-														{{--$bonus->user->parentOf->referredParentOfUser->user->first_name . ' ' . $bonus->user->parentOf->referredParentOfUser->user->last_name}}
-														({{$bonus->user->parentOf->referredParentOfUser->email--}}
-													@else
-														{{$bonus->user->agent->first_name . ' ' . $bonus->user->agent->last_name}}
-														({{$bonus->user->email}})
-														<small>---Agent</small>
-													@endif
-												</td>
-												<td>₦ {!! number_format($bonus->amount,2) !!} </td>
-												<td>{!! $bonus->user_type == 'mine' ? "First Time Bonus":
-												 $bonus->user_type == 'referral' ? "Bonus based on client referral" : "Bonus for the Agent" !!} </td>
-												<td>{{\Illuminate\Support\Str::ucfirst($bonus->userLevel->payment->status)}}</td>
-												<td>{{$bonus->userLevel->level->name}}</td>
-												<td>@if($bonus->status == 'approved')
-														{!!  "<span class='label label-success'>Approved</span>"!!}
-													@elseif($bonus->status == 'unapproved')
-														{!!  "<span class='label label-info'>Waiting Approval</span>"!!}
-													@else{!!  "<span class='label label-danger'>Cancelled</span>" !!}
-													@endif
-												</td>
-												<td>{{ \Carbon\Carbon::parse($bonus->created_at)->diffForHumans()}}</td>
-											</tr>
-										
+											
 										@endforeach
 										</tbody>
 									</table>
