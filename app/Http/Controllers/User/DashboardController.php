@@ -76,11 +76,7 @@ class DashboardController extends Controller
 	public function myTransaction()
 	{
 		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'completed')->paginate(20);
-		$account = UserBank::where('user_id', Auth::user()->id)->first();
-		if (empty($account)) {
-			flash('Update your profile', 'danger');
-			return redirect('dashboard/profile');
-		}
+		
 		
 		return view('user.transaction', compact('transactions'));
 	}
