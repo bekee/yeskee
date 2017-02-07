@@ -155,13 +155,22 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('withdrawal_pay/{id}', ['uses' => 'WithdrawalController@payNow']);
 		Route::post('withdrawal_cancel/{id}', ['uses' => 'WithdrawalController@cancelNow']);
 	});
-	Route::group(['middleware' => 'email'], function () {
-		Route::group(['namespace' => 'Agent', 'middleware' => ['role:agent'], 'prefix' => 'agent'], function () {
+	
+	
+	Route::group(['namespace' => 'Agent', 'middleware' => ['role:agent', 'blocked', 'suspend'], 'prefix' => 'agent'], function () {
+		
+		//Email Confirmation
+		Route::get('email_sent', ['uses' => 'EmailController@emailSent']);
+		Route::get('email_not_confirmed', ['uses' => 'EmailController@notConfirmed']);
+		Route::get('resend_email', ['uses' => 'EmailController@resend']);
+		Route::get('confirm_email/{code}', ['uses' => 'EmailController@confirm']);
+		
+		Route::group(['middleware' => 'agent '], function () {
 			Route::get('/', ['uses' => 'AgentController@index']);
 		});
 	});
 	
-	Route::group(['namespace' => 'User', 'middleware' => ['role:user','blocked','suspend','profile'], 'prefix' => 'dashboard'], function () {
+	Route::group(['namespace' => 'User', 'middleware' => ['role:user', 'blocked', 'suspend', 'profile'], 'prefix' => 'dashboard'], function () {
 		
 		//Email Confirmation
 		Route::get('email_sent', ['uses' => 'EmailController@emailSent']);
@@ -204,6 +213,9 @@ Route::group(['middleware' => 'auth'], function () {
 			//Withdrawals
 			Route::get('place_withdrawal', ['uses' => 'WithdrawalController@withdrawal']);
 			Route::post('place_withdrawal', ['uses' => 'WithdrawalController@placeOrder']);
+			
+			//Referrals
+			Route::get('my_referrals', ['uses' => 'MyReferralsController@index']);
 		});
 	});
 	

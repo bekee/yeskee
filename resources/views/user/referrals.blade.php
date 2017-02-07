@@ -3,12 +3,12 @@
 
 
 @section('title')
-	PENDING
+	MY REFERRALS
 @stop
 
 @section('heading')
 	<div class="page-heading">
-		<h3><i class='icon icon-air'></i>WAITING APPROVAL</h3>
+		<h3><i class='icon icon-compass-2'></i>MY REFERRALS</h3>
 	</div>
 @stop
 
@@ -51,7 +51,7 @@
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-suitcase'></i> MY REFERRALS</h1>
 	</div>
 @stop
 
@@ -61,22 +61,16 @@
 
 @stop
 @section('row1')
-	@unless(count($transactions))
+	@unless(count($referrals))
 		<div class="col-md-12 portlets">
 			<div class="widget">
 				<div class="widget-header transparent">
-					
 					<div class="additional-btn">
-					
 					</div>
 				</div>
 				<div class="widget-content padding">
-					
-					<h5 class="text-center">You do not have any pending level</h5>
-				
-				
+					<h5 class="text-center">You have not referred anyone yet</h5>
 				</div>
-			
 			</div>
 		</div>
 	@endunless
@@ -84,77 +78,63 @@
 
 
 @section('row2')
-	@foreach($transactions as $level)
+	@if(count($referrals))
 		<div class="col-md-12 portlets">
 			<div class="widget">
-				<div class="widget-header transparent">
-					<div class="col-sm-8">
-						<div class="col-sm-12">
-							<div class="col-sm-2"><span style="color: #1b7e5a">Level Name:</span></div>
-							<div class="col-sm-9"><span
-										style="color: #1b7e5a"><strong>{{$level->level->name}}</strong></span>
+				<div class="widget-header">
+					<h2>My Referral
+					</h2>
+				
+				</div>
+				<div class="widget-content padding">
+					
+					<div class="row">
+						<div class="col-md-12">
+							<div class="widget">
+								
+								<div class="widget-content">
+									
+									<div class="table-responsive">
+										<table data-sortable class="table table-hover table-striped">
+											<thead>
+											<tr>
+												<th>No</th>
+												<th>User</th>
+												<th>Date Registered</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												@if($referrals->isEmpty())
+													<td colspan="10"><p class="text-center">You have not referred anyone yet</p></td>
+												@endif
+											</tr>
+											@foreach($referrals as $key => $level )
+												<tr>
+													<td>{{$key +1}}</td>
+													<td><strong>{{$level->referredParentOfUser->user->first_name}} {{$level->referredParentOfUser->user->last_name}}</strong></td>
+													<td>{{\Carbon\Carbon::parse($level->created_at)->diffForHumans()}}</td>
+												</tr>
+											
+											@endforeach
+											</tbody>
+										</table>
+									</div>
+									
+									<div class="data-table-toolbar">
+										<ul class="pagination">
+											{{$referrals->links()}}
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-2"><span style="color: #1b7e5a">Amount Invested:</span></div>
-							<div class="col-sm-9"><span
-										style="color: #ee1e2d"><strong>₦ {{number_format($level->level->amount)}}</strong></span>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
-							<div class="col-sm-9"><span
-										style="color: #1b7e5a"><strong> ₦{{(number_format(round($level->level->amount)*.33333*6))}}</strong></span>
-							</div>
-						</div>
+					
 					</div>
-					<div class="col-sm-4">
-						<h3>PAYMENT STATUS: @if($level->payment->status == 'paid') <span class="btn btn-success">APPROVED </span>@else
-								<span class="btn btn-info">PENDING APPROVAL</span>@endif
-						</h3>
-					</div>
-				</div>
-				<div class="col-sm-8">
-					<div class="widget-content padding">
-						<div class="text-center">
-							<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
-							<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
-							<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
-							<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
-							<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
-							<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
-						</div>
-					</div>
-					<div class="text-left text-red-1"><strong>Note</strong>, your level will be approved within
-						24hrs of
-						payment. <br/> For any issue regarding your transaction, kindly drop a request message
-						as we
-						will respond to you swiftly. <br/>
-						The good news here is that, when you register and find it difficult introducing two
-						people or
-						the system is unable to queue you up with somebody within the the space of two weeks,
-						you can
-						humbly apply for a refund of money or send us email – ecn@yeskeinterconnect.com
-						This is possible because we operate a single account and a registered platform to avoid
-						delay
-						and issues in payment. Invest your money and see how things turns swiftly with ease. We
-						are
-						reliable and trusted
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<h5 class="text-center"><strong>My Teller</strong></h5>
-					<img src="{{Storage::disk('teller')->url('images/teller/'.$level->payment->image)}}"
-					     height="250px;" width="100%;">
-				</div>
-				<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
-					<div class="pull-right"><a class="btn btn-yellow-1" href="{{url('my-request')}}">Make a
-							Request
-							<span class="icon icon-message"></span></a></div>
 				</div>
 			</div>
 		</div>
-	@endforeach
+	@endif
 @stop
 
 @section('row3')

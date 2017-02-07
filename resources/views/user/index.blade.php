@@ -109,7 +109,9 @@
 								</div>
 							</div>
 							<div class="col-sm-4">
-								PAYMENT STATUS:
+								<h3>PAYMENT STATUS: @if($level->payment->status == 'paid') <span class="btn btn-success">APPROVED </span>@else
+										<span class="btn btn-info">PENDING APPROVAL</span>@endif
+								</h3>
 							</div>
 						</div>
 						<div class="col-sm-8">
@@ -158,27 +160,29 @@
 				<div class="col-md-12 portlets">
 					<div class="widget">
 						<div class="widget-header transparent">
-							<div class="col-sm-12">
-								<div class="col-sm-2"><span style="color: #1b7e5a">Level Name:</span></div>
-								<div class="col-sm-9"><span
-											style="color: #1b7e5a"><strong>{{$level->level->name}}</strong></span></div>
-							</div>
-							<div class="col-sm-12">
-								<div class="col-sm-2"><span style="color: #1b7e5a">Amount Invested:</span></div>
-								<div class="col-sm-9"><span
-											style="color: #ee1e2d"><strong>₦ {{number_format($level->level->amount)}}</strong></span>
+							<div class="col-sm-8">
+								<div class="col-sm-12">
+									<div class="col-sm-2"><span style="color: #1b7e5a">Level Name:</span></div>
+									<div class="col-sm-9"><span
+												style="color: #1b7e5a"><strong>{{$level->level->name}}</strong></span>
+									</div>
 								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
-								<div class="col-sm-9"><span
-											style="color: #1b7e5a"><strong> ₦{{(number_format(round(( $level->level->amount)*.33333*6),2))}} </strong></span>
+								<div class="col-sm-12">
+									<div class="col-sm-2"><span style="color: #1b7e5a">Amount Invested:</span></div>
+									<div class="col-sm-9"><span
+												style="color: #ee1e2d"><strong>₦ {{number_format($level->level->amount)}}</strong></span>
+									</div>
 								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="col-sm-2"><span style="color: #1b7e5a">Current Payout:</span></div>
-								<div class="col-sm-9"><span
-											style="color: #ee1e2d"><strong>₦ {{number_format(round(
+								<div class="col-sm-12">
+									<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
+									<div class="col-sm-9"><span
+												style="color: #1b7e5a"><strong> ₦{{(number_format(round(( $level->level->amount)*.33333*6),2))}} </strong></span>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="col-sm-2"><span style="color: #1b7e5a">Current Payout:</span></div>
+									<div class="col-sm-9"><span
+												style="color: #ee1e2d"><strong>₦ {{number_format(round(
 									 (empty($level->levelStatus->y)? 0 : ($level->level->amount)*.33333)+
 									 (empty($level->levelStatus->e)? 0 : ($level->level->amount)*.33333)+
 									 (empty($level->levelStatus->s)? 0 : ($level->level->amount)*.33333)+
@@ -187,11 +191,13 @@
 									 (empty($level->levelStatus->e2)? 0 : ($level->level->amount)*.33333)
 									 ),2)
 									   }}</strong></span>
+									</div>
 								</div>
 							</div>
-							
-							<div class="additional-btn">
-							
+							<div class="col-sm-4">
+								<h3>PAYMENT STATUS: @if($level->payment->status == 'paid') <span class="btn btn-success">APPROVED </span>@else
+										<span class="btn btn-info">PENDING APPROVAL</span>@endif
+								</h3>
 							</div>
 						</div>
 						<div class="col-sm-12">

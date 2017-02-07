@@ -51,7 +51,7 @@
 
 @section('heading')
 	<div class="page-heading">
-		<h1><i class='fa fa-arrows-alt'></i> Profile</h1>
+		<h1><i class='fa fa-arrows-alt'></i> COMPLETED TRANSACTIONS</h1>
 	</div>
 @stop
 
@@ -122,7 +122,7 @@
 												<tr>
 													<td>{{$key +1}}</td>
 													<td><strong>{{$level->level->name}}</strong></td>
-													<td>{{$level->created_at}}</td>
+													<td>{{\Carbon\Carbon::parse($level->created_at)->diffForHumans()}}</td>
 													<td>{{ (empty($level->y)? 0 : ($level->level->amount)*.33333*6)}}</td>
 													
 													<td>{{$level->y->user->first_name}} {{$level->y->user->last_name}}

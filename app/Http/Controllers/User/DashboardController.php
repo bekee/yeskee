@@ -87,7 +87,7 @@ class DashboardController extends Controller
 	
 	public function active()
 	{
-		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->whereOr('status','processing')->paginate(20);
+		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', '<>','completed')->whereOr('status','<>','cancelled')->whereOr('status','<>','pending')->paginate(20);
 		
 		return view('user.active', compact('transactions'));
 	}

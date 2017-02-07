@@ -53,7 +53,7 @@
 	
 	@show
 	
-@section('extra_css1')
+	@section('extra_css1')
 		<link href="{{URL::asset('loggedin/assets/css/custom.css')}}" rel="stylesheet" type="text/css"/>
 @show
 
@@ -432,6 +432,12 @@
 										<a href='{{url('dashboard/my_transactions')}}'
 										   class="{{Route::getCurrentRoute()->getPath() == 'dashboard/my_transactions' ? 'active' : ''}}">
 											<span>My Levels Complete</span>
+										</a>
+									</li>
+									<li>
+										<a href='{{url('dashboard/my_referrals')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'dashboard/my_referrals' ? 'active' : ''}}">
+											<span>My Referrals</span>
 										</a>
 									</li>
 									<li>
@@ -1613,7 +1619,7 @@
 					<footer>
 						@section('footer')
 							YESKEINTERCONNECT &copy; {{date('Y')}}, All right reserved</a>
-							
+						
 						@show
 					</footer>
 				
@@ -1623,7 +1629,7 @@
 						<h3 class="text-center"></h3>
 						<img src="{{asset('loggedin/images/advert/users1.jpg')}}"
 						     height="100%;" width="100%;">
-						
+					
 					</div>
 				</div>
 			</div>
