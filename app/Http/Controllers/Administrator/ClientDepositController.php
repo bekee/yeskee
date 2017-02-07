@@ -56,9 +56,14 @@ class ClientDepositController extends Controller
 		$payment->status = 'cancelled';
 		$payment->update();
 		
-		$userLevel = UserLevel::find($payment->user_level_id);
+		$userLevel = UserLevel::find($payment->user_level_id)->get();
 		$userLevel->status = 'cancelled';
 		$userLevel->update();
+		
+		$bonus = Bonus::where('user_level_id', $userLevel->id)->get();
+		$bonus->status = 'cancelled';
+		$bonus->update();
+		
 		return redirect('admin/client_deposits');
 	}
 	
