@@ -1726,7 +1726,7 @@
 	<script src="{{URL::asset('loggedin/assets/js/init.js')}}"></script>
 	<!-- Page Specific JS Libraries -->
 	
-	<script src="{{URL::asset('loggedin/assets/js/pages/index.js')}}"></script>
+	
 @show
 
 
