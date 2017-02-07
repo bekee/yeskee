@@ -1710,7 +1710,7 @@
 	<script src="{{URL::asset('loggedin/assets/libs/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
 	<script src="{{URL::asset('loggedin/assets/libs/jquery-sparkline/jquery-sparkline.js')}}"></script>
 	<script src="{{URL::asset('loggedin/assets/libs/nifty-modal/js/classie.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/nifty-modal/js/modalEffects.js')}}"></script>
+	
 	<script src="{{URL::asset('loggedin/assets/libs/sortable/sortable.min.js')}}"></script>
 	<script src="{{URL::asset('loggedin/assets/libs/bootstrap-fileinput/bootstrap.file-input.js')}}"></script>
 	<script src="{{URL::asset('loggedin/assets/libs/bootstrap-select/bootstrap-select.min.js')}}"></script>
