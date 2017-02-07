@@ -18,7 +18,7 @@ class DashboardController extends Controller
 {
 	public function index()
 	{
-		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->whereOr('status','processing')->whereOr('status','pending')->paginate(20);
+		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', '<>','completed')->whereOr('status','<>','cancelled')->paginate(20);
 		
 		return view('user.index', compact('transactions'));
 	}
