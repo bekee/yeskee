@@ -31,7 +31,7 @@ class FileUploadRequest extends FormRequest
 			case 'POST': {
 				return [
 					'selected' => 'required|numeric',
-					'teller' => 'required|image|mimes:jpeg,bmp,png',
+					'teller' => 'required|image|mimes:jpeg,bmp,png|max:500',
 					'payment_type' => 'required',
 				];
 			}
