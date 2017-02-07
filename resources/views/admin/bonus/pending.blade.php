@@ -138,22 +138,40 @@
 													@else{!!  "<span class='label label-danger'>Cancelled</span>" !!}
 													@endif
 												</td>
-												<td>{{$bonus->created_at}}</td>
+												<td>{{\Carbon\Carbon::parse($bonus->created_at)->diffForHumans()}}</td>
 												<td>
+													
+													@if($bonus->userLevel->payment->status=='paid')
+														<div class="btn-group">
+															<div class="btn-group btn-group-xs">
+																<a href='{{url(Auth::user()->route."/approve_bonus/".$bonus->id)}}'
+																   data-toggle="tooltip" title="Approve This Bonus"
+																   class="btn btn-primary"><i
+																			class="fa fa-suitcase"></i></a>
+															</div>
+															<div class="btn-group btn-group-xs">
+																<a href='{{url(Auth::user()->route."/cancel_bonus/".$bonus->id)}}'
+																   data-toggle="tooltip" title="Cancel This Bonus"
+																   class="btn btn-danger"><i
+																			class="fa fa-remove"></i></a>
+															</div>
+														</div>
+													@elseif($bonus->userLevel->payment->status=='pending')
+														WAITING FOR PAYMENT APPROVAL
+													@else
 													<div class="btn-group">
-														<div class="btn-group btn-group-xs">
-															<a href='{{url(Auth::user()->route."/approve_bonus/".$bonus->id)}}'
-															   data-toggle="tooltip" title="Approve This Bonus"
-															   class="btn btn-primary"><i
-																		class="fa fa-suitcase"></i></a>
+															<div class="btn-group btn-group-xs">
+																<span class="btn btn-danger">PAYMENT WAS CANCELLED</span>
+															</div>
+															<div class="btn-group btn-group-xs">
+																<a href='{{url(Auth::user()->route."/cancel_bonus/".$bonus->id)}}'
+																   data-toggle="tooltip" title="Cancel This Bonus"
+																   class="btn btn-danger"><i
+																			class="fa fa-remove"></i></a>
+															</div>
 														</div>
-														<div class="btn-group btn-group-xs">
-															<a href='{{url(Auth::user()->route."/cancel_bonus/".$bonus->id)}}'
-															   data-toggle="tooltip" title="Cancel This Bonus"
-															   class="btn btn-danger"><i
-																		class="fa fa-remove"></i></a>
-														</div>
-													</div>
+													@endif
+												
 												</td>
 											</tr>
 										
