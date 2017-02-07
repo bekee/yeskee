@@ -366,8 +366,8 @@
 										</a>
 									</li>
 									<li>
-										<a href='{{url('admin/approved_bonuses')}}'
-										   class="{{Route::getCurrentRoute()->getPath() == 'admin/approved_bonuses' ? 'active' : ''}}">
+										<a href='{{url('admin/bonus_approved')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/bonus_approved' ? 'active' : ''}}">
 											<span>Approved</span>
 										</a>
 									</li>

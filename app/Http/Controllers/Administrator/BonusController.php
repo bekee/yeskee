@@ -14,7 +14,7 @@ class BonusController extends Controller
 		return view('admin.bonus.pending', compact('bonuses'));
 	}
 	
-	public function approved()
+	public function approvedd()
 	{
 		//$bonuses = Bonus::where("status", 'approved')->paginate(100);
 		//return view('admin.bonus.approved', compact('bonuses'));
@@ -49,7 +49,7 @@ class BonusController extends Controller
 			flash('Bonus of ₦' . $bonus->amount . ' have been approved for ' . $bonus->user->agent->first_name . ' ' . $bonus->user->agent->last_name . ' for Level ' . $bonus->userLevel->level->name, 'success');
 		}
 		$wallet->save();
-		return redirect('admin/approved_bonuses');
+		return redirect('admin/bonus_approved');
 	}
 	
 	public function cancel($id)

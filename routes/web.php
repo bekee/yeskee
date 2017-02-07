@@ -136,7 +136,7 @@ Route::group(['middleware' => 'auth'], function () {
 		//Bonuses
 		
 		Route::get('bonus_pending_approval', ['uses' => 'BonusController@pending']);
-		Route::get('approved_bonuses', ['uses' => 'BonusController@approved']);
+		Route::get('bonus_approved', ['uses' => 'BonusController@approvedd']);
 		Route::get('cancelled_bonuses', ['uses' => 'BonusController@cancelled']);
 		Route::get('approve_bonus/{id}', ['uses' => 'BonusController@approve']);
 		Route::get('cancel_bonus/{id}', ['uses' => 'BonusController@cancel']);
