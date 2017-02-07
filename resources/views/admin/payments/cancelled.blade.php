@@ -60,7 +60,7 @@
 								</td>
 								<td>{{$deposit->user->userBank->acc_name}}</td>
 								<td>{{$deposit->userLevel->level->name}}</td>
-								<td>{{ \Carbon\Carbon::parse($deposit->user->created_at)->diffForHumans()}}</td>
+								<td>{{ \Carbon\Carbon::parse($deposit->created_at)->diffForHumans()}}</td>
 								<td>{{\Illuminate\Support\Str::upper($deposit->type)}}</td>
 								<td>{{\Illuminate\Support\Str::upper($deposit->status)}}</td>
 								<td>
