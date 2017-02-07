@@ -1725,21 +1725,7 @@
 	
 	<script src="{{URL::asset('loggedin/assets/js/init.js')}}"></script>
 	<!-- Page Specific JS Libraries -->
-	<script src="{{URL::asset('loggedin/assets/libs/d3/d3.v3.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/rickshaw/rickshaw.min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/raphael/raphael-min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/morrischart/morris.min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/jquery-knob/jquery.knob.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/jquery-jvectormap/js/jquery-jvectormap-1.2.2.min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/jquery-jvectormap/js/jquery-jvectormap-us-aea-en.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/jquery-clock/clock.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/jquery-easypiechart/jquery.easypiechart.min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/jquery-weather/jquery.simpleWeather-2.6.min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/bootstrap-xeditable/js/bootstrap-editable.min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/libs/bootstrap-calendar/js/bic_calendar.min.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/js/apps/calculator.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/js/apps/todo.js')}}"></script>
-	<script src="{{URL::asset('loggedin/assets/js/apps/notes.js')}}"></script>
+	
 	<script src="{{URL::asset('loggedin/assets/js/pages/index.js')}}"></script>
 @show
 
