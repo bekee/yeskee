@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Http\Middleware\BlockedClientMiddleware;
 use App\Http\Middleware\Emailverification;
 use App\Http\Middleware\SuspendedClientMiddleware;
+use App\Http\Middleware\UpdateProfileMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -61,5 +62,6 @@ class Kernel extends HttpKernel
 		'email' => Emailverification::class,
 		'suspend'=>SuspendedClientMiddleware::class,
 		'blocked'=>BlockedClientMiddleware::class,
+		'profile'=>UpdateProfileMiddleware::class,
 	];
 }

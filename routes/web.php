@@ -161,7 +161,7 @@ Route::group(['middleware' => 'auth'], function () {
 		});
 	});
 	
-	Route::group(['namespace' => 'User', 'middleware' => ['role:user','blocked','suspend'], 'prefix' => 'dashboard'], function () {
+	Route::group(['namespace' => 'User', 'middleware' => ['role:user','blocked','suspend','profile'], 'prefix' => 'dashboard'], function () {
 		
 		//Email Confirmation
 		Route::get('email_sent', ['uses' => 'EmailController@emailSent']);

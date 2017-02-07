@@ -83,28 +83,188 @@
 @section('row2')
 	
 	@foreach($transactions as $level)
-		<a href="{{url('dashboard/active_level')}}">
-		<div class="col-md-12 portlets">
-			<div class="widget">
-				<div class="widget-header transparent">
-					<h2><strong>{{$level->level->name}}</strong></h2>
-					<div class="additional-btn">
+		@if($level)
+			<a href="{{url('dashboard/pending_level')}}">
+				<div class="col-md-12 portlets">
+					<div class="widget">
+						<div class="widget-header transparent">
+							<h2><strong>{{$level->level->name}}</strong></h2>
+							<div class="additional-btn">
+							
+							</div>
+						</div>
+						<div class="widget-content padding">
+							<div class="text-center">
+								<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
+								<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
+								<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
+								<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
+								<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
+								<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		@else
+			<a href="{{url('dashboard/active_level')}}">
+				<div class="col-md-12 portlets">
+					<div class="widget">
+						<div class="widget-header transparent">
+							<div class="col-sm-12">
+								<div class="col-sm-2"><span style="color: #1b7e5a">Level Name:</span></div>
+								<div class="col-sm-9"><span
+											style="color: #1b7e5a"><strong>{{$level->level->name}}</strong></span></div>
+							</div>
+							<div class="col-sm-12">
+								<div class="col-sm-2"><span style="color: #1b7e5a">Amount Invested:</span></div>
+								<div class="col-sm-9"><span
+											style="color: #ee1e2d"><strong>₦ {{number_format($level->level->amount)}}</strong></span>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
+								<div class="col-sm-9"><span
+											style="color: #1b7e5a"><strong> ₦{{(number_format(round(( $level->level->amount)*.33333*6),2))}} </strong></span>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="col-sm-2"><span style="color: #1b7e5a">Current Payout:</span></div>
+								<div class="col-sm-9"><span
+											style="color: #ee1e2d"><strong>₦ {{number_format(round(
+									 (empty($level->levelStatus->y)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->s)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->k)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e1)? 0 : ($level->level->amount)*.33333)+
+									 (empty($level->levelStatus->e2)? 0 : ($level->level->amount)*.33333)
+									 ),2)
+									   }}</strong></span>
+								</div>
+							</div>
+							
+							<div class="additional-btn">
+							
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="widget-content padding">
+								<div class="text-center">
+									<table style=" margin: auto;">
+										<tr>
+											<td>
+												<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="{{empty($level->levelStatus->y) ?'yesk2':'yeskee2'}}">
+													@if(empty($level->levelStatus->y))
+														₦ 0.0<span
+																class="icon icon-down-3"></span>
+													@else
+														₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+														<span class="icon icon-up-3"></span>
+													@endif
+												</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->e) ?'yesk2':'yeskee2'}}">
+													@if(empty($level->levelStatus->e))
+														₦ 0.0<span
+																class="icon icon-down-3"></span>
+													@else
+														₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+														<span class="icon icon-up-3"></span>
+													@endif
+												</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->s) ?'yesk2':'yeskee2'}}">
+													@if(empty($level->levelStatus->s))
+														₦ 0.0<span
+																class="icon icon-down-3"></span>
+													@else
+														₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+														<span class="icon icon-up-3"></span>
+													@endif
+												</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->k) ?'yesk2':'yeskee2'}}">
+													@if(empty($level->levelStatus->k))
+														₦ 0.0<span
+																class="icon icon-down-3"></span>
+													@else
+														₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+														<span class="icon icon-up-3"></span>
+													@endif
+												</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->e1) ?'yesk2':'yeskee2'}}">
+													@if(empty($level->levelStatus->e1))
+														₦ 0.0<span
+																class="icon icon-down-3"></span>
+													@else
+														₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+														<span class="icon icon-up-3"></span>
+													@endif
+												</div>
+											</td>
+											
+											<td>
+												<div class="{{empty($level->levelStatus->e2) ?'yesk2':'yeskee2'}}">
+													@if(empty($level->levelStatus->e2))
+														₦ 0.0<span
+																class="icon icon-down-3"></span>
+													@else
+														₦ {{(number_format(round(( $level->level->amount)*.33333),2))}}
+														<span class="icon icon-up-3"></span>
+													@endif
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
 						
+						</div>
+						
+						<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
+							<div class="pull-right"><a class="btn btn-yellow-1"
+							                           href="{{url('dashboard/my-request/'.$level->id.'/')}}">Issue
+									Tracker
+									<span class="icon icon-message"></span></a></div>
+						</div>
 					</div>
 				</div>
-				<div class="widget-content padding">
-					<div class="text-center">
-						<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
-						<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
-						<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
-						<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
-						<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</a>
+			</a>
+		@endif
 	@endforeach
 @stop
 

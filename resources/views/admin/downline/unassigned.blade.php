@@ -132,10 +132,12 @@
 																   class="btn btn-primary">ASSIGN NOW</a>
 															</div>
 														@else
-															<a href='{{url(Auth::user()->route."/a_view_payment_detail/".$level->payment->id)}}'
-															   data-toggle="tooltip"
-															   title="PROCESS PAYMENT FIRST"
-															   class="btn btn-danger">PROCESS PAYMENT FIRST</a>
+															<div class="btn-group btn-group-xs">
+																<a href='{{url(Auth::user()->route."/a_view_payment_detail/".$level->payment->id)}}'
+																   data-toggle="tooltip"
+																   title="PROCESS PAYMENT FIRST"
+																   class="btn btn-danger">PROCESS PAYMENT FIRST</a>
+															</div>
 														@endif
 													</td>
 												</tr>

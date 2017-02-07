@@ -18,12 +18,7 @@ class DashboardController extends Controller
 {
 	public function index()
 	{
-		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->whereOr('status','processing')->paginate(20);
-		$account = UserBank::where('user_id', Auth::user()->id)->first();
-		if (empty($account)) {
-			flash('Update your profile', 'danger');
-			return redirect('dashboard/profile');
-		}
+		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->whereOr('status','processing')->whereOr('status','pending')->paginate(20);
 		
 		return view('user.index', compact('transactions'));
 	}
@@ -74,11 +69,6 @@ class DashboardController extends Controller
 	public function pending()
 	{
 		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'pending')->paginate(20);
-		$account = UserBank::where('user_id', Auth::user()->id)->first();
-		if (empty($account)) {
-			flash('Update your profile', 'danger');
-			return redirect('dashboard/pending_level');
-		}
 		
 		return view('user.pending', compact('transactions'));
 	}
@@ -98,11 +88,6 @@ class DashboardController extends Controller
 	public function active()
 	{
 		$transactions = UserLevel::where('user_id', Auth::user()->id)->where('status', 'progress')->whereOr('status','processing')->paginate(20);
-		$account = UserBank::where('user_id', Auth::user()->id)->first();
-		if (empty($account)) {
-			flash('Update your profile', 'danger');
-			return redirect('dashboard/profile');
-		}
 		
 		return view('user.active', compact('transactions'));
 	}
