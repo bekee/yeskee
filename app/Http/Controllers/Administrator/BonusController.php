@@ -16,10 +16,10 @@ class BonusController extends Controller
 	
 	public function approvedd()
 	{
-		//$bonuses = Bonus::where("status", 'approved')->paginate(100);
-		//return view('admin.bonus.approved', compact('bonuses'));
+		$bonuses = Bonus::where("status", 'approved')->paginate(100);
+		return view('admin.bonus.approved', compact('bonuses'));
 		
-		return "Hello world";
+		//return "Hello world";
 	}
 	
 	public function cancelled()
