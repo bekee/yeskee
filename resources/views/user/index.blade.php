@@ -83,25 +83,72 @@
 @section('row2')
 	
 	@foreach($transactions as $level)
-		@if($level)
+		@if($level->status == 'pending')
 			<a href="{{url('dashboard/pending_level')}}">
 				<div class="col-md-12 portlets">
 					<div class="widget">
 						<div class="widget-header transparent">
-							<h2><strong>{{$level->level->name}}</strong></h2>
-							<div class="additional-btn">
-							
+							<div class="col-sm-8">
+								<div class="col-sm-12">
+									<div class="col-sm-2"><span style="color: #1b7e5a">Level Name:</span></div>
+									<div class="col-sm-9"><span
+												style="color: #1b7e5a"><strong>{{$level->level->name}}</strong></span>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="col-sm-2"><span style="color: #1b7e5a">Amount Invested:</span></div>
+									<div class="col-sm-9"><span
+												style="color: #ee1e2d"><strong>₦ {{number_format($level->level->amount)}}</strong></span>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="col-sm-2"><span style="color: #ee1e2d">Expected Payout:</span></div>
+									<div class="col-sm-9"><span
+												style="color: #1b7e5a"><strong> ₦{{(number_format(round($level->level->amount)*.33333*6))}}</strong></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								PAYMENT STATUS:
 							</div>
 						</div>
-						<div class="widget-content padding">
-							<div class="text-center">
-								<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
-								<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
-								<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
-								<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
-								<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
-								<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
+						<div class="col-sm-8">
+							<div class="widget-content padding">
+								<div class="text-center">
+									<div class="{{empty($level->levelStatus->y) ?'yesk':'yeskee'}}">Y</div>
+									<div class="{{empty($level->levelStatus->e) ?'yesk':'yeskee'}}">E</div>
+									<div class="{{empty($level->levelStatus->s) ?'yesk':'yeskee'}}">S</div>
+									<div class="{{empty($level->levelStatus->k) ?'yesk':'yeskee'}}">K</div>
+									<div class="{{empty($level->levelStatus->e1) ?'yesk':'yeskee'}}">E</div>
+									<div class="{{empty($level->levelStatus->e2) ?'yesk':'yeskee'}}">E</div>
+								</div>
 							</div>
+							<div class="text-left text-red-1"><strong>Note</strong>, your level will be approved within
+								24hrs of
+								payment. <br/> For any issue regarding your transaction, kindly drop a request message
+								as we
+								will respond to you swiftly. <br/>
+								The good news here is that, when you register and find it difficult introducing two
+								people or
+								the system is unable to queue you up with somebody within the the space of two weeks,
+								you can
+								humbly apply for a refund of money or send us email – ecn@yeskeinterconnect.com
+								This is possible because we operate a single account and a registered platform to avoid
+								delay
+								and issues in payment. Invest your money and see how things turns swiftly with ease. We
+								are
+								reliable and trusted
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<h5 class="text-center"><strong>My Teller</strong></h5>
+							<img src="{{Storage::disk('teller')->url('images/teller/'.$level->payment->image)}}"
+							     height="250px;" width="100%;">
+						</div>
+						<div class="col-sm-12" style="margin-top: 21px; margin-bottom: 15px;">
+							<div class="pull-right"><a class="btn btn-yellow-1" href="{{url('my-request')}}">Make a
+									Request
+									<span class="icon icon-message"></span></a></div>
 						</div>
 					</div>
 				</div>
