@@ -19,7 +19,6 @@
 					<div class="column one column">
 						<div style="text-align: left;">
 							
-							<p class="text-danger"><strong>NB</strong> - You are mandated to pay on or before 72hrs after registration, unless your account will be blocked. This is to ensure the smooth running of the system</p>
 							
 							<p>Imagine investing your money into a risk free business with no regrets or being paranoid of
 								losing your money. Now, Yeske interconnect operates a very simple platform. It is important to
@@ -65,6 +64,8 @@
 							20,000 = 3,000<br/>
 							30,000 = 5,000<br/>
 							50,000 = 8,000.<br/>
+							
+							<p class="text-danger"><strong>NB</strong> - You are mandated to pay on or before 72hrs after registration, unless your account will be blocked. This is to ensure the smooth running of the system</p>
 							
 							<h3>Summary of the registration process</h3>
 							1. Choose the level or stage you want to apply for<br/>
