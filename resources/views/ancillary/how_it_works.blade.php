@@ -65,7 +65,7 @@
 							30,000 = 5,000<br/>
 							50,000 = 8,000.<br/>
 							
-							<p class="text-danger"><strong>NB</strong> - You are mandated to pay on or before 72hrs after registration, unless your account will be blocked. This is to ensure the smooth running of the system</p>
+							<p class="text-danger" style="color: red"><strong>NB</strong> - You are mandated to pay on or before 72hrs after registration, unless your account will be blocked. This is to ensure the smooth running of the system</p>
 							
 							<h3>Summary of the registration process</h3>
 							1. Choose the level or stage you want to apply for<br/>
