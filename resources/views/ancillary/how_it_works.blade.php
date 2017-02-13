@@ -19,6 +19,8 @@
 					<div class="column one column">
 						<div style="text-align: left;">
 							
+							<p class="text-danger"><strong>NB</strong> - You are mandated to pay on or before 72hrs after registration, unless your account will be blocked. This is to ensure the smooth running of the system</p>
+							
 							<p>Imagine investing your money into a risk free business with no regrets or being paranoid of
 								losing your money. Now, Yeske interconnect operates a very simple platform. It is important to
 								note that our commitment to be leaders in business stems from our purpose in society, which is
