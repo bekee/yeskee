@@ -39,6 +39,7 @@
 							<th>First Name</th>
 							<th>Last Name</th>
 							<th>Other Name</th>
+							<th>Phone</th>
 							<th>Email Confirmed</th>
 							<th>Registration Date</th>
 							<th data-sortable="false">Action</th>
@@ -57,6 +58,7 @@
 								<td><strong>{{$client->user->first_name}}</strong></td>
 								<td>{{$client->user->last_name}}</td>
 								<td>{{$client->user->other_name}}</td>
+								<td>{{$client->user->phone}}</td>
 								<td>{!!  $client->email_confirm== 1 ? "<span class='btn btn-success btn-sm'>Yes</span>":'<span class="btn btn-danger btn-sm">No</span>'!!}</td>
 								<td>{!!  \Carbon\Carbon::parse($client->user->created_at)->diffForHumans() !!}</td>
 								<td>

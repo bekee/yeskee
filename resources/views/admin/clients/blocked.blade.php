@@ -39,6 +39,7 @@
 							<th>First Name</th>
 							<th>Last Name</th>
 							<th>Other Name</th>
+							<th>Phone</th>
 							<th data-sortable="false">Action</th>
 						</tr>
 						</thead>
@@ -55,6 +56,7 @@
 								<td><strong>{{$client->user->first_name}}</strong></td>
 								<td>{{$client->user->last_name}}</td>
 								<td>{{$client->user->other_name}}</td>
+								<td>{{$client->user->phone}}</td>
 								<td>
 									<div class="btn-group btn-group-xs">
 										<a href='{{url(Auth::user()->route."/a_unblock_client/".$client->id)}}'
