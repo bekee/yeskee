@@ -66,7 +66,7 @@ class LevelActivityController extends Controller
 			return redirect()->back();
 		}
 		$levelStatus = LevelStatus::where('user_level_id', $userLevel->id)->first();
-		return var_dump($levelStatus);
+		return var_dump($userLevel);
 		if (empty($levelStatus->left_leg)) {
 			$levelStatus->left_leg = $user_id;
 			$levelStatus->update();
