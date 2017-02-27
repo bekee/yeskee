@@ -16,87 +16,122 @@
 		<div class="section " style="padding:20px 0;">
 			<div class="section_wrapper clearfix">
 				<div class="items_group clearfix">
-					<div class="column one column">
-						<div style="text-align: left;">
-							
-							
-							<p>Imagine investing your money into a risk free business with no regrets or being paranoid of
-								losing your money. Now, Yeske interconnect operates a very simple platform. It is important to
-								note that our commitment to be leaders in business stems from our purpose in society, which is
-								to help our customers thrive by enabling them to achieve their lifetime financial goals, while
-								investing their funds in ways that will create a positive future for them, their families,
-								communities and the world at large.</p>
-							<p>
-								There are benefits attached to being a member. You stand a chance of getting a minimum of six
-								thousand and a maximum of 100 hundred thousand. There are laid down rules that are expected of
-								the clients in becoming a partaker of this offer.</p>
-							<p>
-								There are seven phases or stages altogether. Imagine getting a whopping 33.4% on every member
-								that registers under you or you introduce. It’s mandatory to note that each level you decide to
-								enter, you are expected to bring two persons which will serve as your downline. Now, each of
-								these stages requires a two by two matrix. That is, you are required to bring two persons which
-								will serve as your downline and the two persons are to bring another two persons also and
-								continuously. But note this; each person you bring puts money into your account. Once your
-								downline is completed by six persons, you automatically complete that stage and either continue
-								to unlock more stages or withdraw your money.
-							</p>
-							<p>
-								Having explained all that, the amount for each stage or level is 3000, 6000, 8000, 10,000, 20,000,
-								30,000, 50,000. The most interesting part is, for each phase chosen, you get double of that plan,
-								i.e.</p>
-							3000 = 6000<br/>
-							6000 = 12,000<br/>
-							8000 = 16,000<br/>
-							10,000 = 20,000<br/>
-							20,000 = 40,000<br/>
-							30,000 = 60,000<br/>
-							50,000 = 100,000.<br/>
-							<p>
-								These can happen with the power of six. In other words, you need to introduce two people and they
-								also bring two and your stage is completed. It is expected that the two active stages have been
-								unlocked are 3000 and 6000 therefore, its either you start with 3000 or 6000 and grow until it gets
-								to 100,000.</p>
-							<h3>Bonus per entry</h3>
-							3000 = 200<br/>
-							6000 = 400<br/>
-							8000 = 700<br/>
-							10,000 = 1,000<br/>
-							20,000 = 3,000<br/>
-							30,000 = 5,000<br/>
-							50,000 = 8,000.<br/>
-							
-							<p class="text-danger" style="color: red"><strong>NB</strong> - You are mandated to pay on or before 72hrs after registration, unless your account will be blocked. This is to ensure the smooth running of the system</p>
-							
-							<h3>Summary of the registration process</h3>
-							1. Choose the level or stage you want to apply for<br/>
-							2. Pay for the level or stage<br/>
-							3. Bring two people that will join you in that stage and give them your referral code<br/>
-							4. Immediately you bring two people under you and payment made, you are getting paid (no time
-							wasting)<br/>
-							5. You get bonus upon each referral.<br/>
-							6. Completion of six, your complete payment/money will be wired into your bank account<br/>
-							7. Below is a schematic representation of the process.<br/>
-							
-							<img src="{{asset('guest/img/instant.JPG')}}">
-							<br/>
-							<strong>NB: </strong>Anytime one person comes under you, you get paid immediately. Therefore, the process does not wait to be completed before you get paid. As Obi is getting paid, Joy and Ade are also getting paid.
-							<br/>
-							<p></p>
-							<h3>REQUIREMENTS</h3>
-							To be a beneficiary or partaker, one must be ready with the following;<br/>
-							i. An active bank account<br/>
-							ii. A minimum start-up capital of Three Thousand Naira (3000) only.<br/>
-							
-							<h3>BENEFITS OF REGISTERING WITH US</h3>
-							* You can become an ambassador<br/>
-							* Quarterly draw for 100,000 naira cash price.<br/>
-							* You can apply for the next face of Yeske. etc<br/>
-						</div>
-					</div>
-				
+					<p class="column one column">
+					<p style="text-align: left;">
+					
+					<p> Imagine investing your money into a risk free business with no regrets or being paranoid of
+						losing your money. Now, Yeske interconnect operates a very simple platform. It is important
+						to note that our commitment to be leaders in business stems from our purpose in society,
+						which is to help our customers thrive by enabling them to achieve their lifetime financial
+						goals, while investing their funds in ways that will create a positive future for them,
+						their families, communities and the world at large.</p>
+					
+					<p>There are lots of benefits attached to being a member. You stand a chance of getting a
+						minimum of six thousand and a maximum of 100 hundred thousand. There are laid down rules
+						that are
+						expected of the clients in becoming a partaker of this offer.</p>
+					
+					<p>Having explained all that, the amount for each stage or level is 3000, 6000, 8000, 10,000,
+						20,000, 30,000, 50,000 The most interesting part is, for each phase chosen, you get double
+						of
+						that plan, i.e.</p>
+					
+					3000 = 6000<br/>
+					6000 = 12,000<br/>
+					8000 = 16,000<br/>
+					10,000 = 20,000<br/>
+					20,000 = 40,000<br/>
+					30,000 = 60,000<br/>
+					50,000 = 100,000<br/>
+					
+					<p>
+						These can happen with the power of six. In other words, you need to introduce two people and
+						they
+						also bring two and your stage is completed. It is expected that the two active stages have
+						been
+						unlocked are 3000 and 6000 therefore, its either you start with 3000 or 6000 and grow until
+						it gets
+						to 100,000.</p>
+					<h3>Bonus per entry</h3>
+					<p>
+					3000 = 200<br/>
+					6000 = 400<br/>
+					8000 = 700<br/>
+					10,000 = 1,000<br/>
+					20,000 = 3,000<br/>
+					30,000 = 5,000<br/>
+					50,000 = 8,000.<br/>
+					</p>
+					<h3>Bonus per entry</h3>
+					<p>
+					3000 = 1,000
+					<p>Referral bonus goes to agents only. (Send us an email if interested- ecn@yeskeinterconnect.com)
+						for only registered members.</p>
+					</p>
+					<h4>The second phase/stage</h4>
+					<p>
+					You pay a step out fee of 6000 to get 12,000 after which you automatically get queued up and
+					paid on or before 20 days. Your step out capital is 6000 naira which is refundable automatically
+					after twenty days of registration if not paid.
+					</p>
+					<h3>The third phase/stage</h3>
+					<p>
+					You pay a step out fee of 8000 to get 16,000 after which you automatically get queued up and
+					paid on or before 20 days. Your step out capital is 8000 naira which is refundable automatically
+					after twenty days of registration if not paid.
+					</p>
+					
+					<h3>The fourth phase/stage</h3>
+					<p>
+					You pay a step out fee of 10,000 to get 20,000 after which you automatically get queued up and
+					paid on or before 20 days. Your step out capital is10,000 naira which is refundable
+					automatically after twenty days of registration if not paid.
+					</p>
+					<h3>The fifth phase/stage</h3>
+					<p>
+					You pay a step out fee of 20,000 to get 40,000 after which you automatically get queued up and
+					paid on or before 20 days. Your step out capital is 20,000 naira which is refundable
+					automatically after twenty days of registration if not paid.
+					</p>
+					<h3>The sixth phase/stage</h3>
+					<p>
+					You pay a step out fee of 30,000 to get 60,000 after which you automatically get queued up and
+					paid on or before 20 days. Your step out capital is 30,000 naira which is refundable
+					automatically after twenty days of registration if not paid.
+					</p>
+					
+					<h3>The seventh phase/stage</h3>
+					<p>
+					You pay a step out fee of 50,000 to get 100,000 after which you automatically get queued up and
+					paid on or before 20 days. Your step out capital is 50,000 naira which is refundable
+					automatically after twenty days of registration if not paid.
+					</p>
+					
+					<h3>Summary of the registration process</h3>
+					<p>
+						1. Chose the level or stage you want to apply for<br/>
+						2. Pay for the level or stage<br/>
+						3. Either bank transfer or teller uploads are accepted<br/>
+						4. You get approved once payment is received<br/>
+						5. You automatically get your money back after 20 days of registration if not paid.<br/>
+						6. After your first payout, you upgrade to the second stage which same principle applies till
+						you get to the last stage which is 100,000 thousand naira.<br/>
+					</p>
+					
+					<h3>Benefits of registering with us</h3>
+					<p>
+						Qualify for a yearly draw of 100,000 naira cash price<br/>
+						Apply for the next face of Yeske<br/>
+						Become an agent<br/>
+						Win lots of recharge cards monthly<br/>
+					</p>
+					<h4 class="text-center"><strong>Think Yeske, live Yeske, love Yeske</strong></h4>
 				</div>
 			</div>
+		
 		</div>
+	</div>
+	</div>
 	
 	</div>
 	<!-- .four-columns - sidebar -->
