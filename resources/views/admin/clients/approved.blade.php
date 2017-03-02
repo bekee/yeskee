@@ -40,6 +40,7 @@
 							<th>Last Name</th>
 							<th>Other Name</th>
 							<th>Phone</th>
+							<th>Account Details</th>
 							<th>Registration Date</th>
 							<th>Url</th>
 							
@@ -60,6 +61,11 @@
 								<td>{{$client->user->last_name}}</td>
 								<td>{{$client->user->other_name}}</td>
 								<td>{{$client->user->phone}}</td>
+								<td>
+									Acc. Name-{{$client->userBank->acc_name}}<br/>
+									Acc. Number-{{$client->userBank->acc_number}}<br/>
+									Bank-{{$client->userBank->bank->name}}<br/>
+								</td>
 								<td>{{ \Carbon\Carbon::parse($client->user->created_at)->diffForHumans()}}</td>
 								<td>{{$client->user->url}}</td>
 								<td>
