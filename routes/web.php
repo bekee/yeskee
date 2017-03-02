@@ -113,6 +113,8 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('a_unblock_client/{id}', ['uses' => 'ClientsController@unblock']);
 		
 		
+		Route::get('referrals', ['uses' => 'ClientsController@referrals']);
+		
 		//Deposits
 		Route::get('client_deposits', ['uses' => 'ClientDepositController@deposits']);
 		Route::get('a_view_payment_detail/{id}', ['uses' => 'ClientDepositController@details']);

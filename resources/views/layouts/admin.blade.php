@@ -292,6 +292,12 @@
 											<span>Suspended Clients</span>
 										</a>
 									</li>
+									<li>
+										<a href='{{url('admin/referrals')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/referrals' ? 'active' : ''}}">
+											<span>Referrals Clients</span>
+										</a>
+									</li>
 								
 								</ul>
 							</li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\UserReferer;
 
 class ClientsController extends Controller
 {
@@ -17,6 +18,14 @@ class ClientsController extends Controller
 	{
 		$clients = User::where('route', 'dashboard')->where('approved', 1)->where('blocked', 0)->where('suspend', 0)->paginate(100);
 		return view('admin.clients.approved', compact('clients'));
+	}
+	
+	
+	public function referrals()
+	{
+		$clients = UserReferer::where('user_type','user')->paginate(100);
+		
+		return view('admin.clients.referrals', compact('clients'));
 	}
 	
 	public function suspended()
