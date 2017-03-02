@@ -10,7 +10,7 @@
         "laravelcollective/html": "5.3.*",
         "laracasts/flash": "^2.0",
         "rych/random": "^0.1.0",
-        "santigarcor/laratrust": "4.0.0-rc.1",
+        "santigarcor/laratrust": "3.1.4",
         "arcanedev/currencies": "~0.9",
         "nesbot/carbon": "^1.22",
         "doctrine/dbal": "^2.5",
