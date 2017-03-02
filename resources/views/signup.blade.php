@@ -111,7 +111,8 @@
 													<span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
-												@endif
+										
+														@endif
 									</span>
 											<span class="wpcf7-form-control-wrap message">
 										{{ Form::select('hear_about_us', [
