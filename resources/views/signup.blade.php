@@ -69,10 +69,10 @@
                                     </span>
 												@endif
 									</span>
-											<span class="wpcf7-form-control-wrap email">
+									<span class="wpcf7-form-control-wrap email">
 										       {!! Form::text('email',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email','placeholder'=>'E-mail address','required'])   !!}
 												@if ($errors->has('email'))
-													<span class="help-block">
+									<span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
 												@endif
@@ -85,6 +85,14 @@
 												@if ($errors->has('sex'))
 													<span class="help-block">
                                         <strong>{{ $errors->first('sex') }}</strong>
+                                    </span>
+												@endif
+									</span>
+											<span class="wpcf7-form-control-wrap email">
+										       {!! Form::text('sponsor',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email','placeholder'=>'Sponsor email (Optional)'])   !!}
+												@if ($errors->has('sponsor'))
+													<span class="help-block">
+                                        <strong>{{ $errors->first('sponsor') }}</strong>
                                     </span>
 												@endif
 									</span>

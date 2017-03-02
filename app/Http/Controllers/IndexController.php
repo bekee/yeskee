@@ -69,6 +69,17 @@ class IndexController extends Controller
 		$referral->user_id = $user->id;
 		$referral->user_type = 'normal';
 		$referral->save();
+			
+		if ($request->sponsor) {
+			$ref_person = User::where('email', $request->sponsor)->first();
+			if ($ref_person) {
+				$referral = new UserReferer();
+				$referral->user_id = $user->id;
+				$referral->user_type = 'user';
+				$referral->referred = $ref_person->id;
+				$referral->save();
+			}
+		}
 		
 		Auth::attempt(['email' => $request['email'], 'password' => $request['password'], 'active' => 1], 1);
 		

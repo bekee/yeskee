@@ -32,7 +32,7 @@ class NewUserReferralRequest extends FormRequest
 				return [
 					'first_name' => 'required|min:2|max:50',
 					'last_name' => 'required|min:2|max:50',
-					'email' => 'required|unique:users|min:2|max:50',
+					'email' => 'required|unique:users|min:2|max:50|email',
 					'sex' => 'required',
 					'mobile' => 'required|unique:user_details,phone',
 					'read_policy' => 'required',
