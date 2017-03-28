@@ -62,9 +62,11 @@
 								<td>{{$client->user->other_name}}</td>
 								<td>{{$client->user->phone}}</td>
 								<td>
-									{{-----Acc. Name-{{$client->userBank->acc_name}}<br/>
-									Acc. Number-{{$client->userBank->acc_number}}<br/>
-									Bank-{{$client->userBank->bank->name}}<br/>---}}
+									@if(!empty($client->userBank))
+										Acc. Name-{{$client->userBank->acc_name}}<br/>
+										Acc. Number-{{$client->userBank->acc_number}}<br/>
+										Bank-{{$client->userBank->bank->name}}<br/>
+									@endif
 								</td>
 								<td>{{ \Carbon\Carbon::parse($client->user->created_at)->diffForHumans()}}</td>
 								<td>{{$client->user->url}}</td>
