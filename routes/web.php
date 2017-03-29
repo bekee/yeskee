@@ -74,6 +74,10 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('recharge_card', ['uses' => 'RechargeController@save']);
 		Route::patch('recharge_card/{id}', ['uses' => 'RechargeController@update']);
 		
+		
+		Route::get('other_setting', ['uses' => 'OtherSettingController@index']);
+		Route::patch('other_setting/{id}', ['uses' => 'OtherSettingController@update']);
+		
 		//Levels
 		Route::get('levels', ['uses' => 'LevelController@index']);
 		Route::get('new_level', ['uses' => 'LevelController@newLevel']);

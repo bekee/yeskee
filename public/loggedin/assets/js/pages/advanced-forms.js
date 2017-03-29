@@ -4,7 +4,7 @@ $(function(){
 
    $.fn.editable.defaults.mode = 'inline';
    //defaults
-   $.fn.editable.defaults.url = '/post'; 
+   $.fn.editable.defaults.url = '/post';
 
     //enable / disable
    $('#enable').click(function() {
@@ -12,8 +12,8 @@ $(function(){
    });    
 
 
-    
-    //editables 
+
+    //editables
     $('#username').editable({
            url: '/post',
            type: 'text',
@@ -21,13 +21,13 @@ $(function(){
            name: 'username',
            title: 'Enter username'
     });
-    
+
     $('#firstname').editable({
         validate: function(value) {
            if($.trim(value) == '') return 'This field is required';
         }
     });
-    
+
     $('#sex').editable({
         prepend: "not selected",
         source: [
@@ -37,38 +37,38 @@ $(function(){
         display: function(value, sourceData) {
              var colors = {"": "gray", 1: "green", 2: "blue"},
                  elem = $.grep(sourceData, function(o){return o.value == value;});
-                 
-             if(elem.length) {    
-                 $(this).text(elem[0].text).css("color", colors[value]); 
+
+             if(elem.length) {
+                 $(this).text(elem[0].text).css("color", colors[value]);
              } else {
-                 $(this).empty(); 
+                 $(this).empty();
              }
-        }   
-    });    
-    
-    $('#status').editable();   
-    
+        }
+    });
+
+    $('#status').editable();
+
     $('#group').editable({
-       showbuttons: false 
-    });   
+       showbuttons: false
+    });
 
     $('#vacation').editable({
         datepicker: {
             todayBtn: 'linked'
-        } 
-    });  
-        
+        }
+    });
+
     $('#dob').editable();
-          
+
     $('#event').editable({
         placement: 'right',
         combodate: {
             firstItem: 'name'
         }
-    });      
-    
+    });
+
     $('#meeting_start').editable({
-        format: 'yyyy-mm-dd hh:ii',    
+        format: 'yyyy-mm-dd hh:ii',
         viewformat: 'dd/mm/yyyy hh:ii',
         validate: function(v) {
            if(v && v.getDate() == 10) return 'Day cant be 10!';
@@ -76,9 +76,9 @@ $(function(){
         datetimepicker: {
            todayBtn: 'linked',
            weekStart: 1
-        }        
-    });            
-    
+        }
+    });
+
     $('#comments').editable({
         showbuttons: 'bottom'
     }); 

@@ -18,7 +18,7 @@
 		<div class="section_wrapper clearfix">
 			<div class="items_group">
 				<div class="column one column">
-					<div style="text-align: center;">
+					<div style="text-align: left;">
 						<div class="container">
 							<div class="row">
 								<div class="column one-fourth column">
@@ -63,7 +63,7 @@
 												@endif
 									</span>
 											<span class="wpcf7-form-control-wrap message">
-										{!! Form::text('mobile',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','placeholder'=>'eg +234-8654-765-4367','required'])   !!}
+										{!! Form::text('mobile',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','placeholder'=>'Mobile Number','required'])   !!}
 												@if ($errors->has('mobile'))
 													<span class="help-block">
                                         <strong>{{ $errors->first('mobile') }}</strong>

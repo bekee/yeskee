@@ -18,6 +18,7 @@ class CreateRechargeCardsTable extends Migration
 			$table->string('number');
 			$table->enum('network', ['mtn', 'glo', 'etisalat', 'airtel']);
 			$table->boolean('active')->default(0);
+			$table->string('message')->nullable();
 			$table->boolean('used')->default(0);
 			$table->timestamps();
 		});

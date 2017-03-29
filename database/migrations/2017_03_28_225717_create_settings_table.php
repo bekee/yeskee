@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateRechargeCard extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class UpdateRechargeCard extends Migration
      */
     public function up()
     {
-	    Schema::table('recharge_cards', function (Blueprint $table) {
-		    $table->string('message')->nullable();
-	    });
+        Schema::create('settings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('about_us')->nullable();
+            $table->text('how_it_works')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,6 +28,6 @@ class UpdateRechargeCard extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('settings');
     }
 }

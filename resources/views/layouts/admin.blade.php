@@ -510,8 +510,13 @@
 											<span>Recharge Cards</span>
 										</a>
 									</li>
-								
-								
+									
+									<li>
+										<a href='{{url('admin/other_setting')}}'
+										   class="{{Route::getCurrentRoute()->getPath() == 'admin/other_setting' ? 'active' : ''}}">
+											<span>Setting</span>
+										</a>
+									</li>
 								</ul>
 							</li>
 						

@@ -12,12 +12,18 @@
 @stop
 
 @section('about_us')
+	<style>
+		.help-block{
+			text-align: left !important;
+			color: #78341a;
+		}
+	</style>
 	<div class="section "
 	     style="padding:40px 0 20px;  background-image:url({{asset("rcoco/upload/background_1.jpg")}}); background-repeat:no-repeat; background-position:center; background-attachment:fixed; -webkit-background-size:cover; background-size:cover">
 		<div class="section_wrapper clearfix">
 			<div class="items_group">
 				<div class="column one column">
-					<div style="text-align: center;">
+					<div style="text-align: left;">
 						<div class="container">
 							<div class="row">
 								<div class="column one-fourth column">
@@ -42,7 +48,7 @@
 											<h3 class="form-signin-heading">APPLICATION FORM</h3>
 											
 											<span class="wpcf7-form-control-wrap message">
-										{!! Form::text('first_name',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','placeholder'=>'First name','id'=>'first_name','required'])   !!}
+										{!! Form::text('first_name','',['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','placeholder'=>'First name','id'=>'first_name','required'])   !!}
 												
 												@if ($errors->has('first_name'))
 													<span class="help-block">
@@ -62,7 +68,7 @@
 												@endif
 									</span>
 											<span class="wpcf7-form-control-wrap message">
-										{!! Form::text('mobile',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','placeholder'=>'eg +234-8654-765-4367','required'])   !!}
+										{!! Form::text('mobile',null,['class'=>'wpcf7-form-control wpcf7-text wpcf7-validates-as-required','placeholder'=>'Mobile Number','required'])   !!}
 												@if ($errors->has('mobile'))
 													<span class="help-block">
                                         <strong>{{ $errors->first('mobile') }}</strong>

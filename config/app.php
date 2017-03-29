@@ -181,6 +181,7 @@ return [
 	    Collective\Html\HtmlServiceProvider::class,
 	    Laracasts\Flash\FlashServiceProvider::class,
 	    Arcanedev\Currencies\CurrenciesServiceProvider::class,
+	    Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
     ],
 
     /*

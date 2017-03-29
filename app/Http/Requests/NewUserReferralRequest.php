@@ -34,7 +34,7 @@ class NewUserReferralRequest extends FormRequest
 					'last_name' => 'required|min:2|max:50',
 					'email' => 'required|unique:users|min:2|max:50|email',
 					'sex' => 'required',
-					'mobile' => 'required|unique:user_details,phone',
+					'mobile' => 'max:11|phone:NG|required|unique:user_details,phone',
 					'read_policy' => 'required',
 					'code' => 'required',
 					'password' => 'required|min:5|max:15|confirmed',
