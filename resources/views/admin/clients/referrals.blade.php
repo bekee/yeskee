@@ -54,6 +54,7 @@
 								<td>{{$key +1}}</td>
 							
 								<td>{{$client->user->user->first_name}} {{$client->user->user->last_name}}</td>
+								<td>{{$client->user->email}}<br/>{{$client->user->user->phone}}</td>
 								
 							</tr>
 						@endforeach
