@@ -56,6 +56,7 @@
 								<td>{{$client->user->user->first_name}} {{$client->user->user->last_name}}</td>
 								<td>{{$client->user->email}}<br/>{{$client->user->user->phone}}</td>
 								
+								<td>{{$client->referredParentUser}}</td>
 							</tr>
 						@endforeach
 						</tbody>
